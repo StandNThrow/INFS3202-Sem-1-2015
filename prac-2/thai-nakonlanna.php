@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link href="css/lightbox.css" rel="stylesheet" />
+<title>Thai Nakonlanna</title>
+</head>
+
+<body>
+<div id="header"> <a class="goBack" href="javascript:history.back();"><span>Back</span></a></div>
+<h2 class="pgHeader">Thai Nakonlanna</h2>
+<div class="column-left">
+  <h4>Address: </h4>
+  <ul>
+    <li>6/225 Hawken Drive, St Lucia QLD 4067 </li>
+  </ul>
+  <h4>Phone: </h4>
+  <ul>
+    <li>(07) 3719 5556 </li>
+  </ul>
+  <h4>Opening hours: </h4>
+  <ul>
+    <li><b>Monday to Friday:</b> 11am to 2.30pm, 5pm to 9.30pm</li>
+    <li><b>Saturday to Sunday:</b> 12nn to 3.30pm, 5pm to 9pm</li>
+  </ul>
+  <h4>Description: </h4>
+  <ul>
+    <li>Catered mostly to University of Queensland (UQ) students, this Thai restaurant, located in Hawken Village (on Hawken Drive), is a nice little restaurant that offers decent Thai food. They offer a lunch special, with an entree for just a little bit more. </li>
+  </ul>
+</div>
+<div class="column-right"><a href="images/thai-nakonlanna-basil-stir-fry.jpg" data-lightbox="thai-nakonlanna"><img src="images/thai-nakonlanna-basil-stir-fry.jpg" alt="Basil Stir Fry" width="310" height="230" /></a> <br />
+  <a href="images/thai-nakonlanna-pad-thai.jpg" data-lightbox="thai-nakonlanna"><img src="images/thai-nakonlanna-pad-thai.jpg" alt="Pad Thai" width="265" height="200" /></a> <a href="images/thai-nakonlanna-red-chicken-curry.jpg" data-lightbox="thai-nakonlanna"><img src="images/thai-nakonlanna-red-chicken-curry.jpg" alt="Red Chicken Curry" width="200" height="200" /></a></div>
+<?php include('footer.php'); ?>
+<script src="js/jquery-1.11.0.min.js"></script> 
+<script src="js/lightbox.js"></script>
+</body>
+</html>

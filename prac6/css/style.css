@@ -1,0 +1,261 @@
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+body {
+	text-align: center; /*For IE shenanigans*/
+}
+
+
+/*Login Page*/
+#login_wrapper {
+	margin: 0 auto;
+	height:200px;
+	width: 600px;
+	border: solid black 10px;
+}
+
+#login_image img {
+	float: left;
+	height:200px;
+	width: 200px;
+}
+
+#login_form {
+	float: left;
+	margin-top: 35px;
+	margin-left: 10px;
+	padding: 10px;
+}
+
+#error_box{
+	width: 120px;
+	height: 45px;
+	position: relative;
+	top: -45px;
+	right: -230px;
+}
+
+#stay_logged {
+
+}
+
+#stay_logged p{
+	position: relative;
+	top: -40px;
+	left: -15px;
+	text-align: left;
+	font-size: 16px;
+}
+
+#stay_logged select{
+	position: relative;
+	top: -50px;
+	left: 0px;
+	float: left;
+	width: 180px;
+}
+
+#submit_button {
+	position: relative;
+	top: -75px;
+	right: -150px;	
+} 
+
+
+
+
+
+/*Home Page*/
+#main_image{
+	float: left;
+	width: 500px;
+	height: 300px;
+}
+
+#left_image{
+	float: left;
+	width: 230px;
+	height: 300px;
+}
+
+#right_image{
+	float: left;
+	width: 230px;
+	height: 300px;
+}
+
+#login_details_tab{
+	float: left;
+	width: 960px;
+	margin-top: 10px;
+}
+
+#login_details_tab h4{
+	float: right;
+	margin-top: 2px;
+	margin-right: 10px;
+	font-size: 24px;
+}
+
+#login_details_tab a img{
+	float: right;
+	width: 150px;
+	height:35px;
+}
+
+#login_details_tab h5 {
+	float: left;
+	margin-top: 2px;
+	margin-right: 10px;
+	font-size: 24px;
+	text-decoration: none;
+	color: red;
+}
+
+
+#current_promo_title img{
+	width: 800px;
+	height: 200px;
+}
+
+#current_promotion{
+	height:1000px;
+	width: 960px;
+}
+
+#current_promotion img {
+	height:260px;
+	width: 440px;
+}
+
+.image_fieldset {
+	padding: 0px;
+	float: left;
+	border:8px solid black;
+	width: 440px;
+	height: 270px;
+	margin:10px;
+}
+
+
+/*Home page bottom part*/
+.header_div{
+	height: 100px;
+}
+
+
+.header_div h1 {
+	float: left;
+}
+
+
+.header_div a {
+	margin-left: 10px;
+	float: left;
+	text-decoration: none;
+	color: red;
+}
+
+.list_items {
+	height: 200px;
+}
+
+.show_more {
+	height: 40px;
+}
+
+.list_items img {
+	float: left;
+	height: 150px;
+	width: 150px;
+}
+
+.list_items p{
+	text-align: left;
+	float: left;
+}
+
+
+ul {
+	list-style: none;
+}
+
+h1{
+	font-size: 35px;
+	text-align: left;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 40px;
+}
+
+p {
+	margin-left: 15px;
+	font-size: 20px;
+}
+
+
+/*Search resutls page*/
+.search_results {
+	padding: 0px;
+	float: left;
+	border:8px solid black;
+	width: 440px;
+	height: 270px;
+	margin:10px;
+}
+
+.search_results img {
+	height:260px;
+	width: 440px;
+}
+
+
+
+/*Dyanamic search page*/
+#dynamic_search_bar input{
+	width: 500px;
+}
+
+
+
+/*promo pages*/
+
+.comments_wrapper {
+	width: 800px;
+	margin: 0 auto;
+}
+
+.display_comments_div {
+	float: left;
+}
+
+.comments_box {
+	width: 300px;
+	height: 600px;
+	text-align: left;
+}
+
+.add_comment_div {
+	width: 300px;
+	height: 600px;
+	float: left;
+}
+
+/*Map page*/
+#map-canvas {
+	height:400px; 
+	width:960px;
+}
+
+#map-canvas2 {
+	height:400px; 
+	width:960px;
+	margin-bottom: 20px;
+}

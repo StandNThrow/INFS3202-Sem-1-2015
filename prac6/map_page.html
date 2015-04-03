@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Map Page</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href="css/lightbox.css" rel="stylesheet" />
+		<script src="js/jquery-1.10.2.min.js"></script>
+
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6cufLFhHezckUrRhYOv_IV_EZ-g7cPeg&sensor=SET_TO_TRUE_OR_FALSE"></script>
+
+		<script type="text/javascript">
+			var geocoder;
+			var map;
+			var marker=[];
+
+		     function initialize() {
+		     	geocoder = new google.maps.Geocoder();
+		     	var mapOptions = {
+		        	center: new google.maps.LatLng(-27.470851, 153.023336),
+		          	zoom: 13
+		        };
+		        map = new google.maps.Map(document.getElementById("map-canvas"),
+		            mapOptions);
+		    }
+
+
+		    function place_marker(id) {
+				var xmlhttp;   
+
+				if (window.XMLHttpRequest) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				  xmlhttp=new XMLHttpRequest();
+				}
+				else{
+				// code for IE6, IE5
+				  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+				}
+
+				xmlhttp.onreadystatechange=function() {
+					if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+				    	var location_results = xmlhttp.responseText;
+				    	place_marker2(location_results);
+				    }
+				    
+				}
+				xmlhttp.open("GET","location.jsp?q="+id,true);
+				xmlhttp.send();
+			}
+
+
+
+		    function place_marker2(location_name) {
+			 	var address = location_name;
+				initialize();
+			  	geocoder.geocode( { 'address': address}, function(results, status) {
+
+				    if (status == google.maps.GeocoderStatus.OK) {
+				     	map.setCenter(results[0].geometry.location);
+				       	marker = new google.maps.Marker({
+				        	map: map,
+				         	position: results[0].geometry.location
+				      });
+				    } else {
+			     		alert('Geocode was not successful for the following reason: ' + status);
+			    	}
+			  });
+		    }
+
+
+		    function test(id) {
+			    var lat = document.getElementById("lat"+id).value;
+			    var lon = document.getElementById("lon"+id).value;
+
+			    console.log(lat,lon);
+
+		 	}
+    	</script>
+	</head>
+
+
+	<body onload="initialize()">
+
+		<div class="wrapper">
+			<a href="http://infs3202-013.uqcloud.net/prac6/admin_login.jsp">Go to Admin Page</a>
+			<div class="site_title">
+				<img id="left_image" src="images/flankimages1.jpg" alt="loginimage">
+				<a href = "http://infs3202-013.uqcloud.net/prac6/home.php">
+					<img id="main_image" src="images/loginimage.jpg" alt="loginimage">
+				</a>
+				<img id="right_image" src="images/flankimages2.jpg" alt="loginimage">
+			</div>
+
+			<div id="login_details_tab">
+				<a href="logout.php"><img src="images/logout.png" alt="logout image"></a>
+				<a href="search_page.jsp"><h5>Custom Search |</h5></a>
+				<a href="dynamic_search_page.html"><h5>| Quick Search</h5></a>
+			</div>
+
+
+			<div id="map-canvas">
+				Laoding map....
+			</div>	
+
+
+
+			<div id="current_promotion">
+				<fieldset class="image_fieldset">
+					<legend id="legend1">Retrieving info....</legend>
+					<a href="javascript:void(0);" onclick="place_marker(1);"><img src="images/promo1.jpg" alt="promo">
+						<div id="print"></div>
+					</a>
+				</fieldset>
+
+				<fieldset class="image_fieldset">
+					<legend id="legend2">Retrieving info....</legend>
+					<a href="javascript:void(0);" onclick="place_marker(2);"><img src="images/promo2.jpg" alt="promo">
+					</a>
+				</fieldset>
+
+				<fieldset class="image_fieldset">
+					<legend id="legend3">Retrieving info....</legend>
+					<a href="javascript:void(0);" onclick="place_marker(3);"><img src="images/promo3.jpg" alt="promo">
+				</fieldset>
+
+				<fieldset class="image_fieldset">
+					<legend id="legend4">Retrieving info....</legend>
+					<a href="javascript:void(0);" onclick="place_marker(4);"><img src="images/promo4.jpg" alt="promo">
+				</fieldset>
+
+				<fieldset class="image_fieldset">
+					<legend id="legend5">Retrieving info....</legend>
+					<a href="javascript:void(0);" onclick="place_marker(5);"><img src="images/promo5.jpg" alt="promo">
+				</fieldset>
+
+				<fieldset class="image_fieldset">
+					<legend id="legend6">Retrieving info....</legend>
+					<a href="javascript:void(0);" onclick="place_marker(6);"><img src="images/promo6.jpg" alt="promo">
+				</fieldset>
+			</div>
+		</div>	
+	</body>
+</html>
