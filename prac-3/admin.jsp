@@ -33,14 +33,13 @@
             String sessionUsername = (String) session.getAttribute("username");
 			if (session.getAttribute("username") == null)
 			{
-				
-			}
-			else {
-				out.print("<a href=\"logout.jsp\" class=\"\">Logout</a>");
-				//out.print("<p class=\"navbar-text navbar-right\">Signed in as <a class=\"navbar-link\">" + session.getAttribute("username") + "</a></p>");
-				
-			}
-        %>
+				%>
+          <% } else { %>
+        <li><a href="logout.jsp">Logout</a></li>
+        <li>
+          <p class="navbar-text navbar-right">Welcome back, <a class="navbar-link"><%=sessionUsername %></a></p>
+        </li>
+        <% } %>
         </li>
       </ul>
     </div>

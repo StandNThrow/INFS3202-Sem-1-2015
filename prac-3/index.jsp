@@ -36,6 +36,7 @@
 				%>
           <li><a href="login.jsp">Login</a></li>
           <%  } else { %>
+          <li><a href="admin.jsp">Admin</a></li>
           <li><a href="logout.jsp">Logout</a></li>
           <li>
             <p class="navbar-text navbar-right">Welcome back, <a class="navbar-link"><%=sessionUsername %></a></p>
@@ -63,22 +64,6 @@
     </div>
   </div>
   <div class="clear"></div>
-  <%--<center>
-    <h2>
-      <%
-            String a=session.getAttribute("username").toString();
-            out.println("Hello  "+a);
-            %>
-    </h2>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <a href="logout.jsp">Logout</a>
-  </center>--%>
   <a href="logout.jsp">Logout</a>
   <div id="footer">
     <p style="color:white;margin-top:10px;">All rights reserved. University of Queensland.</p>
