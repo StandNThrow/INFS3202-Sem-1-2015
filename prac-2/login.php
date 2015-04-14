@@ -12,8 +12,7 @@
 </head>
 
 <body onLoad="disableBtn();">
-<?php include('header.php'); ?>
-<?php include('login_action.php'); ?>
+<?php include('header.php'); include('login_action.php'); ?>
 <form name="formLogin" id="formLogin" class="formLogin" method="post">
   <?php if(isset($msg)){?>
   <tr>
@@ -51,7 +50,7 @@ function disableBtn()
 	document.getElementById("navLoginBtn").disabled=true;
 }
 </script> 
-<script type="text/javascript">
+<!--<script type="text/javascript">
     var loginTimeout = "";
     var loggedIn = false;
     if(loggedIn) {
@@ -59,6 +58,6 @@ function disableBtn()
             initCountdown(loginTimeout);
         });
     }
-</script>
+</script>-->
 </body>
 </html>

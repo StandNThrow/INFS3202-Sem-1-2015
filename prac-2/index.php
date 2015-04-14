@@ -47,7 +47,7 @@ if ($_GET['handler'])
             initCountdown(loginTimeout);
         });
     }
-</script> 
+</script>
 <script>
 function ifIndex() {
 	document.getElementById("toIndex").removeAttribute("href");
