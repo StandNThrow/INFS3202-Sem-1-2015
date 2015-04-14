@@ -112,21 +112,6 @@ input {
 	margin-top: 5px;
 	margin-right: 5px;
 }
-/*input.search {
-	background-position: 5px center;
-	background-repeat: no-repeat;
-	border: 1px solid #ccc;
-	padding: 10px 5px;
-	text-indent: 20px;
-	-webkit-transition: all 0.2s;
-	-moz-transition: all 2s;
-	transition: all 0.2s;
-	height: 30px;
-	margin-top: 5px;
-	margin-right: 5px;
-	background-image: url('../images/icoSearch.png');
-}
-*/
 input:focus {
 	background-position: -20px center;
 	text-indent: 0;
@@ -139,7 +124,7 @@ input:focus {
 	padding: 15px 0 15px 0;
 	background-color: #EEE;
 	color: #333;
-	border-radius: 40px 0 40px 0;
+	/*border-radius: 40px 0 40px 0;*/
 }
 .formLogin ul {
 	list-style-type: none;

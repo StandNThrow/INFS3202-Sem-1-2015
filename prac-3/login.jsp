@@ -20,7 +20,7 @@
 <script src="js/googleMapAPI.js"></script>
 </head>
 
-<body onLoad="disableBtn();">
+<body>
 <!-- Fixed navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
@@ -80,12 +80,6 @@
 			}
 			}
 		%>
-<script>
-function disableBtn()
-{
-	document.getElementById("navLoginBtn").disabled=true;
-}
-</script> 
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
 <!-- Latest compiled and minified JavaScript --> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 

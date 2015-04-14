@@ -46,6 +46,9 @@
     <!--/.nav-collapse --> 
   </div>
 </nav>
+<div class="container">
+  <div class="col-lg-12"></div>
+</div>
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
 <!-- Latest compiled and minified JavaScript --> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
