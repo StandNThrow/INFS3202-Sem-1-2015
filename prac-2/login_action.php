@@ -1,4 +1,4 @@
-<?php session_start(); /* Starts the session */
+<?php /* Starts the session */
 	
 	/* Check Login form submitted */	
 	if(isset($_POST['Submit'])){
@@ -17,6 +17,11 @@
 			$_SESSION['Timeout']=$Timeout;
 			$_SESSION['isLoggedIn']="true";
 			header('location:index.php?handler=' . urlencode(base64_encode('You have logged in successfully. Your session will timeout in: ' . $Timeout . 's<br>Welcome back, ' . $_SESSION["Username"])));
+			
+			date_default_timezone_set('Australia/Brisbane');
+			$log  = date("Y-m-d H:i") . " " . $Username . " Login" .PHP_EOL;
+			
+			file_put_contents('./log.txt', $log, FILE_APPEND);
 		} else {
 			/*Unsuccessful attempt: Set error message */
 			$msg="<span style='color:red'>Invalid Login Details</span>";

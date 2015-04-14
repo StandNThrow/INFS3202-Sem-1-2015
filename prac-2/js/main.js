@@ -13,6 +13,7 @@ function initCountdown(countdown) {
         document.title = getRemainder(countdown) + ' till your session expires.';
         if(countdown < 0) {
 			location.href="logout.php";
+			console.log("Logout by timer");
         }
     }, 1000);
 }
