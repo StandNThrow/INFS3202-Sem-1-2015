@@ -27,7 +27,7 @@
     <li>
       <input type="password" name="Password" placeholder="Password" required>
     </li>
-    <li> <!--<a href="#" style="text-decoration:none;color:red;">Forget my Password</a>--> <span style="color:red;">Forget my Password</span></li>
+    <li><span style="color:red;">Forget my Password</span></li>
     <li>
       <p>Stay Logged in for:
         <select name="Timeout">
@@ -43,7 +43,6 @@
     </li>
   </ul>
 </form>
-<?php include('footer.php'); ?>
 <script>
 function disableBtn()
 {

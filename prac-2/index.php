@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link href="css/lightbox.css" rel="stylesheet" />
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="js/main.js"></script>
 </head>
 <body onload="ifIndex();">
 <div id="container">
@@ -47,10 +49,8 @@ if ($_GET['handler'])
 function ifIndex() {
 	document.getElementById("toIndex").removeAttribute("href");
 }
-</script> 
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
+</script>  
 <script src="js/lightbox.js"></script> 
 <script src="js/googleMapAPI.js"></script> 
-<script src="js/main.js"></script>
 </body>
 </html>
