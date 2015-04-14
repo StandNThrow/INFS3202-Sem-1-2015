@@ -1,11 +1,10 @@
 <div id="header"> <a href="index.php" id="toIndex">Asianic Food Culture</a>
   <?php session_start(); /* Starts the session */
 if(isset($_SESSION['Username'])){
-	echo '<a href="logout.php"><button id="navLogoutBtn" class="navBtn" type="button">Logout</button></a>';
+	echo "<button id=\"navLogoutBtn\" class=\"navBtn\" type=\"button\" onClick=\"javascript:location.href='logout.php';\">Logout</button>";
 }
 	else{
-		echo '<a href="login.php"><button id="navLoginBtn" class="navBtn" type="button">Login</button></a>';
+		echo "<button id=\"navLoginBtn\" class=\"navBtn\" type=\"button\" onClick=\"javascript:location.href='login.php';\">Login</button>";
 	}
   ?>
-  </ul>
 </div>

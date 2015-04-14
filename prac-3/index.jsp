@@ -18,43 +18,40 @@
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 </head>
 <body>
-<div id="container"> 
-  <!-- Fixed navbar -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <a class="navbar-brand">Asianic Food Culture</a> </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="index.jsp">Home</a></li>
-          <li>
-            <%
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand">Asianic Food Culture</a> </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.jsp">Home</a></li>
+        <li>
+          <%
             String sessionUsername = (String) session.getAttribute("username");
 			if (sessionUsername == null)
 			{
 				%>
-          <li><a href="login.jsp">Login</a></li>
-          <%  } else { %>
-          <li><a href="admin.jsp">Admin</a></li>
-          <li><a href="logout.jsp">Logout</a></li>
-          <li>
-            <p class="navbar-text navbar-right">Welcome back, <a class="navbar-link"><%=sessionUsername %></a></p>
-          </li>
-          <%			} %>
-          </li>
-        </ul>
-      </div>
-      <!--/.nav-collapse --> 
+        <li><a href="login.jsp">Login</a></li>
+        <%  } else { %>
+        <li><a href="admin.jsp">Admin</a></li>
+        <li><a href="logout.jsp">Logout</a></li>
+        <li>
+          <p class="navbar-text navbar-right">Welcome back, <a class="navbar-link"><%=sessionUsername %></a></p>
+        </li>
+        <%			} %>
+      </ul>
     </div>
-  </nav>
-  <div class="clear"></div>
-  <div class="column-left">
-    <h2>Location</h2>
+    <!--/.nav-collapse --> 
+  </div>
+</nav>
+<div class="container" role="main">
+  <div class="getGeolocation">Google Geolocation Placeholder. Enable your Location/GPS for this to work.</div>
+  <div class="col-lg-7" style="height:400px;">
     <div id="map-canvas"></div>
   </div>
-  <div class="column-right">
-    <h2>Restaurants</h2>
+  <div class="col-lg-5">
     <div class="scrollableTableContainer">
       <table class="tableLegend">
         <tr>
@@ -62,11 +59,6 @@
         </tr>
       </table>
     </div>
-  </div>
-  <div class="clear"></div>
-  <a href="logout.jsp">Logout</a>
-  <div id="footer">
-    <p style="color:white;margin-top:10px;">All rights reserved. University of Queensland.</p>
   </div>
 </div>
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
