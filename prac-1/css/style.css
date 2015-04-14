@@ -16,12 +16,11 @@ html, body {
 	float: left;
 	width: 50%;
 	height: 400px;
-	margin: 10px;
 }
 .column-right {
 	float: left;
+	width: 50%;
 	height: 400px;
-	margin: 10px;
 }
 .clear {
 	clear: both;
@@ -320,8 +319,8 @@ img.imgLightbox {
 .pgHeader {
 	text-align: center;
 	border-bottom: 1px dotted;
-	padding-bottom:20px;
+	padding-bottom: 20px;
 }
-h4{
-	border-bottom:1px dotted;
+h4 {
+	border-bottom: 1px dotted;
 }
