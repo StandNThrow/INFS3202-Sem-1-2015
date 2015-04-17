@@ -46,25 +46,17 @@
     <!--/.nav-collapse --> 
   </div>
 </nav>
-<?php /*?><?php 
-if (isset($_GET['handler']))
-{
-	echo "<div class=\"welcomeMsg\">" . base64_decode(urldecode($_GET["handler"])) . "</div>";
-}
-?><?php */?>
 <div class="getGeolocation"></div>
 <div class="container" role="main">
+  <div class="col-lg-5">
+    <table class="tableLegend">
+      <tr>
+        <td id="legend"></td>
+      </tr>
+    </table>
+  </div>
   <div class="col-lg-7" style="height:400px;">
     <div id="map-canvas"></div>
-  </div>
-  <div class="col-lg-5">
-    <!--<div class="scrollableTableContainer">-->
-      <table class="tableLegend">
-        <tr>
-          <td id="legend"></td>
-        </tr>
-      </table>
-    <!--</div>-->
   </div>
 </div>
 <script type="text/javascript">

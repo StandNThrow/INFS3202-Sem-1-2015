@@ -31,7 +31,7 @@ if(isset($_POST["Submit"]))
 		file_put_contents("../logs/log.txt", $log, FILE_APPEND);
 		} else {
 			/*Unsuccessful attempt: Set error message */
-			$msg="<span style=\"color:red;\">Invalid Login Details</span>";
+			$msg="<span style=\"color:red;\">Invalid Login Details!</span>";
 			$log  = date("Y-m-d H:i") . " " . $Username . " Failed to login" . PHP_EOL;
 			file_put_contents("../logs/log.txt", $log, FILE_APPEND);
 		}
