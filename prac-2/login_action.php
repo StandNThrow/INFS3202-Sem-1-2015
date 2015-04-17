@@ -1,6 +1,7 @@
 <?php 
 /* Set timezone to Brisbane */
 date_default_timezone_set('Australia/Brisbane');
+
 /* Check Login form submitted */
 if(isset($_POST['Submit']))
 {
@@ -18,8 +19,8 @@ if(isset($_POST['Submit']))
 		/* Success: Set session variables and redirect to Homepage  */
 		$_SESSION['Username']	=	$Username;
 		$_SESSION['Start']		=	time();
-		$_SESSION['Timeout']	=	$Timeout;
-		$_SESSION['isLoggedIn']	=	"true";
+		$_SESSION["Timeout"]	=	$Timeout;
+		$_SESSION["isLoggedIn"]	=	"true";
 		
 		header('location:index.php?handler=' . urlencode(base64_encode('You have logged in successfully. Your session will timeout in: ' . $Timeout . 's<br>Welcome back, ' . $_SESSION["Username"])));
 		
