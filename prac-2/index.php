@@ -30,10 +30,11 @@
       <ul class="nav navbar-nav">
         <li class="active"><a>Home</a></li>
         <?php 
-		session_start(); /* Starts the session */
+		session_start();
 		if (isset($_SESSION['Username']))
 		{
 			echo "<li><a href=\"logout.php\">Logout</a></li>";
+			echo "<p class=\"navbar-text navbar-right\">Logged in User: " . $_SESSION["Username"] . "</p>";
 			}
 			else
 			{
@@ -45,30 +46,30 @@
     <!--/.nav-collapse --> 
   </div>
 </nav>
-<?php 
+<?php /*?><?php 
 if (isset($_GET['handler']))
 {
 	echo "<div class=\"welcomeMsg\">" . base64_decode(urldecode($_GET["handler"])) . "</div>";
 }
-?>
-<div class="getGeolocation">Google Geolocation Placeholder</div>
+?><?php */?>
+<div class="getGeolocation"></div>
 <div class="container" role="main">
   <div class="col-lg-7" style="height:400px;">
     <div id="map-canvas"></div>
   </div>
   <div class="col-lg-5">
-    <div class="scrollableTableContainer">
+    <!--<div class="scrollableTableContainer">-->
       <table class="tableLegend">
         <tr>
           <td id="legend"></td>
         </tr>
       </table>
-    </div>
+    <!--</div>-->
   </div>
 </div>
 <script type="text/javascript">
-    var loginTimeout = <?php echo $_SESSION["Timeout"]; ?>;
-    var loggedIn = <?php echo $_SESSION["isLoggedIn"]; ?>;
+    var loginTimeout = <?php echo $_SESSION['Timeout']; ?>;
+    var loggedIn = <?php echo $_SESSION['isLoggedIn']; ?>;
     if(loggedIn) {
         $(function() {
             initCountdown(loginTimeout);

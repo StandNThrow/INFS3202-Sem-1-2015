@@ -29,7 +29,8 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
-        <?php 
+        <li class="disabled"><a>Login</a></li>
+        <?php /*?><?php 
 		session_start();
 		if (isset($_SESSION["Username"]))
 		{
@@ -37,9 +38,9 @@
 			}
 			else
 			{
-				echo "<li class=\"active\"><a href=\"login.php\">Login</a></li>";
+				echo "<li class=\"disabled\"><a href=\"login.php\">Login</a></li>";
 			}
-			?>
+			?><?php */?>
       </ul>
     </div>
     <!--/.nav-collapse --> 
@@ -64,7 +65,7 @@
     <li>
       <p>Stay Logged in for:
         <select name="Timeout">
-        <option value="03" selected>3 Sec</option>
+          <option value="03" selected>3 Sec</option>
           <option value="10">10 Sec</option>
           <option value="30">30 Sec</option>
           <option value="86400">1 Day</option>
@@ -73,7 +74,6 @@
     </li>
     <li>
       <button name="Submit" id="btnLogin" class="btnLogin" type="submit">Login</button>
-      <!--<button name="Clear" id="btnClear" class="btnClear" type="reset">Clear</button>--> 
     </li>
   </ul>
 </form>
