@@ -47,8 +47,8 @@
     <!--/.nav-collapse --> 
   </div>
 </nav>
+<div class="getGeolocation">Google Geolocation Placeholder. Enable your Location/GPS for this to work.</div>
 <div class="container" role="main">
-  <div class="getGeolocation">Google Geolocation Placeholder. Enable your Location/GPS for this to work.</div>
   <div class="col-lg-5">
     <table class="tableLegend">
       <tr>
