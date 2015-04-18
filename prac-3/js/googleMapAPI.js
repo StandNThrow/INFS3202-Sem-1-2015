@@ -4,25 +4,25 @@ function initialize() {
 		  "title": "<b>Taro's Ramen & Cafe</b>", 
 		  "lat": "-27.464985", 
 		  "lng": "153.030076", 
-		  "description": '<a href="images/taro-ramen-akatonkotsu.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/taro-ramen-akatonkotsu.jpg" /></a><p>Address: 363 Adelaide Street, Brisbane QLD 4000<br />Phone: (07) 3832 6358<br /><a class="moreInfo" href="taro-ramen.php">More Info...</a></p>', 
+		  "description": '<a href="images/taro-ramen-akatonkotsu.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/taro-ramen-akatonkotsu.jpg" /></a><p>Address: 363 Adelaide Street, Brisbane QLD 4000<br />Phone: (07) 3832 6358<br /><a class="btn btn-primary" href="taro-ramen.php">More Info...</a></p>', 
 		  },
 		  {
 		  "title": "<b>Thai Nakonlanna</b>", 
 		  "lat": "-27.502666", 
 		  "lng": "153.00661", 
-		  "description": '<a href="images/thai-nakonlanna-basil-stir-fry.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/thai-nakonlanna-basil-stir-fry.jpg" /></a><p>Address: 6/225 Hawken Drive, St Lucia QLD 4067<br />Phone: (07) 3719 5556<br /><a class="moreInfo" href="thai-nakonlanna.php">More Info...</a></p>', 
+		  "description": '<a href="images/thai-nakonlanna-basil-stir-fry.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/thai-nakonlanna-basil-stir-fry.jpg" /></a><p>Address: 6/225 Hawken Drive, St Lucia QLD 4067<br />Phone: (07) 3719 5556<br /><a class="btn btn-primary" href="thai-nakonlanna.php">More Info...</a></p>', 
 		  },
 		    {
 		  "title": "<b>Madtong San II</b>", 
 		  "lat": "-27.471166", 
 		  "lng": "153.025238", 
-		  "description": '<a href="images/madtongsan-bibimbap.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/madtongsan-bibimbap.jpg" /></a><p>Address: 1/85 Elizabeth Street, Brisbane QLD 4000<br />Phone:(07) 3003 1881<br /><a class="moreInfo" href="madtong-san-ii.php">More Info...</a></p>', 
+		  "description": '<a href="images/madtongsan-bibimbap.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/madtongsan-bibimbap.jpg" /></a><p>Address: 1/85 Elizabeth Street, Brisbane QLD 4000<br />Phone:(07) 3003 1881<br /><a class="btn btn-primary" href="madtong-san-ii.php">More Info...</a></p>', 
 		  },
 		    {
 		  "title": "<b>Fantasia (Queen St)</b>", 
 		  "lat": "-27.468179", 
 		  "lng": "153.027368", 
-		  "description": '<a href="images/fantasia-beijing-noodles.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/fantasia-beijing-noodles.jpg" /></a><p>Address: 255 Queen Street, MacArthur Central, Brisbane QLD 4000<br />Phone:(07) 3221 8881<br /><a class="moreInfo" href="fantasia.php">More Info...</a></p>',
+		  "description": '<a href="images/fantasia-beijing-noodles.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/fantasia-beijing-noodles.jpg" /></a><p>Address: 255 Queen Street, MacArthur Central, Brisbane QLD 4000<br />Phone:(07) 3221 8881<br /><a class="btn btn-primary" href="fantasia.php">More Info...</a></p>',
 		  },
 
     ];
@@ -49,7 +49,7 @@ function initialize() {
         geocoder.geocode({'latLng': location}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results[0]) {
-                    container.html(results[0].formatted_address);
+                    container.html("Current Location: <b><marquee>" + results[0].formatted_address + "</marquee></b>");
                 } else {
                     container.html('No results found');
                 }

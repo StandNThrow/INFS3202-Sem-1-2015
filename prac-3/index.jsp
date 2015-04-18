@@ -49,17 +49,15 @@
 </nav>
 <div class="container" role="main">
   <div class="getGeolocation">Google Geolocation Placeholder. Enable your Location/GPS for this to work.</div>
+  <div class="col-lg-5">
+    <table class="tableLegend">
+      <tr>
+        <td id="legend"></td>
+      </tr>
+    </table>
+  </div>
   <div class="col-lg-7" style="height:400px;">
     <div id="map-canvas"></div>
-  </div>
-  <div class="col-lg-5">
-    <div class="scrollableTableContainer">
-      <table class="tableLegend">
-        <tr>
-          <td id="legend"></td>
-        </tr>
-      </table>
-    </div>
   </div>
 </div>
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 

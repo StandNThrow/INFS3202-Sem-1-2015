@@ -48,12 +48,6 @@
 </nav>
 <?php include('login_action.php'); ?>
 <form name="formLogin" id="formLogin" class="formLogin" method="post">
-  <?php if(isset($msg)){?>
-  <tr>
-    <td colspan="2" align="center" valign="top"><?php echo $msg;?></td>
-  </tr>
-  <?php } ?>
-  <br>
   <h2>Please login to continue</h2>
   <label for="Username" class="sr-only">Username</label>
   <input type="text" name="Username" class="form-control" placeholder="Username" required autofocus>
@@ -70,6 +64,9 @@
     </select>
   </p>
   <button name="Submit" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+  <?php if(isset($msg)) { ?>
+  <span class="center-block"><?php echo $msg; ?></span>
+  <?php } ?>
 </form>
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
