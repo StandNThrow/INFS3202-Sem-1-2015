@@ -15,8 +15,8 @@
     <![endif]-->
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/lightbox.css" type="text/css" />
+<link rel="shortcut icon" href="images/favicon.png" />
 </head>
-
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">

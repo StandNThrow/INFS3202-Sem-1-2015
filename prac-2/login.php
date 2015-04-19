@@ -15,12 +15,10 @@
     <![endif]-->
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/lightbox.css" type="text/css" />
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<link rel="shortcut icon" href="images/favicon.png" />
 </head>
-
 <body>
 <!-- Fixed navbar -->
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
