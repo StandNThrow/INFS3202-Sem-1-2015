@@ -1,0 +1,45 @@
+2015-04-17 20:34 INFS Login
+2015-04-17 20:34 INFS Logout by user
+2015-04-17 20:34 INFS Login
+2015-04-17 20:34 INFS Logout by timer
+2015-04-17 20:34 INFS Login
+2015-04-17 20:34 INFS Logout by timer
+2015-04-17 20:34 INFS Login
+2015-04-17 20:34 INFS Logout by timer
+2015-04-17 20:34 INFS Login
+2015-04-17 20:35 INFS Logout by timer
+2015-04-17 20:36 INFS Login
+2015-04-17 20:36 INFS Logout by timer
+2015-04-17 20:37 INFS Login
+2015-04-17 20:37 INFS Logout by timer
+2015-04-17 20:37 INFS Login
+2015-04-17 20:37 INFS Logout by timer
+2015-04-17 20:39 INFS Login
+2015-04-17 20:40 INFS Logout by timer
+2015-04-17 21:16 INFS Login
+2015-04-17 21:16 INFS Logout by timer
+2015-04-17 21:18 INFS Login
+2015-04-17 21:18 INFS Logout by timer
+2015-04-17 21:18 INFS Login
+2015-04-17 21:18 INFS Logout by user
+2015-04-17 21:18 INFS Login
+2015-04-17 21:19 INFS Logout by user
+2015-04-17 21:19 INFS Login
+2015-04-17 21:19 INFS Logout by user
+2015-04-17 21:19 INFS Login
+2015-04-17 21:19 INFS Logout by user
+2015-04-17 21:19 INFS Login
+2015-04-17 21:19 INFS Logout by timer
+2015-04-17 21:19 INFS Login
+2015-04-17 21:19 INFS Logout by user
+2015-04-17 21:27 INFS Login
+2015-04-17 21:27 INFS Login
+2015-04-17 21:28 INFS Logout by timer
+2015-04-17 22:39 INFS Failed to login
+2015-04-17 22:40 INFS Failed to login
+2015-04-17 22:42 INFS Failed to login
+2015-04-17 23:39 INFS Login
+2015-04-17 23:40 INFS Logout by timer
+2015-04-18 17:58 INFS Failed to login
+2015-04-18 18:00 INFS Failed to login
+2015-04-18 18:01 INFS Failed to login
