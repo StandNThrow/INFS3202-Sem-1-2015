@@ -47,10 +47,10 @@
 <?php include('login_action.php'); ?>
 <form name="formLogin" id="formLogin" class="formLogin" method="post">
   <h2>Please login to continue</h2>
-  <label for="Username" class="sr-only">Username</label>
-  <input type="text" name="Username" class="form-control" placeholder="Username" required autofocus>
-  <label for="Password" class="sr-only">Password</label>
-  <input type="password" name="Password" class="form-control" placeholder="Password" required>
+  <label for="username" class="sr-only">Username</label>
+  <input type="text" name="Username" id="username" class="form-control" placeholder="Username" required autofocus>
+  <label for="password" class="sr-only">Password</label>
+  <input type="password" name="Password" id="password" class="form-control" placeholder="Password" required>
   <span style="color:red;">Forget my Password</span><br>
   <span style="color:blue;">Not a member? Join Now!</span>
   <p>Stay Logged in for:
