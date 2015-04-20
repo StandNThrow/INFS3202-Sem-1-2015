@@ -1,4 +1,4 @@
-function initCountdown(countdown) {
+/*function initCountdown(countdown) {
     function getRemainder(time) {
         if(time < 0) {
             return '0:0'
@@ -15,4 +15,17 @@ function initCountdown(countdown) {
 			location.href	=	"logout_timeout.php";
         }
     }, 1000);
-}
+}*/
+
+$(function() {
+    $('.moreInfo').click(function() {
+        var button = $(this);
+        $(button).closest('.more-panel').find('.moreInfo-panel').slideToggle('fast', function() {
+            if ($(this).is(':visible')) {
+                button.text('Close...');
+            } else {
+                button.text('More Info...');
+            }
+        });
+    });
+});

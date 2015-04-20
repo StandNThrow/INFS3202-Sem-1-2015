@@ -20,6 +20,16 @@
 </head>
 
 <body>
+<%
+            String sessionUsername = (String) session.getAttribute("username");
+			if (sessionUsername == null)
+			{
+				
+			}
+			else {
+				response.sendRedirect("admin.jsp");
+			}
+        %>
 <!-- Fixed navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
@@ -31,16 +41,7 @@
         <li><a href="index.jsp">Home</a></li>
         <li class="active"><a>Login</a></li>
         <li>
-          <%
-            String sessionUsername = (String) session.getAttribute("username");
-			if (session.getAttribute("username") == "admin")
-			{
-				response.sendRedirect("admin.jsp");
-			}
-			else {
-				
-			}
-        %>
+         
         </li>
       </ul>
     </div>
@@ -54,20 +55,25 @@
   <input type="text" name="Username" class="form-control" placeholder="Username" required autofocus>
   <label for="Password" class="sr-only">Password</label>
   <input type="password" name="Password" class="form-control" placeholder="Password" required>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="remember-me">
+      Remember me</label>
+  </div>
   <button name="Submit" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
   <% } else if(request.getParameter("Username") != null && request.getParameter("Password") != null)
   {
 	  String username=request.getParameter("Username");
 	  String password=request.getParameter("Password");
 	  
-	  if ((username.equals("admin") && password.equals("password")))
+	  if ((username.equals("admin") && password.equals("password")) || (username.equals("Admin") && password.equals("password")))
 	  {
-		  session.setAttribute("username",username);
+		  session.setAttribute("username", username);
 		  response.sendRedirect("admin.jsp");
 		  }
 		  else
 		  {
-			  out.println("<form action=\"login.jsp\" name=\"formLogin\" id=\"formLogin\" class=\"formLogin\" method=\"post\"><h2>Please login to continue</h2><label for=\"Username\" class=\"sr-only\">Username</label><input type=\"text\" name=\"Username\" class=\"form-control\" placeholder=\"Username\" required autofocus><label for=\"Password\" class=\"sr-only\">Password</label><input type=\"password\" name=\"Password\" class=\"form-control\" placeholder=\"Password\" required><button name=\"Submit\" class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Login</button></form><span>Your username or password may be incorrect.</span>");
+			  out.println("<form action=\"login.jsp\" name=\"formLogin\" id=\"formLogin\" class=\"formLogin\" method=\"post\"><h2>Please login to continue</h2><label for=\"Username\" class=\"sr-only\">Username</label><input type=\"text\" name=\"Username\" class=\"form-control\" placeholder=\"Username\" required autofocus><label for=\"Password\" class=\"sr-only\">Password</label><input type=\"password\" name=\"Password\" class=\"form-control\" placeholder=\"Password\" required><div class=\"checkbox\"><label><input type=\"checkbox\" value=\"remember-me\">Remember me</label></div><button name=\"Submit\" class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Login</button></form><span>Your username or password may be incorrect.</span>");
 		  }
   }
 		%>
