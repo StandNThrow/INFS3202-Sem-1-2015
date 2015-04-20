@@ -53,7 +53,7 @@
   <div class="col-lg-5">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><span class="badge">1</span> Taro's Ramen &amp; Cafe</h3>
+        <h3 class="panel-title"><span class="badge">A</span> Taro's Ramen &amp; Cafe</h3>
       </div>
       <div class="panel-body">
         <div class="row">
@@ -72,7 +72,7 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><span class="badge">2</span>Thai Nakonlanna</h3>
+        <h3 class="panel-title"><span class="badge">B</span>Thai Nakonlanna</h3>
       </div>
       <div class="panel-body">
         <div class="row">
@@ -91,7 +91,7 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><span class="badge">3</span>Madtong San II</h3>
+        <h3 class="panel-title"><span class="badge">C</span>Madtong San II</h3>
       </div>
       <div class="panel-body">
         <div class="row">
@@ -110,7 +110,7 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><span class="badge">4</span>FantAsia (Queen St)</h3>
+        <h3 class="panel-title"><span class="badge">D</span>FantAsia (Queen St)</h3>
       </div>
       <div class="panel-body">
         <div class="row">

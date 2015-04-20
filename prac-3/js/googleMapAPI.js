@@ -1,10 +1,10 @@
 function initialize() {
 
 	var locations = [
-	["Taro's Ramen &amp; Cafe", -27.464985, 153.030076, 1],
-	["Thai Nakonlanna", -27.502666, 153.00661, 2],
-	["Madtong San II", -27.471166, 153.025238, 3],
-	["FantAsia (Queen St)", -27.468179, 153.027368, 4]
+	["Taro's Ramen &amp; Cafe", -27.464985, 153.030076, "A"],
+	["Thai Nakonlanna", -27.502666, 153.00661, "B"],
+	["Madtong San II", -27.471166, 153.025238, "C"],
+	["FantAsia (Queen St)", -27.468179, 153.027368, "D"]
 	];
 	
 	var mapOptions = {
