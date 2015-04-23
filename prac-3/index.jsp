@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" errorPage="error.jsp"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" import="java.lang.*,java.io.*,java.util.*" errorPage="error.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,12 +42,15 @@
         <li>
           <p class="navbar-text navbar-right">Welcome back, <a class="navbar-link"><%=sessionUsername %></a></p>
         </li>
-        <%			} %>
+        <% } %>
       </ul>
     </div>
     <!--/.nav-collapse --> 
   </div>
 </nav>
+<%
+String inputPath = application.getRealPath("prac-3/data") + File.separatorChar;
+%>
 <div class="getGeolocation">Google Geolocation Placeholder. Enable your Location/GPS for this to work.</div>
 <div class="container" role="main">
   <div class="col-lg-5">
@@ -59,13 +62,44 @@
         <div class="row">
           <div class="col-lg-4"><a href="images/taro-ramen-akatonkotsu.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/taro-ramen-akatonkotsu.jpg" /></a></div>
           <div class="col-lg-8">
-            <p>Address: 363 Adelaide Street, Brisbane QLD 4000<br />
-              Phone: (07) 3832 6358</p>
+            <p>
+            <%
+
+            String fileName1 = "data1.txt";
+            BufferedReader bufferedReader1 = null;
+            FileReader fileReader1;
+
+            fileReader1 = new FileReader (new File(inputPath + fileName1));
+            bufferedReader1 = new BufferedReader (fileReader1);
+
+            String line1 = bufferedReader1.readLine();
+            List<String> lines1 = new ArrayList<String>();
+            while (line1 != null)
+              {
+            lines1.add(line1);
+            line1 = bufferedReader1.readLine();
+          }
+
+                                      String[] linesArray1 = lines1.toArray(new String[]{});
+                                      
+                                      bufferedReader1.close();  
+   
+        %>
+            <% 
+            out.println("Address: " + linesArray1[1]);
+            out.println("<br>");
+            out.println("Phone: " + linesArray1[2]);
+            %>
+          </p>
             <div class="more-panel">
               <div class="moreInfo-panel">
-                <p>The produce that requires freshness is sought out locally and dry goods etc are gathered from personally trusted suppliers in Japan. Please enjoy the &quot;real flavor&quot; Taro has created by using the best ingredients and his best recipes.</p>
+                <blockquote>
+                  <%
+                  out.println(linesArray1[4]);
+                  %>
+                </blockquote>
               </div>
-              <a class="btn btn-primary moreInfo">More Info...</a> </div>
+              <a class="btn btn-primary moreInfo">More Info</a> </div>
           </div>
         </div>
       </div>
@@ -82,9 +116,33 @@
               Phone: (07) 3719 5556</p>
             <div class="more-panel">
               <div class="moreInfo-panel">
-                <p>Catered mostly to University of Queensland (UQ) students, this Thai restaurant, located in Hawken Village (on Hawken Drive), is a nice little restaurant that offers decent Thai food. They offer a lunch special, with an entree for just a little bit more.</p>
+                <blockquote>
+                  <%  
+                            String fileName2 = "data2.txt";  
+                            BufferedReader bufferedReader2 = null;  
+                            FileReader fileReader2;
+                                          
+                            try {  
+                                fileReader2 = new FileReader (new File(inputPath + fileName2));  
+                                bufferedReader2 = new BufferedReader (fileReader2);
+                                String line2 = bufferedReader2.readLine();  
+                                List<String> lines2 = new ArrayList<String>();
+                                  while (line2 != null) {  
+                                    lines2.add(line2);
+                                    line2 = bufferedReader2.readLine();
+                                    }
+
+                                    String[] linesArray2 = lines2.toArray(new String[]{});
+                                    out.println(linesArray2[4]);
+                                    bufferedReader2.close();  
+                               } 
+                 catch (Exception e) {
+                   out.println(e);
+              }
+			  %>
+                </blockquote>
               </div>
-              <a href="javascript:void(0);" class="btn btn-primary moreInfo">More Info...</a> </div>
+              <a href="javascript:void(0);" class="btn btn-primary moreInfo">More Info</a> </div>
           </div>
         </div>
       </div>
@@ -101,9 +159,33 @@
               Phone:(07) 3003 1881</p>
             <div class="more-panel">
               <div class="moreInfo-panel">
-                <p>Offering one of the best Korean Cuisine, Madtong San is located in Elizabeth Street at downtown city of Brisbane which offers a variety of authentic Korean food. If you are a fan of Korean food and misses them while studying in Australia, head on down!</p>
+                <blockquote>
+                  <%  
+                            String fileName3 = "data3.txt";  
+                            BufferedReader bufferedReader3 = null;  
+                            FileReader fileReader3;
+                                          
+                            try {  
+                                fileReader3 = new FileReader (new File(inputPath + fileName3));  
+                                bufferedReader3 = new BufferedReader (fileReader3);
+                                String line3 = bufferedReader3.readLine();  
+                                List<String> lines3 = new ArrayList<String>();
+                                  while (line3 != null) {  
+                                    lines3.add(line3);
+                                    line3 = bufferedReader3.readLine();
+                                    }
+
+                                    String[] linesArray3 = lines3.toArray(new String[]{});
+                                    out.println(linesArray3[4]);
+                                    bufferedReader3.close();  
+                               } 
+                 catch (Exception e) {
+                   out.println(e);
+              }
+			  %>
+                </blockquote>
               </div>
-              <a href="javascript:void(0);" class="btn btn-primary moreInfo">More Info...</a> </div>
+              <a href="javascript:void(0);" class="btn btn-primary moreInfo">More Info</a> </div>
           </div>
         </div>
       </div>
@@ -120,9 +202,33 @@
               Phone:(07) 3221 8881</p>
             <div class="more-panel">
               <div class="moreInfo-panel">
-                <p>FantAsia sets the benchmark for modern Asian cuisine in Australia, delivering fantastic, fast Asian food. FantAsia’s menu is built on using the freshest seasonal produce and employing traditional cooking methods, ensuring authentic Asian flavours are apparent in every bite.</p>
+                <blockquote>
+                  <%  
+                            String fileName4 = "data4.txt";  
+                            BufferedReader bufferedReader4 = null;  
+                            FileReader fileReader4;
+                                          
+                            try {  
+                                fileReader4 = new FileReader (new File(inputPath + fileName4));  
+                                bufferedReader4 = new BufferedReader (fileReader4);
+                                String line4 = bufferedReader4.readLine();  
+                                List<String> lines4 = new ArrayList<String>();
+                                  while (line4 != null) {  
+                                    lines4.add(line4);
+                                    line4 = bufferedReader4.readLine();
+                                    }
+
+                                    String[] linesArray4 = lines4.toArray(new String[]{});
+                                    out.println(linesArray4[4]);
+                                    bufferedReader4.close();  
+                               } 
+                 catch (Exception e) {
+                   out.println(e);
+              }
+			  %>
+                </blockquote>
               </div>
-              <a href="javascript:void(0);" class="btn btn-primary moreInfo">More Info...</a> </div>
+              <a href="javascript:void(0);" class="btn btn-primary moreInfo">More Info</a> </div>
           </div>
         </div>
       </div>
