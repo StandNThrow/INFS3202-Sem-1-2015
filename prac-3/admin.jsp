@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.lang.*,java.io.*,java.util.*" errorPage="" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.lang.*,java.io.*,java.util.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,50 +64,41 @@
     <!-- Table -->
     <table class="table table-striped">
       <%  
-	  String inputPath = application.getRealPath("prac-3/data") + File.separatorChar;  
-                            
-                            String fileName = "metadata.txt";  
-                            BufferedReader bufferedReader = null;  
-                            FileReader fileReader;
-							                            
-                            try {  
-                                fileReader = new FileReader (new File(inputPath + fileName));  
-                                bufferedReader = new BufferedReader (fileReader);
-                                String line = bufferedReader.readLine();  
-                                List<String> lines = new ArrayList<String>();
-                                  while (line != null) {  
-                                    lines.add(line);
-                                    line = bufferedReader.readLine();
-                                    }  
-                                String[] linesArray = lines.toArray(new String[]{});
-								for (int i = 0; i < linesArray.length; i++)
-								{
-                                out.println("<tr><td>" + linesArray[i] + "</td><td><a class=\"btn btn-primary\" href=\"edit.jsp?id=" + (i+1) + "\">Edit</a></td></tr>");
-								}
-								bufferedReader.close();  
-                               } 
-							   catch (Exception e) {
-								   out.println(e);
-							}
-                            %>
+      String inputPath = application.getRealPath("prac-3/data") + File.separatorChar;  
+
+      String fileName = "metadata.txt";  
+      BufferedReader bufferedReader = null;  
+      FileReader fileReader;
+
+      try {  
+      fileReader = new FileReader (new File(inputPath + fileName));  
+      bufferedReader = new BufferedReader (fileReader);
+      String line = bufferedReader.readLine();  
+      List<String> lines = new ArrayList<String>();
+      while (line != null) {  
+      lines.add(line);
+      line = bufferedReader.readLine();
+    }  
+    String[] linesArray = lines.toArray(new String[]{});
+    for (int i = 0; i < linesArray.length; i++)
+    {
+                                //out.println("<tr><td>" + linesArray[i] + "</td><td><a class=\"btn btn-primary\" href=\"edit.jsp?id=" + (i+1) + "\">Edit</a></td></tr>");
+                                //out.println("<tr><td>" + linesArray[i] + "</td><td><a class=\"btn btn-primary\" href=\"javascript:popup(" + (i+1) + ");\">Edit</a></td></tr>");
+                                out.println("<tr><td>" + linesArray[i] + "</td><td><a class=\"btn btn-primary\" data-toggle=\"modal\" href=\"edit.jsp?id=" + (i+1) + "\" data-target=\"#myModal\">Edit</a></td></tr>");
+                                out.println("<!-- Modal --><div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\"><div class=\"modal-dialog\"><div class=\"modal-content\"><div class=\"modal-header\"><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button><h4 class=\"modal-title\">Modal title</h4></div><div class=\"modal-body\"><div class=\"te\"></div></div><!--<div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button><button type=\"button\" class=\"btn btn-primary\">Save changes</button></div>--></div><!-- /.modal-content --></div><!-- /.modal-dialog --></div>");
+                              }
+                              bufferedReader.close();  
+                            } 
+                            catch (Exception e) {
+                            out.println(e);
+                          }
+                          %>
     </table>
   </div>
 </div>
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
 <!-- Latest compiled and minified JavaScript --> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
-<script src="js/lightbox.js"></script> 
-<script type="text/javascript">
-var newWindow;
-function popup(i)
-{
-	newWindow = window.open("edit.jsp?id=item" + i, "edit", "height=450,width=550");
-	
-	if (window.focus)
-	{
-		newWindow.focus()
-	}
-}
-</script>
+<script src="js/lightbox.js"></script>
 </body>
 </html>
