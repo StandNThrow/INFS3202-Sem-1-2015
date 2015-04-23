@@ -40,15 +40,15 @@
       <ul class="nav navbar-nav">
         <li><a href="index.jsp">Home</a></li>
         <li class="active"><a>Login</a></li>
-        <li>
-         
-        </li>
       </ul>
     </div>
     <!--/.nav-collapse --> 
   </div>
 </nav>
-<% if(null == request.getParameter("Username")){ %>
+<% 
+if(null == request.getParameter("Username"))
+{ 
+  %>
 <form action="login.jsp" name="formLogin" id="formLogin" class="formLogin" method="post">
   <h2>Please login to continue</h2>
   <label for="Username" class="sr-only">Username</label>
@@ -61,7 +61,9 @@
       Remember me</label>
   </div>
   <button name="Submit" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-  <% } else if(request.getParameter("Username") != null && request.getParameter("Password") != null)
+  <% 
+  } 
+  else if(request.getParameter("Username") != null && request.getParameter("Password") != null)
   {
 	  String username=request.getParameter("Username");
 	  String password=request.getParameter("Password");
