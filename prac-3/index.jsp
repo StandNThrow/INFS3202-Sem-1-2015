@@ -60,7 +60,7 @@
               </div>
               <div class="panel-body">
                 <div class="row">
-                  <div class="col-lg-4"><a href="images/taro-ramen-akatonkotsu.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/taro-ramen-akatonkotsu.jpg" /></a></div>
+                  <div class="col-lg-4"><a href="images/taro-ramen-akatonkotsu.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/taro-ramen-akatonkotsu.jpg" alt="" /></a></div>
                   <div class="col-lg-8">
                     <p>
                       <%
@@ -99,7 +99,7 @@
                         %>
                       </blockquote>
                     </div>
-                    <a class="btn btn-primary moreInfo">More Info</a> </div>
+                    <a href="javascript:void(0);" class="btn btn-primary moreInfo">More Info</a> </div>
                   </div>
                 </div>
               </div>
@@ -110,7 +110,7 @@
               </div>
               <div class="panel-body">
                 <div class="row">
-                  <div class="col-lg-4"><a href="images/thai-nakonlanna-basil-stir-fry.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/thai-nakonlanna-basil-stir-fry.jpg" /></a></div>
+                  <div class="col-lg-4"><a href="images/thai-nakonlanna-basil-stir-fry.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/thai-nakonlanna-basil-stir-fry.jpg" alt="" /></a></div>
                   <div class="col-lg-8">
                     <p>Address: 6/225 Hawken Drive, St Lucia QLD 4067<br />
                       Phone: (07) 3719 5556</p>
@@ -153,7 +153,7 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-lg-4"><a href="images/madtongsan-bibimbap.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/madtongsan-bibimbap.jpg" /></a></div>
+                <div class="col-lg-4"><a href="images/madtongsan-bibimbap.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/madtongsan-bibimbap.jpg" alt="" /></a></div>
                 <div class="col-lg-8">
                   <p>Address: 1/85 Elizabeth Street, Brisbane QLD 4000<br />
                     Phone:(07) 3003 1881</p>
@@ -196,7 +196,7 @@
           </div>
           <div class="panel-body">
             <div class="row">
-              <div class="col-lg-4"><a href="images/fantasia-beijing-noodles.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/fantasia-beijing-noodles.jpg" /></a></div>
+              <div class="col-lg-4"><a href="images/fantasia-beijing-noodles.jpg" data-lightbox="restaurant"><img class="imgLightbox" src="images/fantasia-beijing-noodles.jpg"  alt="" /></a></div>
               <div class="col-lg-8">
                 <p>Address: 255 Queen Street, MacArthur Central, Brisbane QLD 4000<br />
                   Phone:(07) 3221 8881</p>

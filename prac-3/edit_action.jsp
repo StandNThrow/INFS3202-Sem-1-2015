@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.lang.*,java.io.*,java.util.*" errorPage="" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.lang.*,java.io.*,java.util.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +44,7 @@ try
 	FileWriter fileWriter = new FileWriter(File, false);
 	fileWriter.write(Name + "\n");
 	fileWriter.write(Address + "\n");
-	fileWriter.write(PhoneNo+ "\n");
+	fileWriter.write(PhoneNo + "\n");
 	fileWriter.write(Images + "\n");
 	fileWriter.write(Description + "\n");
 	fileWriter.close();
