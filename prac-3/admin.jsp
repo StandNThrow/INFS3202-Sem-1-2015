@@ -104,8 +104,10 @@
 </div>
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
 <!-- Latest compiled and minified JavaScript --> 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 <script src="js/lightbox.js"></script>
+<script src="js/main.js"></script>
 <script>
 // Close modal dialog, refresh page
 $('#myModal').on('hidden.bs.modal', function () {
