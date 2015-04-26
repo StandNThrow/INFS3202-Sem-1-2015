@@ -30,23 +30,23 @@
 }
 %>
 <%
-String Name = request.getParameter("Name");
-String Address = request.getParameter("Address");
-String PhoneNo = request.getParameter("PhoneNo");
-String Images = request.getParameter("Images");
-String Description = request.getParameter("Description");
-String fileName = request.getParameter("File");
-String File = application.getRealPath("prac-3/data/" + fileName);
+String name = request.getParameter("name");
+String address = request.getParameter("address");
+String phoneno = request.getParameter("phoneno");
+String images = request.getParameter("images");
+String description = request.getParameter("description");
+String fileName = request.getParameter("file");
+String file = application.getRealPath("prac-3/data/" + fileName);
 
 response.sendRedirect("admin.jsp");
 try
 {
-	FileWriter fileWriter = new FileWriter(File, false);
-	fileWriter.write(Name + "\n");
-	fileWriter.write(Address + "\n");
-	fileWriter.write(PhoneNo + "\n");
-	fileWriter.write(Images + "\n");
-	fileWriter.write(Description + "\n");
+	FileWriter fileWriter = new FileWriter(file, false);
+	fileWriter.write(name + "\n");
+	fileWriter.write(address + "\n");
+	fileWriter.write(phoneno + "\n");
+	fileWriter.write(images + "\n");
+	fileWriter.write(description + "\n");
 	fileWriter.close();
 } catch (Exception e)
 {
