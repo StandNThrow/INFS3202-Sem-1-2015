@@ -4,7 +4,7 @@ $(function() {
         $(button).closest('.more-panel').find('.moreInfo-panel').slideToggle('fast', function() {
             if ($(this).is(':visible')) 
             {
-                button.text('Collapse');
+                button.text('Hide');
             } 
             else 
                 button.text('More Info');
