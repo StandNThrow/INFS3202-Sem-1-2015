@@ -10,12 +10,14 @@ html, body {
 	height: 100%;
 	width: 100%;
 }
+table.table.table-striped td {
+	vertical-align: middle;
+}
 .scrollableTableContainer {
 	height: 400px;
 	overflow: auto;
 }
 img.imgLightbox {
-	float: right;
 	width: 64px;
 	height: 64px;
 }
@@ -110,7 +112,4 @@ img.imgLightbox {
 }
 .moreInfo-panel {
 	display: none;
-}
-.table>tbody>tr>td {
-	vertical-align: middle;
 }

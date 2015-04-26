@@ -17,7 +17,6 @@
       <link rel="stylesheet" href="css/style.css" type="text/css">
       <link rel="shortcut icon" href="images/favicon.png">
   </head>
-
   <body>
   	<%
   	String sessionUsername = (String) session.getAttribute("username");
@@ -30,7 +29,6 @@
 
 }
 %>
-
 <!-- Fixed navbar -->
 <!-- Hide navbar
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -55,30 +53,33 @@
 						<% } %>
 					</ul>
 				</div>
-				<!-/.nav-collapse -> 
 			</div>
 		</nav>
-	-->
+	--> 
 	<% 
 	String id = request.getParameter("id");
-	String fileName = "data" + id + ".txt";
-	BufferedReader bufferedReader = null;
-	FileReader fileReader;
+	if (id == null) {
+	response.sendRedirect("admin.jsp");
+} 
+String fileName = "data" + id + ".txt";
+BufferedReader bufferedReader = null;
+FileReader fileReader;
 
-	String inputPath = application.getRealPath("prac-3/data") + File.separatorChar;
+String inputPath = application.getRealPath("prac-3/data") + File.separatorChar;
 
-	try {
-	fileReader = new FileReader (new File(inputPath + fileName));
-	bufferedReader = new BufferedReader (fileReader);
-	String line = bufferedReader.readLine();
-	List<String> lines = new ArrayList<String>();
-	while (line != null)
-	{
+try {
+fileReader = new FileReader (new File(inputPath + fileName));
+bufferedReader = new BufferedReader (fileReader);
+String line = bufferedReader.readLine();
+List<String> lines = new ArrayList<String>();
+while (line != null)
+{
 	lines.add(line);
 	line = bufferedReader.readLine();
 }
 
 String[] linesArray = lines.toArray(new String[]{});
+// Form Contoller for displaying elements from text file. 
 out.println("<!-- <div class=\"modal-header\"><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button><h4 class=\"modal-title\">Edit</h4></div> --><div class=\"modal-body\"><form action=\"edit_action.jsp\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\"><h2>Edit</h2><label for=\"File\" class=\"sr-only\">Filename</label><input type=\"hidden\" name=\"File\" class=\"form-control\" value=\"" + fileName + "\"><label for=\"Name\">Name</label><input type=\"text\" name=\"Name\" class=\"form-control\" placeholder=\"Name\" value=\"" + linesArray[0] + "\" required><label for=\"Address\">Address</label><input type=\"text\" name=\"Address\" class=\"form-control\" placeholder=\"Address\" value=\"" + linesArray[1] + "\" required><label for=\"PhoneNo\">Phone No.</label><input type=\"text\" name=\"PhoneNo\" class=\"form-control\" placeholder=\"Phone No.\" value=\"" + linesArray[2] + "\" required><label for=\"Images\">Images</label><input type=\"text\" name=\"Images\" class=\"form-control\" placeholder=\"Images URL\" value=\"" + linesArray[3] + "\" required><label for=\"Description\">Description</label><textarea name=\"Description\" class=\"form-control\" placeholder=\"Description\" rows=\"5\" required>" + linesArray[4] + "</textarea><br><button name=\"Submit\" class=\"btn btn-lg btn-primary\" type=\"submit\">Save</button></form></div><!-- <div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-lg btn-primary\" data-dismiss=\"modal\">Close</button><button type=\"submit\" class=\"btn btn-primary\">Save</button></div> -->");
 }
 catch (Exception e)
