@@ -80,17 +80,18 @@ while (line != null)
 
 String[] linesArray = lines.toArray(new String[]{});
 // Form Contoller for displaying elements from text file. 
-out.println("<!-- <div class=\"modal-header\"><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button><h4 class=\"modal-title\">Edit</h4></div> --><div class=\"modal-body\"><form action=\"edit_action.jsp\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\"><h2>Edit</h2><label for=\"File\" class=\"sr-only\">Filename</label><input type=\"hidden\" name=\"File\" class=\"form-control\" value=\"" + fileName + "\"><label for=\"Name\">Name</label><input type=\"text\" name=\"Name\" class=\"form-control\" placeholder=\"Name\" value=\"" + linesArray[0] + "\" required><label for=\"Address\">Address</label><input type=\"text\" name=\"Address\" class=\"form-control\" placeholder=\"Address\" value=\"" + linesArray[1] + "\" required><label for=\"PhoneNo\">Phone No.</label><input type=\"text\" name=\"PhoneNo\" class=\"form-control\" placeholder=\"Phone No.\" value=\"" + linesArray[2] + "\" required><label for=\"Images\">Images</label><input type=\"text\" name=\"Images\" class=\"form-control\" placeholder=\"Images URL\" value=\"" + linesArray[3] + "\" required><label for=\"Description\">Description</label><textarea name=\"Description\" class=\"form-control\" placeholder=\"Description\" rows=\"5\" required>" + linesArray[4] + "</textarea><br><button name=\"Submit\" class=\"btn btn-lg btn-primary\" type=\"submit\">Save</button></form></div><!-- <div class=\"modal-footer\"><button type=\"button\" class=\"btn btn-lg btn-primary\" data-dismiss=\"modal\">Close</button><button type=\"submit\" class=\"btn btn-primary\">Save</button></div> -->");
+out.println("<div class=\"modal-body\"><form action=\"edit_action.jsp\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\"><h2>Edit</h2><div class=\"form-group\"><label for=\"file\" class=\"sr-only\">Filename</label><input type=\"hidden\" id=\"file\" name=\"file\" class=\"form-control\" value=\"" + fileName + "\"></div><div class=\"form-group\"><label for=\"name\">Name</label><input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"Name\" value=\"" + linesArray[0] + "\" ></div><div class=\"form-group\"><label for=\"address\">Address</label><input type=\"text\" id=\"address\" name=\"address\" class=\"form-control\" placeholder=\"Address\" value=\"" + linesArray[1] + "\" ></div><div class=\"form-group\"><label for=\"phoneno\">Phone No.</label><input type=\"text\" id=\"phoneno\" name=\"phoneno\" class=\"form-control\" placeholder=\"Phone No.\" value=\"" + linesArray[2] + "\" ></div><div class=\"form-group\"><label for=\"images\">Images</label><input type=\"text\" id=\"images\" name=\"images\" class=\"form-control\" placeholder=\"Images URL\" value=\"" + linesArray[3] + "\" ></div><div class=\"form-group\"><label for=\"description\">Description</label><textarea id=\"description\" name=\"description\" class=\"form-control\" placeholder=\"Description\" rows=\"5\" >" + linesArray[4] + "</textarea></div><button id=\"save\" name=\"save\" class=\"btn btn-lg btn-primary\" type=\"submit\">Save</button></form></div>");
 }
 catch (Exception e)
 {
 	out.println(e);
 }
 %>
-
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+<script src="js/main.js"></script>
 <script src="js/lightbox.js"></script>
 </body>
 </html>
