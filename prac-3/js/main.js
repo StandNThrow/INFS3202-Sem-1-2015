@@ -12,37 +12,36 @@ $(function() {
     });
 });
 
-$(document).ready(function() 
-{
-    $("#formEdit").validate({
-        rules: {
-            name: {
-                minlength: 4,
-                required: true
-            },
-            address: {
-                minlength: 4,
-                required: true
-            },
-            phoneno: {
-                minlength: 4,
-                required: true
-            },
-            images: {
-                minlength: 4,
-                required: true,
-            },
-            description: {
-                minlength: 4,
-                required: true
-            }
-            // messages: {
-            //     name: "Please enter name of the restaurant.",
-            //     address: "Please enter address of the restaurant.",
-            //     phoneno: "Plese enter a contact number of the restaurant.",
-            //     images: "Please enter valid image links.",
-            //     description: "Please enter a decription of the restaurant."
-            // }
+$("#formEdit").validate({
+    rules: {
+        name: {
+            minlength: 4,
+            required: true
+        },
+        address: {
+            minlength: 4,
+            required: true
+        },
+        phoneno: {
+            minlength: 4,
+            required: true
+        },
+        images: {
+            minlength: 4,
+            required: true,
+        },
+        description: {
+            minlength: 4,
+            required: true
         }
-    });
+    },
+    highlight: function(element) {
+        $(element).closest(".form-group").removeClass("has-success").addClass("has-error");
+    },
+    success: function(element) {
+        element.closest(".form-group").removeClass("has-error").addClass("has-success");
+    },
+    invalidHandler: function() {
+        return false;
+    }
 });
