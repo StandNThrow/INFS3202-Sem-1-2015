@@ -7,4 +7,6 @@
 <li><a href="http://infs3202-mh609.uqcloud.net/prac-2">Prac 2</a></li>
 <li><a href="http://infs3202-mh609.uqcloud.net/prac-3">Prac 3</a></li>
 <li><a href="http://infs3202-mh609.uqcloud.net/prac-4">Prac 4</a></li>
+<li><a href="http://infs3202-mh609.uqcloud.net/prac-5">Prac 5 (Not Ready!)</a></li>
+<li><a href="http://infs3202-mh609.uqcloud.net/prac-6">Prac 6 (Not Ready!)</a></li>
 </ul>
