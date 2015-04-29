@@ -1,19 +1,46 @@
-function initialize() {
+var customIcons = {
+	restaurant: {
+		icon: 'http://labs.google.com/ridefinder/images/mm_20_blue.png'
+	},
+	bar: {
+		icon: 'http://labs.google.com/ridefinder/images/mm_20_red.png'
+	}
+};
 
-	var locations = [
-	["Taro's Ramen &amp; Cafe", -27.464985, 153.030076, "A"],
-	["Thai Nakonlanna", -27.502666, 153.00661, "B"],
-	["Madtong San II", -27.471166, 153.025238, "C"],
-	["FantAsia (Queen St)", -27.468179, 153.027368, "D"]
-	];
-	
-	var mapOptions = {
+function load() {
+	var map = new google.maps.Map(document.getElementById("map-canvas"), {
 		zoom: 10,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-	
-	var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-	
+		mapTypeId: 'roadmap'
+	});
+	var infoWindow = new google.maps.InfoWindow;
+	var latlngbounds = new google.maps.LatLngBounds();
+
+	// Change this depending on the name of your PHP file
+	downloadUrl("db_markersXML.php", function(data) {
+		var xml = data.responseXML;
+		var markers = xml.documentElement.getElementsByTagName("marker");
+		for (var i = 0; i < markers.length; i++) {
+			var name = markers[i].getAttribute("name");
+			var address = markers[i].getAttribute("address");
+			var type = markers[i].getAttribute("type");
+			var point = new google.maps.LatLng(
+				parseFloat(markers[i].getAttribute("lat")),
+				parseFloat(markers[i].getAttribute("lng")));
+			var html = "<b>" + name + "</b> <br/>" + address;
+			var icon = customIcons[type] || {};
+			var marker = new google.maps.Marker({
+				map: map,
+				position: point,
+				icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=" + markers[i].getAttribute("id") + "|FF0000|FFFFFF"
+			});
+			latlngbounds.extend(marker.position);
+			bindInfoWindow(marker, map, infoWindow, html);
+
+			var bounds = new google.maps.LatLngBounds();
+			map.setCenter(latlngbounds.getCenter());
+			map.fitBounds(latlngbounds);
+		}
+	});
 	var container = $('.getGeolocation');
 
 	function getLocation() {
@@ -32,6 +59,7 @@ function initialize() {
 			map: map,
 			icon: 'http://chart.apis.google.com/chart?chst=d_map_xpin_icon&chld=pin_star|home'
 		});
+
 		var geocoder = new google.maps.Geocoder();
 		geocoder.geocode({'latLng': location}, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
@@ -49,36 +77,30 @@ function initialize() {
 	$(function () {
 		getLocation();
 	});
-	
-	var infoWindow = new google.maps.InfoWindow();
-	var latlngbounds = new google.maps.LatLngBounds();
-	var start_letter_code = 97;
-	var marker_color = "FF0000";
-	var marker_text_color = "FFFFFF";
-	for (var i = 0; i < locations.length; i++) {
-		var character = String.fromCharCode(start_letter_code).toUpperCase();
-		start_letter_code++;
-		
-		var location = locations[i];
-		var myLatLng = new google.maps.LatLng(location[1], location[2]);
-		
-		var marker = new google.maps.Marker({
-			position: myLatLng,
-			map: map,
-			title: location[0],
-			icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=" + location[3] + "|" + marker_color + "|" + marker_text_color
-		});
 
-		(function (marker, location) {
-			google.maps.event.addListener(marker, "click", function (e) {
-                //infoWindow.open(map, marker);
-            });
-		})(marker, location);
-		latlngbounds.extend(marker.position);
-	}
-	
-	var bounds = new google.maps.LatLngBounds();
-	map.setCenter(latlngbounds.getCenter());
-	map.fitBounds(latlngbounds);
 }
-google.maps.event.addDomListener(window, 'load', initialize);
+
+function bindInfoWindow(marker, map, infoWindow, html) {
+	google.maps.event.addListener(marker, 'click', function() {
+		infoWindow.setContent(html);
+		infoWindow.open(map, marker);
+	});
+}
+
+function downloadUrl(url, callback) {
+	var request = window.ActiveXObject ?
+	new ActiveXObject('Microsoft.XMLHTTP') :
+	new XMLHttpRequest;
+
+	request.onreadystatechange = function() {
+		if (request.readyState == 4) {
+			request.onreadystatechange = doNothing;
+			callback(request, request.status);
+		}
+	};
+
+	request.open('GET', url, true);
+	request.send(null);
+}
+
+function doNothing() {}

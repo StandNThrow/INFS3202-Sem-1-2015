@@ -1,3 +1,26 @@
+function showResult(str) {
+	if (str == "") {
+		document.getElementById("txtHint").innerHTML = "";
+		return;
+	} else { 
+		if (window.XMLHttpRequest) {
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp = new XMLHttpRequest();
+	} else {
+	// code for IE6, IE5
+	xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange = function() {
+	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		document.getElementById("content").innerHTML = xmlhttp.responseText;
+	}
+}
+xmlhttp.open("GET", "search_action.php?q=" + str, true);
+xmlhttp.send();
+}
+}
+
+/* Hide/Show More Info */
 $(function() {
 	$('.moreInfo').click(function() {
 		var button = $(this);
@@ -12,6 +35,7 @@ $(function() {
 	});
 });
 
+/* Form Validation - Bootstrap */
 $("#formEdit").validate({
 	rules: {
 		name: {
@@ -53,25 +77,3 @@ $("#formEdit").validate({
 		return false;
 	}
 });
-
-// function showResult(str) {
-// 	if (str == "") {
-// 		document.getElementById("txtHint").innerHTML = "";
-// 		return;
-// 	} else { 
-// 		if (window.XMLHttpRequest) {
-// 		// code for IE7+, Firefox, Chrome, Opera, Safari
-// 		xmlhttp = new XMLHttpRequest();
-// 	} else {
-// 	// code for IE6, IE5
-// 	xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-// }
-// xmlhttp.onreadystatechange = function() {
-// 	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-// 		document.getElementById("content").innerHTML = xmlhttp.responseText;
-// 	}
-// }
-// xmlhttp.open("GET", "search_action.php?q=" + str, true);
-// xmlhttp.send();
-// }
-// }

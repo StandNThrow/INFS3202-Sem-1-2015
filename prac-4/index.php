@@ -17,32 +17,10 @@
 	<link rel="stylesheet" href="css/lightbox.css">
 	<link rel="shortcut icon" href="images/favicon.png">
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-	<script>
-	function showResult(str) {
-		if (str == "") {
-			document.getElementById("txtHint").innerHTML = "";
-			return;
-		} else { 
-			if (window.XMLHttpRequest) {
-		// code for IE7+, Firefox, Chrome, Opera, Safari
-		xmlhttp = new XMLHttpRequest();
-	} else {
-	// code for IE6, IE5
-	xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-}
-xmlhttp.onreadystatechange = function() {
-	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-		document.getElementById("content").innerHTML = xmlhttp.responseText;
-	}
-}
-xmlhttp.open("GET", "search_action.php?q=" + str, true);
-xmlhttp.send();
-}
-}
-</script>
-<?php require("db_config.php"); ?>
+	<script src="js/main.js"></script>
+	<?php require("db_config.php"); ?>
 </head>
-<body>
+<body onload="load()">
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
@@ -59,7 +37,8 @@ xmlhttp.send();
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.php">Home</a></li>
 					<?php 
-					if ($_SESSION["username"] == null) {
+					$sessionUsername = isset($_SESSION["username"]);
+					if ($sessionUsername == 0) {
 						echo "<li><a href=\"login.php\">Login</a></li>";
 					} else { ?>
 					<li><a href="admin.php">Admin Panel</a></li>
@@ -83,13 +62,13 @@ xmlhttp.send();
 	<div class="container" role="main">
 		<div class="col-lg-5" id="content">
 			<?php 
-			$sql = "SELECT * FROM `restaurant-data`";
+			$sql = "SELECT * FROM `markers`";
 			$result = mysqli_query($connect, $sql);
 
 			if (mysqli_num_rows($result) > 0) {
 				$i=0;
 				while ($row = mysqli_fetch_array($result)) {
-					$images = $row["image-url"];
+					$images = $row["imgURL"];
 					$imageArray = explode("#", $images);
 					echo "<div class=\"panel panel-default\">";
 					echo "<div class=\"panel-heading\">";
@@ -141,7 +120,6 @@ xmlhttp.send();
 	<!-- Latest compiled and minified JavaScript --> 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
 	<script src="js/lightbox.js"></script> 
-	<script src="js/googleMapAPI.js"></script> 
-	<script src="js/main.js"></script>
+	<script src="js/googleMapAPI.js"></script>
 </body>
 </html>

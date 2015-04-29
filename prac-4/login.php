@@ -20,7 +20,8 @@
 
 <body>
 	<?php
-	if ($_SESSION["username"] == null) {
+	$sessionUsername = isset($_SESSION["username"]);
+	if ($sessionUsername == 0) {
 		
 	} else {
 		header("Location: admin.php");

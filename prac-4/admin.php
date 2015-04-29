@@ -21,7 +21,8 @@
 </head>
 <body>
 	<?php
-	if ($_SESSION["username"] == null) {
+	$sessionUsername = isset($_SESSION["username"]);
+	if ($sessionUsername == 0) {
 		header("Location: login.php");
 	}
 	?>
@@ -42,14 +43,13 @@
 					<li><a href="index.php">Home</a></li>
 					<li class="active"><a>Admin Panel</a></li>
 					<?php 
-					$sessionUsername = $_SESSION["username"];
-					if ($sessionUsername == null) {
+					if ($sessionUsername == 0) {
 						echo $_SESSION["username"];
 					} else { 
 						?>
 						<li><a href="logout.php">Logout</a></li>
 						<li>
-							<p class="navbar-text">Welcome back, <a class="navbar-link"><?php echo $sessionUsername; ?></a></p>
+							<p class="navbar-text">Welcome back, <a class="navbar-link"><?php echo $_SESSION["username"]; ?></a></p>
 						</li>
 						<?php } ?>
 					</ul>
@@ -74,7 +74,7 @@
 					</thead>
 					<tbody>
 						<?php
-						$sql = "SELECT * FROM `restaurant-data`";
+						$sql = "SELECT * FROM `markers`";
 						$result = mysqli_query($connect, $sql);
 
 						if (mysqli_num_rows($result) > 0) {

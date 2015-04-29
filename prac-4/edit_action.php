@@ -1,4 +1,3 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.lang.*,java.io.*,java.util.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,17 +17,9 @@
       <link rel="shortcut icon" href="images/favicon.png">
   </head>
   <body>
-  	<%
-  	String sessionUsername = (String) session.getAttribute("username");
-  	if (sessionUsername == null)
-  		{
-  	response.sendRedirect("login.jsp");
-  }
-  else 
-  	{
+  	<?php
 
-}
-%>
+  	?>
 <%
 String Name = request.getParameter("Name");
 String Address = request.getParameter("Address");
