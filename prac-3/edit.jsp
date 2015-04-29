@@ -55,7 +55,18 @@ while (line != null)
 
 String[] linesArray = lines.toArray(new String[]{});
 // Form Contoller for displaying elements from text file. 
-out.println("<div class=\"modal-body\"><form action=\"edit_action.jsp\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\"><h2>Edit</h2><div class=\"form-group\"><label for=\"file\" class=\"sr-only\">Filename</label><input type=\"hidden\" id=\"file\" name=\"file\" class=\"form-control\" value=\"" + fileName + "\"></div><div class=\"form-group\"><label for=\"name\">Name</label><input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"Name\" value=\"" + linesArray[0] + "\" readonly></div><div class=\"form-group\"><label for=\"address\">Address</label><input type=\"text\" id=\"address\" name=\"address\" class=\"form-control\" placeholder=\"Address\" value=\"" + linesArray[1] + "\" ></div><div class=\"form-group\"><label for=\"phoneno\">Phone No.</label><input type=\"text\" id=\"phoneno\" name=\"phoneno\" class=\"form-control\" placeholder=\"Phone No.\" value=\"" + linesArray[2] + "\" ></div><div class=\"form-group\"><label for=\"images\">Images</label><input type=\"text\" id=\"images\" name=\"images\" class=\"form-control\" placeholder=\"Images URL\" value=\"" + linesArray[3] + "\" ></div><div class=\"form-group\"><label for=\"description\">Description</label><textarea id=\"description\" name=\"description\" class=\"form-control\" placeholder=\"Description\" rows=\"5\" >" + linesArray[4] + "</textarea></div><button id=\"save\" name=\"save\" class=\"btn btn-lg btn-primary\" type=\"submit\">Save</button></form></div>");
+out.println("<div class=\"modal-body\">");
+out.println("<form action=\"edit_action.jsp\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\">");
+out.println("<h2>Edit</h2>");
+out.println("<div class=\"form-group\"><label for=\"file\" class=\"sr-only\">Filename</label><input type=\"hidden\" id=\"file\" name=\"file\" class=\"form-control\" value=\"" + fileName + "\"></div>");
+out.println("<div class=\"form-group\"><label for=\"name\">Name</label><input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"Name\" value=\"" + linesArray[0] + "\" readonly></div>");
+out.println("<div class=\"form-group\"><label for=\"address\">Address</label><input type=\"text\" id=\"address\" name=\"address\" class=\"form-control\" placeholder=\"Address\" value=\"" + linesArray[1] + "\" ></div>");
+out.println("<div class=\"form-group\"><label for=\"phoneno\">Phone No.</label><input type=\"text\" id=\"phoneno\" name=\"phoneno\" class=\"form-control\" placeholder=\"Phone No.\" value=\"" + linesArray[2] + "\" ></div>");
+out.println("<div class=\"form-group\"><label for=\"images\">Images</label><input type=\"text\" id=\"images\" name=\"images\" class=\"form-control\" placeholder=\"Images URL\" value=\"" + linesArray[3] + "\" ></div>");
+out.println("<div class=\"form-group\"><label for=\"description\">Description</label><textarea id=\"description\" name=\"description\" class=\"form-control\" placeholder=\"Description\" rows=\"5\" >" + linesArray[4] + "</textarea></div>");
+out.println("<button id=\"save\" name=\"save\" class=\"btn btn-lg btn-primary\" type=\"submit\">Save</button>");
+out.println("</form>");
+out.println("</div>");
 }
 catch (Exception e)
 {

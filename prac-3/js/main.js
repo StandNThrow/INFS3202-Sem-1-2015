@@ -28,7 +28,7 @@ $("#formEdit").validate({
         },
         images: {
             minlength: 4,
-            required: true,
+            required: true
         },
         description: {
             minlength: 4,
