@@ -73,6 +73,7 @@ function showPosition(position) {
 			container.html('Geocoder failed due to: ' + status);
 		}
 	});
+
 }
 
 $(function () {
