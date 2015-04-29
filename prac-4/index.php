@@ -121,5 +121,20 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
 	<script src="js/lightbox.js"></script> 
 	<script src="js/googleMapAPI.js"></script>
+	<script>
+	/* Hide/Show More Info */
+	$(document).ready(function() {
+		$('.moreInfo').click(function() {
+			var button = $(this);
+			$(button).closest('.more-panel').find('.moreInfo-panel').slideToggle('fast', function() {
+				if ($(this).is(':visible')) {
+					button.text('Hide');
+				} else {
+					button.text('More Info');
+				}
+			});
+		});
+	});
+	</script>
 </body>
 </html>
