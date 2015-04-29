@@ -20,7 +20,7 @@
 	<script src="js/main.js"></script>
 	<?php require("db_config.php"); ?>
 </head>
-<body onload="load()">
+<body>
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
@@ -72,7 +72,7 @@
 					$imageArray = explode("#", $images);
 					echo "<div class=\"panel panel-default\">";
 					echo "<div class=\"panel-heading\">";
-					echo "<span class=\"badge\">" . $row["id"] . "</span><b>" . $row["name"] . "</b>";
+					echo "<span class=\"badge\">" . ($i+1 ). "</span><b>" . $row["name"] . "</b>";
 					echo "</div>";
 					echo "<div class=\"panel-body\">";
 					echo "<div class=\"row\">";

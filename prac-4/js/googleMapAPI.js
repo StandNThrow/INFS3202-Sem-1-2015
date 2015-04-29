@@ -1,13 +1,4 @@
-var customIcons = {
-	restaurant: {
-		icon: 'http://labs.google.com/ridefinder/images/mm_20_blue.png'
-	},
-	bar: {
-		icon: 'http://labs.google.com/ridefinder/images/mm_20_red.png'
-	}
-};
-
-function load() {
+function initialize() {
 	var map = new google.maps.Map(document.getElementById("map-canvas"), {
 		zoom: 10,
 		mapTypeId: 'roadmap'
@@ -22,17 +13,27 @@ function load() {
 		for (var i = 0; i < markers.length; i++) {
 			var name = markers[i].getAttribute("name");
 			var address = markers[i].getAttribute("address");
-			var type = markers[i].getAttribute("type");
+			var phone = markers[i].getAttribute("contact");
 			var point = new google.maps.LatLng(
 				parseFloat(markers[i].getAttribute("lat")),
 				parseFloat(markers[i].getAttribute("lng")));
-			var html = "<b>" + name + "</b> <br/>" + address;
-			var icon = customIcons[type] || {};
+			var html = "<b>" + name + "</b> <br/>" + address + "<br/>" + phone;
 			var marker = new google.maps.Marker({
 				map: map,
+				animation: google.maps.Animation.DROP,
 				position: point,
-				icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=" + markers[i].getAttribute("id") + "|FF0000|FFFFFF"
+				icon: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=" + (i+1) + "|FF0000|FFFFFF"
 			});
+			google.maps.event.addListener(marker, 'click', toggleBounce);
+
+			function toggleBounce() {
+
+				if (marker.getAnimation() != null) {
+					marker.setAnimation(null);
+				} else {
+					marker.setAnimation(google.maps.Animation.BOUNCE);
+				}
+			}
 			latlngbounds.extend(marker.position);
 			bindInfoWindow(marker, map, infoWindow, html);
 
@@ -41,42 +42,42 @@ function load() {
 			map.fitBounds(latlngbounds);
 		}
 	});
-	var container = $('.getGeolocation');
+var container = $('.getGeolocation');
 
-	function getLocation() {
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(showPosition);
-		} else {
-			container.html('Geolocation is not supported by this browser.');
-		}
+function getLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
+	} else {
+		container.html('Geolocation is not supported by this browser.');
 	}
+}
 
-	function showPosition(position) {
-		var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-		map.setCenter(location);
-		var marker = new google.maps.Marker({
-			position: location,
-			map: map,
-			icon: 'http://chart.apis.google.com/chart?chst=d_map_xpin_icon&chld=pin_star|home'
-		});
-
-		var geocoder = new google.maps.Geocoder();
-		geocoder.geocode({'latLng': location}, function(results, status) {
-			if (status == google.maps.GeocoderStatus.OK) {
-				if (results[0]) {
-					container.html("Current Location: <b><marquee>" + results[0].formatted_address + "</marquee></b>");
-				} else {
-					container.html('No results found');
-				}
-			} else {
-				container.html('Geocoder failed due to: ' + status);
-			}
-		});
-	}
-
-	$(function () {
-		getLocation();
+function showPosition(position) {
+	var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	map.setCenter(location);
+	var marker = new google.maps.Marker({
+		position: location,
+		map: map,
+		icon: 'http://chart.apis.google.com/chart?chst=d_map_xpin_icon&chld=pin_star|home'
 	});
+
+	var geocoder = new google.maps.Geocoder();
+	geocoder.geocode({'latLng': location}, function(results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			if (results[0]) {
+				container.html("Current Location: <b><marquee>" + results[0].formatted_address + "</marquee></b>");
+			} else {
+				container.html('No results found');
+			}
+		} else {
+			container.html('Geocoder failed due to: ' + status);
+		}
+	});
+}
+
+$(function () {
+	getLocation();
+});
 
 }
 
@@ -104,3 +105,5 @@ function downloadUrl(url, callback) {
 }
 
 function doNothing() {}
+
+google.maps.event.addDomListener(window, 'load', initialize);

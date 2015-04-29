@@ -18,39 +18,13 @@
 </head>
 <body>
 	<?php
-	// $sessionUsername = isset($_SESSION["username"]);
+	$sessionUsername = isset($_SESSION["username"]);
 
-	// if ($sessionUsername == 0) {
-	// 	header("Location: login.php");
-	// }
+	if ($sessionUsername == 0) {
+	} else {
+		header("Location: login.php");
+	}
 	?>
-	<!-- Fixed navbar -->
-<!-- Hide navbar
-<nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-			<a class="navbar-brand">Asianic Food Culture</a> </div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="index.jsp">Home</a></li>
-					<li><a href="admin.jsp">Admin Panel</a></li>
-					<li>
-						<%
-						if (sessionUsername == null)
-							{
-						%>
-						<% } else { %>
-						<li><a href="logout.jsp">Logout</a></li>
-						<li>
-							<p class="navbar-text navbar-right">Welcome back, <a class="navbar-link"><%=sessionUsername %></a></p>
-						</li>
-						<% } %>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	--> 
 	<?php
 	require("db_config.php");
 
@@ -78,6 +52,10 @@
 		echo "<input type=\"text\" name=\"PhoneNo\" class=\"form-control\" placeholder=\"Phone No.\" value=\"" . $row["contact"] . "\" required>";
 		echo "<label for=\"Images\">Images</label>";
 		echo "<input type=\"text\" name=\"Images\" class=\"form-control\" placeholder=\"Images URL\" value=\"" . $row["imgURL"] . "\" required>";
+		echo "<label for=\"Latitude\">Latitude</label>";
+		echo "<input type=\"number\" name=\"Latitude\" class=\"form-control\" placeholder=\"Latitude\" value=\"" . $row["lat"] . "\" required>";
+		echo "<label for=\"Longtitude\">Longtitude</label>";
+		echo "<input type=\"number\" name=\"Longtitude\" class=\"form-control\" placeholder=\"Longtitude\" value=\"" . $row["lng"] . "\" required>";
 		echo "<label for=\"Description\">Description</label>";
 		echo "<textarea name=\"Description\" class=\"form-control\" placeholder=\"Description\" rows=\"5\" required>" . $row["description"] . "</textarea>";
 		echo "<br>";

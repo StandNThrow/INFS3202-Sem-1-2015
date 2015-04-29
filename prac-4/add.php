@@ -18,9 +18,10 @@
 </head>
 <body>
 	<?php
-	$sessionUsername = $_SESSION["username"];
-	if ($sessionUsername == null) {
-		header("login.php");
+	$sessionUsername = isset($_SESSION["username"]);
+	if ($sessionUsername == 0) {
+	} else {
+		header("Location: login.php");
 	}
 	?>
 	<div class="modal-body">
@@ -44,11 +45,11 @@
 			</div>
 			<div class="form-group">
 				<label for="latitude">Latitude</label>
-				<input type="text" name="latitude" id="latitude" class="form-control" placeholder="Latitude">
+				<input type="number" step="any" name="latitude" id="latitude" class="form-control" placeholder="Latitude">
 			</div>
 			<div class="form-group">
 				<label for="longtitude">Longtitude</label>
-				<input type="text" name="longtitude" id="longtitude" class="form-control" placeholder="Longtitude">
+				<input type="number" step="any" name="longtitude" id="longtitude" class="form-control" placeholder="Longtitude">
 			</div>
 			<div class="form-group">
 				<label for="description">Description</label>
