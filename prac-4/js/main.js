@@ -35,15 +35,15 @@ $("#formEdit").validate({
 			minlength: 4,
 			required: true
 		},
-		images: {
+		imgURL: {
 			minlength: 4,
 			required: true
 		},
-		latitude: {
+		lat: {
 			minlength: 4,
 			required: true
 		},
-		longtitude: {
+		lng: {
 			minlength: 4,
 			required: true
 		},
