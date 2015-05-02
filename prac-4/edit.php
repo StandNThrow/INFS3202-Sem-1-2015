@@ -29,7 +29,6 @@
 	require("db_config.php");
 
 	$id = $_GET["id"];
-
 	$sql = "SELECT * FROM markers WHERE id=\"" . $id . "\"";
 	$result = mysqli_query($connect, $sql);
 
@@ -38,20 +37,22 @@
 		echo "<div class=\"modal-body\">";
 		echo "<form action=\"edit_action.php\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\">";
 		echo "<h2>Edit</h2>";
-		echo "<label for=\"Name\">Name</label>";
-		echo "<input type=\"text\" name=\"Name\" class=\"form-control\" placeholder=\"Name\" value=\"" . $row["name"] . "\" required>";
-		echo "<label for=\"Address\">Address</label>";
-		echo "<input type=\"text\" name=\"Address\" class=\"form-control\" placeholder=\"Address\" value=\"" . $row["address"] . "\" required>";
-		echo "<label for=\"PhoneNo\">Phone No.</label>";
-		echo "<input type=\"text\" name=\"PhoneNo\" class=\"form-control\" placeholder=\"Phone No.\" value=\"" . $row["contact"] . "\" required>";
-		echo "<label for=\"Images\">Images</label>";
-		echo "<input type=\"text\" name=\"Images\" class=\"form-control\" placeholder=\"Images URL\" value=\"" . $row["imgURL"] . "\" required>";
-		echo "<label for=\"Latitude\">Latitude</label>";
-		echo "<input type=\"number\" name=\"Latitude\" class=\"form-control\" placeholder=\"Latitude\" value=\"" . $row["lat"] . "\" required>";
-		echo "<label for=\"Longtitude\">Longtitude</label>";
-		echo "<input type=\"number\" name=\"Longtitude\" class=\"form-control\" placeholder=\"Longtitude\" value=\"" . $row["lng"] . "\" required>";
-		echo "<label for=\"Description\">Description</label>";
-		echo "<textarea name=\"Description\" class=\"form-control\" placeholder=\"Description\" rows=\"5\" required>" . $row["description"] . "</textarea>";
+		echo "<label for=\"id\" class=\"sr-only\">id</label>";
+		echo "<input type=\"hidden\" name=\"id\" id=\"id\" class=\"form-control\" value=\"" . $row["id"] . "\">";
+		echo "<label for=\"name\">Name</label>";
+		echo "<input type=\"text\" name=\"name\" id=\"name\" class=\"form-control\" placeholder=\"Name\" value=\"" . $row["name"] . "\">";
+		echo "<label for=\"address\">Address</label>";
+		echo "<input type=\"text\" name=\"address\" id=\"address\" class=\"form-control\" placeholder=\"Address\" value=\"" . $row["address"] . "\">";
+		echo "<label for=\"phoneno\">Phone No.</label>";
+		echo "<input type=\"text\" name=\"phoneno\" id=\"phoneno\" class=\"form-control\" placeholder=\"Phone No.\" value=\"" . $row["contact"] . "\">";
+		echo "<label for=\"imgURL\">Images</label>";
+		echo "<input type=\"text\" name=\"imgURL\" id=\"imgURL\" class=\"form-control\" placeholder=\"Images URL\" value=\"" . $row["imgURL"] . "\">";
+		echo "<label for=\"lat\">Latitude</label>";
+		echo "<input type=\"text\" name=\"lat\" id=\"lat\" class=\"form-control\" placeholder=\"Latitude\" value=\"" . $row["lat"] . "\">";
+		echo "<label for=\"lng\">Longtitude</label>";
+		echo "<input type=\"text\" name=\"lng\" id=\"lng\" class=\"form-control\" placeholder=\"Longtitude\" value=\"" . $row["lng"] . "\">";
+		echo "<label for=\"description\">Description</label>";
+		echo "<textarea name=\"description\" id=\"description\" class=\"form-control\" placeholder=\"Description\" rows=\"5\">" . $row["description"] . "</textarea>";
 		echo "<br>";
 		echo "<button name=\"Submit\" class=\"btn btn-lg btn-primary\" type=\"submit\">Save</button>";
 		echo "</form>";
@@ -68,7 +69,9 @@
 
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 	<script src="js/lightbox.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
