@@ -40,16 +40,16 @@
 				<input type="text" name="phoneno" id="phoneno" class="form-control" placeholder="Phone No.">
 			</div>
 			<div class="form-group">
-				<label for="images">Images</label>
-				<input type="text" name="images" id="images" class="form-control" placeholder="Images URL">
+				<label for="imgURL">Images</label>
+				<input type="text" name="imgURL" id="imgURL" class="form-control" placeholder="Images URL">
 			</div>
 			<div class="form-group">
-				<label for="latitude">Latitude</label>
-				<input type="number" step="any" name="latitude" id="latitude" class="form-control" placeholder="Latitude">
+				<label for="lat">Latitude</label>
+				<input type="text" name="lat" id="lat" class="form-control" placeholder="Latitude">
 			</div>
 			<div class="form-group">
-				<label for="longtitude">Longtitude</label>
-				<input type="number" step="any" name="longtitude" id="longtitude" class="form-control" placeholder="Longtitude">
+				<label for="lng">Longtitude</label>
+				<input type="text" name="lng" id="lng" class="form-control" placeholder="Longtitude">
 			</div>
 			<div class="form-group">
 				<label for="description">Description</label>
