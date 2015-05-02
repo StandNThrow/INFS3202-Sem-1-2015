@@ -1,16 +1,4 @@
 <?php
-// require("db_config.php");
-
-// $sql = "SELECT * FROM markers";
-// $result	 = mysqli_query($connect, $sql) or die(mysql_error());
-// $xml = "<markers>";
-
-// while($row = mysqli_fetch_array($result)){
-// 	$xml .= "<marker name=\"" . $row["name"] . "\" address=\"" . $row["address"] . "\" lat=\"" . $row["lat"] . "\" lng=\"" . $row["lng"] . "\" />"; 
-// }
-// $xml .= "</markers>";
-// $saveXML = new SimpleXMLElement($xml);
-// $saveXML->asXML("markers.xml");
 require("db_config.php");
 
 // Start XML file, create parent node
@@ -40,7 +28,6 @@ while ($row = $result->fetch_object()) {
 	$newNode->setAttribute("image", $row->imgURL);
 	$newNode->setAttribute("lat", $row->lat);
 	$newNode->setAttribute("lng", $row->lng);
-	$newNode->setAttribute("type", $row->type);
 	$newNode->setAttribute("description", $row->description);
 }
 echo $dom->saveXML();
