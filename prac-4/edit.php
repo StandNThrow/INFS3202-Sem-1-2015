@@ -35,15 +35,9 @@
 
 	if (mysqli_num_rows($result) > 0) {
 		$row = mysqli_fetch_array($result);
-		// echo "<div class=\"modal-header\">";
-		// echo "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>";
-		// echo "<h4 class=\"modal-title\">Edit</h4>";
-		// echo "</div>";
 		echo "<div class=\"modal-body\">";
 		echo "<form action=\"edit_action.php\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\">";
 		echo "<h2>Edit</h2>";
-		// echo "<label for=\"File\" class=\"sr-only\">Filename</label>";
-		// echo "<input type=\"hidden\" name=\"File\" class=\"form-control\" value=\"" + fileName + "\">";
 		echo "<label for=\"Name\">Name</label>";
 		echo "<input type=\"text\" name=\"Name\" class=\"form-control\" placeholder=\"Name\" value=\"" . $row["name"] . "\" required>";
 		echo "<label for=\"Address\">Address</label>";

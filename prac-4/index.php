@@ -17,7 +17,6 @@
 	<link rel="stylesheet" href="css/lightbox.css">
 	<link rel="shortcut icon" href="images/favicon.png">
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-	<script src="js/main.js"></script>
 	<?php require("db_config.php"); ?>
 </head>
 <body>
@@ -52,7 +51,7 @@
 					<div class="form-group">
 						<input type="text" name="searchTerm" class="form-control" onkeyup="showResult(this.value);" onchange="showResult(this.value);" onkeypress="this.onchange();" oninput="this.onchange();" placeholder="Search">
 					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<!-- <button type="submit" class="btn btn-primary">Submit</button> -->
 				</form>
 			</div>
 			<!--/.nav-collapse --> 
@@ -121,6 +120,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
 	<script src="js/lightbox.js"></script> 
 	<script src="js/googleMapAPI.js"></script>
+	<script src="js/main.js"></script>
 	<script>
 	/* Hide/Show More Info */
 	$(document).ready(function() {
@@ -133,6 +133,15 @@
 					button.text('More Info');
 				}
 			});
+		});
+	});
+
+	$(document).ready(function() {
+		$(window).keydown(function(event){
+			if(event.keyCode == 13) {
+				event.preventDefault();
+				return false;
+			}
 		});
 	});
 	</script>

@@ -86,7 +86,8 @@
 								echo "<td><a class=\"btn btn-primary\" data-toggle=\"modal\" data-remote=\"edit.php?id=" . $row["id"] . "\" data-target=\"#myModal\">Edit</a></td>";
 								echo "<td><button type=\"submit\" name=\"id\" class=\"btn btn-primary\" value=\"" . $row["id"] . "\">Remove</button></td>";
 								echo "</tr>";
-								echo "<div class=\"modal fade\" id=\"myModal\"><div class=\"modal-dialog\">";
+								echo "<div class=\"modal fade\" id=\"myModal\">";
+								echo "<div class=\"modal-dialog\">";
 								echo "<div class=\"modal-content\"></div>";
 								echo "</div>";
 								echo "</div>";
