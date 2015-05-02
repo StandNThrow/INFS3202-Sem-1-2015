@@ -9,40 +9,39 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-      <link rel="stylesheet" href="css/style.css" type="text/css">
-      <link rel="shortcut icon" href="images/favicon.png">
-  </head>
-  <body>
-  	<?php
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="shortcut icon" href="images/favicon.png">
+</head>
+<body>
+	<?php
+	require("db_config.php");
 
-  	?>
-<%
-String Name = request.getParameter("Name");
-String Address = request.getParameter("Address");
-String PhoneNo = request.getParameter("PhoneNo");
-String Images = request.getParameter("Images");
-String Description = request.getParameter("Description");
-String fileName = request.getParameter("File");
-String File = application.getRealPath("prac-3/data/" + fileName);
+	$id = $_POST["id"];
+	$name = mysql_escape_string($_POST["name"]);
+	$address = mysql_escape_string($_POST["address"]);
+	$phoneno = mysql_escape_string($_POST["phoneno"]);
+	$images = mysql_escape_string($_POST["imgURL"]);
+	$lat = mysql_escape_string($_POST["lat"]);
+	$lng = mysql_escape_string($_POST["lng"]);
+	$description = mysql_escape_string($_POST["description"]);
 
-response.sendRedirect("admin.jsp");
-try
-{
-	FileWriter fileWriter = new FileWriter(File, false);
-	fileWriter.write(Name + "\n");
-	fileWriter.write(Address + "\n");
-	fileWriter.write(PhoneNo + "\n");
-	fileWriter.write(Images + "\n");
-	fileWriter.write(Description + "\n");
-	fileWriter.close();
-} catch (Exception e)
-{
-	out.println(e);
-}
-%>
+	// echo $id . "<br>";
+	// echo "Name: " . $name . "<br>";
+	// echo "Address: " . $address . "<br>";
+	// echo "Contact: " . $phoneno . "<br>";
+	// echo "ImageURLs: " . $images . "<br>";
+	// echo "Lat: " . $lat . "<br>";
+	// echo "Lng: " . $lng . "<br>";
+	// echo "Description: " . $description . "<br>";
+
+	$sql = "UPDATE `markers` SET `name`='$name', `address`='$address', `contact`='$phoneno', `imgURL`='$images', `lat`='$lat', `lng`='$lng', `description`='$description' WHERE id='$id'";
+
+	$result = mysqli_query($connect, $sql);
+	header("Location: admin.php");
+	?>
 </body>
 </html>
