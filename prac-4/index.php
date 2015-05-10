@@ -51,7 +51,7 @@
 					<div class="form-group">
 						<input type="text" name="searchTerm" id="searchTerm" class="form-control" onkeyup="showResult(this.value);" onchange="showResult(this.value);" onkeypress="this.onchange();" oninput="this.onchange();" placeholder="Search">
 					</div>
-					<input type="button" id="search" class="btn btn-primary" value="Search">
+					<!-- <input type="button" id="search" class="btn btn-primary" value="Search"> -->
 				</form>
 			</div>
 			<!--/.nav-collapse --> 
