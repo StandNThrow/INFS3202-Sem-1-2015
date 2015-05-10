@@ -4,54 +4,9 @@ function initialize() {
 		mapTypeId: 'roadmap'
 	});
 
-	// var tableId = '1ZU8D1ASYZMeIise2gboBt-HPt9hX8Y2NIdMfZg';
-	// var locationColumn = 'lat';
-
-	// var layer = new google.maps.FusionTablesLayer({
-	// 	query: {
-	// 		select: locationColumn,
-	// 		from: tableId
-	// 	},
-	// 	map: map
-	// });
-
-// 	var zoomToAddress = function() {
-// 		var address = document.getElementById("searchTerm").value;
-// 		geocoder.geocode({
-// 			address: address
-// 		}, function(results, status) {
-// 			if (status == google.maps.GeocoderStatus.OK) {
-// 				map.setCenter(results[0].geometry.location);
-// 				map.setZoom(10);
-
-// 			// OPTIONAL: run spatial query to find results within bounds.
-// 			var sw = map.getBounds().getSouthWest();
-// 			var ne = map.getBounds().getNorthEast();
-// 			var where = 'ST_INTERSECTS(' + locationColumn +
-// 				', RECTANGLE(LATLNG' + sw + ', LATLNG' + ne + '))';
-// 		layer.setOptions({
-// 			query: {
-// 				select: locationColumn,
-// 				from: tableId,
-// 				where: where
-// 			}
-// 		});
-// 	} else {
-// 		window.alert('Address could not be geocoded: ' + status);
-// 	}
-// });
-// 	};
-// 	google.maps.event.addDomListener(document.getElementById("search"),
-// 		"click", zoomToAddress);
-	// google.maps.event.addDomListener(window, 'keypress', function(e) {
-	// 	if (e.keyCode == 13) {
-	// 		zoomToAddress();
-	// 	}
-	// });
-
-var infoWindow = new google.maps.InfoWindow;
-var latlngbounds = new google.maps.LatLngBounds();
-var geocoder = new google.maps.Geocoder();
+	var infoWindow = new google.maps.InfoWindow;
+	var latlngbounds = new google.maps.LatLngBounds();
+	var geocoder = new google.maps.Geocoder();
 
 	// Change this depending on the name of your PHP file
 	downloadUrl("db_markersXML.php", function(data) {
