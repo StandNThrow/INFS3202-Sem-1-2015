@@ -6,7 +6,7 @@
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<title>Home</title>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -49,9 +49,9 @@
 				</ul>
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">
-						<input type="text" name="searchTerm" class="form-control" onkeyup="showResult(this.value);" onchange="showResult(this.value);" onkeypress="this.onchange();" oninput="this.onchange();" placeholder="Search">
+						<input type="text" name="searchTerm" id="searchTerm" class="form-control" onkeyup="showResult(this.value);" onchange="showResult(this.value);" onkeypress="this.onchange();" oninput="this.onchange();" placeholder="Search">
 					</div>
-					<!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+					<input type="button" id="search" class="btn btn-primary" value="Search">
 				</form>
 			</div>
 			<!--/.nav-collapse --> 
@@ -65,13 +65,13 @@
 			$result = mysqli_query($connect, $sql);
 
 			if (mysqli_num_rows($result) > 0) {
-				$i=0;
+				$i=1;
 				while ($row = mysqli_fetch_array($result)) {
 					$images = $row["imgURL"];
 					$imageArray = explode("#", $images);
 					echo "<div class=\"panel panel-default\">";
 					echo "<div class=\"panel-heading\">";
-					echo "<span class=\"badge\">" . ($i+1 ). "</span><b>" . $row["name"] . "</b>";
+					echo "<span class=\"badge\">" . $i. "</span><b>" . $row["name"] . "</b>";
 					echo "</div>";
 					echo "<div class=\"panel-body\">";
 					echo "<div class=\"row\">";
@@ -116,8 +116,9 @@
 		</div>
 	</div>
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
+	<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 	<!-- Latest compiled and minified JavaScript --> 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
 	<script src="js/lightbox.js"></script> 
 	<script src="js/googleMapAPI.js"></script>
 	<script src="js/main.js"></script>
@@ -134,9 +135,6 @@
 				}
 			});
 		});
-	});
-
-	$(document).ready(function() {
 		$(window).keydown(function(event){
 			if(event.keyCode == 13) {
 				event.preventDefault();
