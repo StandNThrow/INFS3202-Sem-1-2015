@@ -1,12 +1,12 @@
+var infoWindow = new google.maps.InfoWindow;
+var latlngbounds = new google.maps.LatLngBounds();
+var geocoder = new google.maps.Geocoder();
+
 function initialize() {
 	var map = new google.maps.Map(document.getElementById("map-canvas"), {
 		zoom: 10,
 		mapTypeId: 'roadmap'
 	});
-
-	var infoWindow = new google.maps.InfoWindow;
-	var latlngbounds = new google.maps.LatLngBounds();
-	var geocoder = new google.maps.Geocoder();
 
 	// Change this depending on the name of your PHP file
 	downloadUrl("db_markersXML.php", function(data) {

@@ -6,7 +6,7 @@
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<title>Edit</title>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -36,7 +36,7 @@
 // echo "Lng: " . $lng . "<br>";
 // echo "Description: " . $description . "<br>";
 
-	$sql = "INSERT INTO `markers`(`id`, `name`, `address`, `contact`, `imgURL`, `lat`, `lng`, `description`) VALUES ('', '$name','$address','$phoneno','$images','$lat','$lng','$description')";
+	$sql = "INSERT INTO `markers`(`id`, `name`, `address`, `contact`, `imgURL`, `lat`, `lng`, `description`) VALUES ('', '$name', '$address', '$phoneno', '$images', '$lat', '$lng', '$description')";
 
 	$result = mysqli_query($connect, $sql);
 	header("Location: admin.php");

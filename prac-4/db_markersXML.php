@@ -7,7 +7,7 @@ $node = $dom->createElement("markers");
 $parnode = $dom->appendChild($node);
 
 // Select all the rows in the markers table
-$sql = "SELECT * FROM markers WHERE 1";
+$sql = "SELECT * FROM markers";
 $result = mysqli_query($connect, $sql);
 if (!$result) {
 	die('Invalid query: ' . mysql_error());
