@@ -47,11 +47,13 @@
 					</li>
 					<?php } ?>
 				</ul>
-				<form class="navbar-form navbar-left" role="search">
+				<!-- <form class="navbar-form navbar-left" role="search"> -->
+				<form action="search.php" class="navbar-form navbar-left" role="search" method="POST">
 					<div class="form-group">
-						<input type="text" name="searchTerm" id="searchTerm" class="form-control" onkeyup="showResult(this.value);" onchange="showResult(this.value);" onkeypress="this.onchange();" oninput="this.onchange();" placeholder="Search">
+						<!-- <input type="text" name="searchTerm" id="searchTerm" class="form-control" onkeyup="showResult(this.value);" onchange="showResult(this.value);" onkeypress="this.onchange();" oninput="this.onchange();" placeholder="Search"> -->
+						<input type="text" name="searchTerm" id="searchTerm" class="form-control" placeholder="Search">
 					</div>
-					<!-- <input type="button" id="search" class="btn btn-primary" value="Search"> -->
+					<input type="submit" id="search" class="btn btn-primary" value="Search">
 				</form>
 			</div>
 			<!--/.nav-collapse --> 
@@ -135,13 +137,15 @@
 				}
 			});
 		});
-		$(window).keydown(function(event){
-			if(event.keyCode == 13) {
-				event.preventDefault();
-				return false;
-			}
-		});
 	});
-	</script>
+	/* Prevents Enter Key from sending the form for AJAX handler. */
+	// 	$(window).keydown(function(event){
+	// 		if(event.keyCode == 13) {
+	// 			event.preventDefault();
+	// 			return false;
+	// 		}
+	// 	});
+	// });
+</script>
 </body>
 </html>
