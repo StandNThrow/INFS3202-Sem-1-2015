@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/lightbox.css">
 	<link rel="shortcut icon" href="images/favicon.png">
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHXZQLmlxuxzjt9mEtGi5rZt3GJL2JAEY"></script>
-	<!-- <?php require("db_config.php"); ?> -->
+	<!-- <?php //require("db_config.php"); ?> -->
 	<?php require("azure_db_config.php"); ?>
 </head>
 <body>
