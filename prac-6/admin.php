@@ -15,9 +15,7 @@
 	<![endif]-->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" href="images/favicon.png">
-	<?php
-	require("db_config.php");
-	?>
+	<?php require("azure_db_config.php"); ?>
 </head>
 <body>
 	<?php

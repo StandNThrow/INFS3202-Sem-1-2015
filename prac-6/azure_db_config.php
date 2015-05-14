@@ -10,6 +10,4 @@ $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db
 if($conn === false){
 	die(print_r(sqlsrv_errors()));
 }
-
-echo "Connected successfully.";
 ?>
