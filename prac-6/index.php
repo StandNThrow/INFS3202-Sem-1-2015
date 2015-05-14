@@ -1,7 +1,7 @@
 <?php
 
-$server = "tcp:irz5rmmmas.database.windows.net,1433";
-$user = "infs3202_admin@irz5rmmmas";
+$server = "tcp:bdkzfvt0vn.database.windows.net,1433";
+$user = "infs3202_admin@bdkzfvt0vn";
 $pwd = "Passworda@";
 $db = "infs3202";
 
