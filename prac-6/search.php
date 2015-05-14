@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-	<title>Home</title>
+	<title>Admin Panel</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -14,14 +14,11 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/lightbox.css">
 	<link rel="shortcut icon" href="images/favicon.png">
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHXZQLmlxuxzjt9mEtGi5rZt3GJL2JAEY"></script>
-	<!-- <?php require("db_config.php"); ?> -->
-	<?php require("azure_db_config.php"); ?>
+	<?php require("db_config.php");	?>
 </head>
 <body>
-	<!-- Fixed navbar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -31,15 +28,16 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand">Asianic Food Culture</a>
+				<a class="navbar-brand">Asianic Food Culture</a> 
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.php">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<?php 
 					$sessionUsername = isset($_SESSION["username"]);
 					if ($sessionUsername == 0) {
 						echo "<li><a href=\"login.php\">Login</a></li>";
+						// echo $_SESSION["username"];
 					} else { ?>
 					<li><a href="admin.php">Admin Panel</a></li>
 					<li><a href="logout.php">Logout</a></li>
@@ -54,27 +52,29 @@
 						<!-- <input type="text" name="searchTerm" id="searchTerm" class="form-control" onkeyup="showResult(this.value);" onchange="showResult(this.value);" onkeypress="this.onchange();" oninput="this.onchange();" placeholder="Search"> -->
 						<input type="text" name="searchTerm" id="searchTerm" class="form-control" placeholder="Search">
 					</div>
-					<input type="submit" id="search" class="btn btn-primary" value="Search">
+					<input type="submit" id="search" class="btn btn-primary" value="Search" />
 				</form>
 			</div>
-			<!--/.nav-collapse --> 
 		</div>
 	</nav>
-	<div class="getGeolocation">Google Geolocation Placeholder. Enable your Location/GPS for this to work.</div>
 	<div class="container" role="main">
 		<div class="col-lg-5" id="content">
-			<?php 
-			$sql = "SELECT * FROM `markers`";
-			$result = mysqli_query($connect, $sql);
+			<?php
+			$searchTerm = $_POST["searchTerm"];
 
-			if (mysqli_num_rows($result) > 0) {
-				$i=1;
-				while ($row = mysqli_fetch_array($result)) {
+			$sql = "SELECT * FROM markers WHERE CONCAT(`name`, `address`, `contact`, `description`) LIKE '%" . $searchTerm . "%'";
+			$searchResult = mysqli_query($connect, $sql);
+
+			$_SESSION["searchResult"] = $searchResult;
+
+			if (mysqli_num_rows($searchResult) > 0) {
+				$i=0;
+				while ($row = mysqli_fetch_array($searchResult)) {
 					$images = $row["imgURL"];
 					$imageArray = explode("#", $images);
 					echo "<div class=\"panel panel-default\">";
 					echo "<div class=\"panel-heading\">";
-					echo "<span class=\"badge\">" . $i. "</span><b>" . $row["name"] . "</b>";
+					echo "<span class=\"badge\">" . ($i+1 ). "</span><b>" . $row["name"] . "</b>";
 					echo "</div>";
 					echo "<div class=\"panel-body\">";
 					echo "<div class=\"row\">";
@@ -112,6 +112,15 @@
 					$i++;
 				}
 			}
+			else
+			{
+				echo "<table class=\"table table-striped\">";
+				echo "<tr>";
+				echo "<th rowspan=\"8\" style=\"text-align:center;\">No entries found!";
+				echo "</th>";
+				echo "</tr>";
+				echo "</table>";
+			}
 			?>
 		</div>
 		<div class="col-lg-7" style="height:400px;">
@@ -119,12 +128,10 @@
 		</div>
 	</div>
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
-	<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 	<!-- Latest compiled and minified JavaScript --> 
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
 	<script src="js/lightbox.js"></script> 
 	<script src="js/googleMapAPI.js"></script>
-	<script src="js/main.js"></script>
 	<script>
 	/* Hide/Show More Info */
 	$(document).ready(function() {
