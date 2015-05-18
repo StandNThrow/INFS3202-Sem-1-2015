@@ -64,13 +64,11 @@
 	<div class="container" role="main">
 		<div class="col-lg-5" id="content">
 			<?php 
-			$sql = "SELECT * FROM `markers`";
-			// $result = mysqli_query($connect, $sql);
+			$sql = "SELECT * FROM markers";
 			$result = $conn->query($sql);
 
 			if ($result->fetchColumn() > 0) {
 				$i=1;
-				// while ($row = mysqli_fetch_array($result)) {
 				while ($row = $result->fetch()) {
 					// $images = $row["imgURL"];
 					// $imageArray = explode("#", $images);
