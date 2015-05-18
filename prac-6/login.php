@@ -53,7 +53,7 @@
 				<label>
 					<input type="checkbox" value="remember-me">Remember me</label>
 				</div>
-				<button name="Submit" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+				<button name="submit" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 			</form>
 			<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
 			<!-- Latest compiled and minified JavaScript --> 
