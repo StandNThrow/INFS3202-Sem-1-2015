@@ -64,7 +64,7 @@
 
 			setcookie("searchResult", $searchResult, time()+3600);
 
-			if ($searchResult->fetchColumn() > 0) {
+			if ($searchResult->rowCount() > 0) {
 				$i=0;
 				while ($row = $searchResult->fetch()) {
 					$images = $row["imgURL"];
