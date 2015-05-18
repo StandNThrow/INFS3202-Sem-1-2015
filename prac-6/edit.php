@@ -29,13 +29,11 @@
 	require("azure_db_config.php");
 
 	$id = $_GET["id"];
-	// $sql = $conn->exec("SELECT * FROM markers WHERE id=\"" . $id . "\"");
-	$sql = $conn->query("SELECT * FROM markers WHERE id='" . $id . "'");
-	// $sql->bindParam(":id", $id, PDO::PARAM_INT);
-	//$result = $sql->execute();
+	$sql = "SELECT * FROM markers WHERE id=\"" . $id . "\"";
+	$result = $conn->query($sql);
 
-	if ($sql->rowCount() > 0) {
-		$row = $sql->fetch();
+	if ($result->rowCount() > 0) {
+		$row = $result->fetch();
 		echo "<div class=\"modal-body\">";
 		echo "<form action=\"edit_action.php\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\">";
 		echo "<h2>Edit</h2>";
