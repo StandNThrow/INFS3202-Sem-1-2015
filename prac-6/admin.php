@@ -19,10 +19,10 @@
 </head>
 <body>
 	<?php
-	$sessionUsername = isset($_SESSION["username"]);
-	if ($sessionUsername == 0) {
-		header("Location: login.php");
-	}
+	// $sessionUsername = isset($_SESSION["username"]);
+	// if ($sessionUsername == 0) {
+	// 	header("Location: login.php");
+	// }
 	?>
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
