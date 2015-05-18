@@ -20,6 +20,9 @@
 	<?php require("azure_db_config.php"); ?>
 </head>
 <body>
+	<?php
+	echo $_SESSION["username"];
+	?>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
