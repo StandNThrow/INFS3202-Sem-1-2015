@@ -9,7 +9,7 @@ $parnode = $dom->appendChild($node);
 // Select all the rows in the markers table
 $sql = "SELECT * FROM markers";
 // $result = mysqli_query($connect, $sql);
-$result = $conn->$query($sql);
+$result = $conn->query($sql);
 if (!$result) {
 	//die('Invalid query: ' . mysql_error());
 }
