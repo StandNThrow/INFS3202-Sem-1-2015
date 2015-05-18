@@ -19,10 +19,10 @@
 </head>
 <body>
 	<?php
-	$sessionUsername = $_SESSION["username"];
-	if ($sessionUsername == null) {
-		header("Location: login.php");
-	}
+	// $sessionUsername = $_SESSION["username"];
+	// if ($sessionUsername == null) {
+	// 	header("Location: login.php");
+	// }
 	?>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
