@@ -71,7 +71,7 @@
 			if ($result->fetchColumn() > 0) {
 				$i=1;
 				// while ($row = mysqli_fetch_array($result)) {
-				while ($row = $result->fetchAll()) {
+				while ($row = $result->fetch()) {
 					$images = $row["imgURL"];
 					$imageArray = explode("#", $images);
 					echo "<div class=\"panel panel-default\">";
