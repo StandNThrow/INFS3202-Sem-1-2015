@@ -11,7 +11,7 @@ $sql = "SELECT * FROM markers";
 // $result = mysqli_query($connect, $sql);
 $result = $conn->$query($sql);
 if (!$result) {
-	die('Invalid query: ' . mysql_error());
+	//die('Invalid query: ' . mysql_error());
 }
 
 header("Content-type: text/xml");
