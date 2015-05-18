@@ -35,9 +35,9 @@
 	$result = $sql->execute(array(":id" => $id));
 
 	if ($result->rowCount() > 0) {
-		print_r($result);
-		$row = $result->fetch();
-		print_r($row);
+		var_dump(($result);
+			$row = $result->fetch();
+			var_dump($row);
 	// echo "<div class=\"modal-body\">";
 	// echo "<form action=\"edit_action.php\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\">";
 	// echo "<h2>Edit</h2>";
@@ -68,14 +68,14 @@
 	// else 
 	// {
 
-	}
-	?>
+		}
+		?>
 
-	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
-	<script src="js/lightbox.js"></script>
-	<script src="js/main.js"></script>
-</body>
-</html>
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+		<script src="js/lightbox.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+	</html>
