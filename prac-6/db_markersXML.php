@@ -26,5 +26,6 @@ while ($row = $result->fetchAll()) {
 	$newNode->setAttribute("lng", $row["lng"]);
 	$newNode->setAttribute("description", $row["description"]);
 }
-echo $dom->saveXML();
+var_dump($dom);
+//echo $dom->saveXML();
 ?>
