@@ -10,6 +10,8 @@ $parnode = $dom->appendChild($node);
 $sql = "SELECT * FROM markers";
 $result = $conn->query($sql);
 
+var_dump($result->fetch());
+
 header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
@@ -17,7 +19,7 @@ while ($row = $result->fetch()) {
 // ADD TO XML DOCUMENT NODE
 	$node = $dom->createElement("marker");
 	$newNode = $parnode->appendChild($node);
-	$newNode->setAttribute("id", $row->"id");
+	$newNode->setAttribute("id", $row["id"]);
 	$newNode->setAttribute("name", $row["name"]);
 	$newNode->setAttribute("address", $row["address"]);
 	$newNode->setAttribute("contact", $row["contact"]);
@@ -26,6 +28,5 @@ while ($row = $result->fetch()) {
 	$newNode->setAttribute("lng", $row["lng"]);
 	$newNode->setAttribute("description", $row["description"]);
 }
-var_dump($dom);
-//echo $dom->saveXML();
+echo $dom->saveXML();
 ?>
