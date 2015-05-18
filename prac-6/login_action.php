@@ -17,7 +17,6 @@ if(isset($_POST["submit"])) {
 	$rows = $result->fetch(PDO::FETCH_NUM);
 
 	if ($rows > 0) {
-		echo $username, $password;
 		$_SESSION['username'] = $username;
 		header("location: admin.php");
 	} else {
