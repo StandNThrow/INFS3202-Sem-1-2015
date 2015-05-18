@@ -41,7 +41,7 @@
 		</div>
 	</div>
 	<?php
-	$folder = "D:\home\site\wwwroot"; // path of htdocs
+	$folder = "D:/home/site/wwwroot/"; // path of htdocs
 
 	if(!$open = @opendir($folder)) 
 		die("The directory is not available!");
@@ -53,7 +53,7 @@
 
 		if($namearq == "." or $namearq == "..") continue;
 
-		$dir = "D:\home\site\wwwroot" . $namearq;
+		$dir = "D:/home/site/wwwroot/" . $namearq;
 
 		if(is_dir($dir)) {
 
