@@ -10,16 +10,15 @@ if(isset($_POST["submit"]))
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 
-	echo $username, $password;
-
 	$result = $conn->prepare("SELECT * FROM `users` WHERE `username` = :username AND `password` = :password");
 	$result->bindParam(":username", $username);
 	$result->bindParam(":password", $password);
 	$result->execute();
 	$rows = $result->fetch(PDO::FETCH_NUM);
 	if ($rows > 0) {
+		echo $username, $password;
 		$_SESSION['username'] = $username;
-		header("location: admin.php");
+		//header("location: admin.php");
 	} else {
 		echo "Invalid login";
 	}

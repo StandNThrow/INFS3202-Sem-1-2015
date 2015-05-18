@@ -42,8 +42,8 @@
 				<!--/.nav-collapse --> 
 			</div>
 		</nav>
-		<!-- <?php require("login_action.php"); ?> -->
-		<form action="login_action.php" name="formLogin" id="formLogin" class="formLogin" method="post">
+		<?php require("login_action.php"); ?>
+		<form action="login.php" name="formLogin" id="formLogin" class="formLogin" method="post">
 			<h2>Please login to continue</h2>
 			<label for="username" class="sr-only">Username</label>
 			<input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
