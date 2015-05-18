@@ -30,12 +30,12 @@
 
 	//$id = $_GET["id"];
 	// $sql = $conn->exec("SELECT * FROM markers WHERE id=\"" . $id . "\"");
-	$sql = $conn->prepare("SELECT * FROM markers WHERE id=1");
+	$sql = $conn->exec("SELECT * FROM markers WHERE id=1");
 	// $sql->bindParam(":id", $id, PDO::PARAM_INT);
-	$result = $sql->execute();
+	//$result = $sql->execute();
 
-	if ($result->rowCount() > 0) {
-		$row = $result->fetch();
+	if ($sql->rowCount() > 0) {
+		$row = $sql->fetch();
 		echo "<div class=\"modal-body\">";
 		echo "<form action=\"edit_action.php\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\">";
 		echo "<h2>Edit</h2>";
