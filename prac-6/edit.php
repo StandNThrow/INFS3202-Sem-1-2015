@@ -18,12 +18,12 @@
 </head>
 <body>
 	<?php
-	// $sessionUsername = isset($_SESSION["username"]);
+	$sessionUsername = isset($_SESSION["username"]);
 
-	// if ($sessionUsername == 0) {
-	// } else {
-	// 	header("Location: login.php");
-	// }
+	if ($sessionUsername == 0) {
+	} else {
+		header("Location: login.php");
+	}
 	?>
 	<?php
 	require("azure_db_config.php");
@@ -60,10 +60,6 @@
 		echo "<!-- <div class=\"modal-footer\">";
 		echo "<button type=\"button\" class=\"btn btn-lg btn-primary\" data-dismiss=\"modal\">Close</button>";
 		echo "<button type=\"submit\" class=\"btn btn-primary\">Save</button></div> -->";
-	}
-	else
-	{
-
 	}
 	?>
 
