@@ -7,7 +7,8 @@ session_start();
 if(isset($_POST["Submit"]))
 {
 	/* Define username and associated password array */
-	$logins = array("admin" => "password");
+	// $logins = array("admin" => "password");
+	$logins = bindParam("admin", "password");
 	
 	/* Check and assign submitted Username and Password */
 	$Username = isset($_POST["username"]) ? $_POST["username"] : "";
