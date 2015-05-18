@@ -9,7 +9,7 @@ $dbname = "infs3202";
 try {
 	$conn = new PDO( "mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpassword);
 	$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-	var_dump("Connected successfully.");
+	// echo ("Connected successfully.");
 }
 catch(Exception $e){
 	die(var_dump($e));
