@@ -20,7 +20,7 @@
 
 <body>
 	<?php
-	$sessionUsername = isset($_SESSION["username"]);
+	$sessionUsername = $_SESSION["username"];
 	if ($sessionUsername == 0) {
 		
 	} else {
