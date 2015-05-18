@@ -30,9 +30,9 @@
 
 	$id = $_GET["id"];
 	$sql = $conn->prepare("SELECT * FROM markers WHERE id=:id");
-	// $sql->bindParam(":id", $id);
-	$result = $sql->execute(":id" => $id);
-	print_r($result);
+	$sql->bindParam(':id', $id);
+	$result = $sql->execute();
+	print_r($result + "<br>" + $sql);
 
 	// // if ($result->fetchColumn() > 0) {
 	// $row = $result->fetch();
