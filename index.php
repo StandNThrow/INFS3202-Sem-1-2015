@@ -41,7 +41,7 @@
 		</div>
 	</div>
 	<?php
-	$folder = "/site/wwwroot/"; // path of htdocs
+	$folder = "/site/wwwroot"; // path of htdocs
 
 	if(!$open = @opendir($folder)) 
 		die("The directory is not available!");
