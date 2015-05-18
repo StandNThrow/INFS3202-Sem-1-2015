@@ -32,7 +32,7 @@
 	$sql = $conn->prepare("SELECT * FROM markers WHERE id=:id");
 	$sql->bindParam(':id', $id);
 	$result = $sql->execute();
-	print_r($sql);
+	print_r($result);
 
 	// // if ($result->fetchColumn() > 0) {
 	// $row = $result->fetch();
