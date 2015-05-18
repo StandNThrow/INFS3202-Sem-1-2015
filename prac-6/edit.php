@@ -18,12 +18,12 @@
 </head>
 <body>
 	<?php
-	$sessionUsername = isset($_SESSION["username"]);
+	// $sessionUsername = isset($_SESSION["username"]);
 
-	if ($sessionUsername == 0) {
-	} else {
-		header("Location: login.php");
-	}
+	// if ($sessionUsername == 0) {
+	// } else {
+	// 	header("Location: login.php");
+	// }
 	?>
 	<?php
 	require("azure_db_config.php");
