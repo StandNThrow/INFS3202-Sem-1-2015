@@ -17,7 +17,7 @@
 	<link rel="shortcut icon" href="images/favicon.png">
 </head>
 <body>
-	<?php
+	<?php 
 	require("azure_db_config.php");
 
 	$name = mysql_escape_string($_POST["name"]);
