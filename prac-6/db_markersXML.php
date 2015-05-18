@@ -13,7 +13,7 @@ $result = $conn->query($sql);
 header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
-while ($row = $result->fetchAll()) {
+while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 // ADD TO XML DOCUMENT NODE
 	$node = $dom->createElement("marker");
 	$newNode = $parnode->appendChild($node);
@@ -26,6 +26,5 @@ while ($row = $result->fetchAll()) {
 	$newNode->setAttribute("lng", $row["lng"]);
 	$newNode->setAttribute("description", $row["description"]);
 }
-var_dump($dom);
 //echo $dom->saveXML();
 ?>
