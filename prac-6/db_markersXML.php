@@ -10,7 +10,7 @@ $parnode = $dom->appendChild($node);
 $sql = "SELECT * FROM markers";
 $result = $conn->query($sql);
 
-header("Content-type: text/xml");
+//header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
 while ($row = $result->fetch()) {
