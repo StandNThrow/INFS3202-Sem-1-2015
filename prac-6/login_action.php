@@ -18,7 +18,8 @@ if(isset($_POST["submit"])) {
 
 	if ($rows > 0) {
 		$_SESSION["username"] = $username;
-		header("location: admin.php");
+		//header("location: admin.php");
+		echo $_SESSION["username"];
 	} else {
 		echo "Invalid login";
 	}
