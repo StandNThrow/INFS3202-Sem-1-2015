@@ -65,11 +65,13 @@
 		<div class="col-lg-5" id="content">
 			<?php 
 			$sql = "SELECT * FROM `markers`";
-			$result = mysqli_query($connect, $sql);
+			// $result = mysqli_query($connect, $sql);
+			$result = $conn->prepare($sql);
 
 			if (mysqli_num_rows($result) > 0) {
 				$i=1;
-				while ($row = mysqli_fetch_array($result)) {
+				// while ($row = mysqli_fetch_array($result)) {
+				while ($row = $result->fetchAll()) {
 					$images = $row["imgURL"];
 					$imageArray = explode("#", $images);
 					echo "<div class=\"panel panel-default\">";
