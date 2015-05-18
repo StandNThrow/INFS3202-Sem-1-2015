@@ -32,10 +32,10 @@
 	$sql = $conn->prepare("SELECT * FROM markers WHERE id=:id");
 	$sql->bindParam(':id', $id);
 	$result = $sql->execute();
-	print_r($result);
 
-	// // if ($result->fetchColumn() > 0) {
-	// $row = $result->fetch();
+	if ($result->fetchColumn() > 0) {
+		$row = $result->fetch();
+		echo $row["name"];
 	// echo "<div class=\"modal-body\">";
 	// echo "<form action=\"edit_action.php\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\">";
 	// echo "<h2>Edit</h2>";
@@ -66,7 +66,7 @@
 	// else 
 	// {
 
-	// }
+	}
 	?>
 
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
