@@ -35,6 +35,7 @@
 	$result = $sql->execute(array(":id" => $id));
 
 	if ($result->rowCount() > 0) {
+		print_r($result)
 		$row = $result->fetch();
 		print_r($row);
 	// echo "<div class=\"modal-body\">";
