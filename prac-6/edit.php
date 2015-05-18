@@ -32,7 +32,7 @@
 	// $sql = $conn->exec("SELECT * FROM markers WHERE id=\"" . $id . "\"");
 	$sql = $conn->prepare("SELECT * FROM markers WHERE id=:id");
 	// $sql->bindParam(":id", $id, PDO::PARAM_INT);
-	$result = $sql->execute(array("id" => $id));
+	$result = $sql->execute(array(":id" => $id));
 
 	if ($result->rowCount() > 0) {
 		$row = $result->fetch();
