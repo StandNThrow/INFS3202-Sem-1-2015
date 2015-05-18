@@ -72,8 +72,8 @@
 				$i=1;
 				// while ($row = mysqli_fetch_array($result)) {
 				while ($row = $result->fetch()) {
-					$images = $row["imgURL"];
-					$imageArray = explode("#", $images);
+					// $images = $row["imgURL"];
+					// $imageArray = explode("#", $images);
 					echo "<div class=\"panel panel-default\">";
 					echo "<div class=\"panel-heading\">";
 					echo "<span class=\"badge\">" . $i. "</span><b>" . $row["name"] . "</b>";
@@ -81,15 +81,15 @@
 					echo "<div class=\"panel-body\">";
 					echo "<div class=\"row\">";
 					echo "<div class=\"col-lg-4\">";
-					echo "<a href=\"" . $imageArray[0] . "\" data-lightbox=\"" . $row["name"] . "\">";
-					echo "<img class=\"imgLightbox\" src=\"" . $imageArray[0] . "\" alt=\"" . $row["name"] . "\" />";
-					echo "</a>";
-					echo "<a href=\"" . $imageArray[1] . "\" data-lightbox=\"" . $row["name"] . "\">";
-					echo "<img class=\"imgLightbox\" src=\"" . $imageArray[1] . "\" alt=\"" . $row["name"] . "\" />";
-					echo "</a>";
-					echo "<a href=\"" . $imageArray[2] . "\" data-lightbox=\"" . $row["name"] . "\">";
-					echo "<img class=\"imgLightbox\" src=\"" . $imageArray[2] . "\" alt=\"" . $row["name"] . "\" />";
-					echo "</a>";
+					// echo "<a href=\"" . $imageArray[0] . "\" data-lightbox=\"" . $row["name"] . "\">";
+					// echo "<img class=\"imgLightbox\" src=\"" . $imageArray[0] . "\" alt=\"" . $row["name"] . "\" />";
+					// echo "</a>";
+					// echo "<a href=\"" . $imageArray[1] . "\" data-lightbox=\"" . $row["name"] . "\">";
+					// echo "<img class=\"imgLightbox\" src=\"" . $imageArray[1] . "\" alt=\"" . $row["name"] . "\" />";
+					// echo "</a>";
+					// echo "<a href=\"" . $imageArray[2] . "\" data-lightbox=\"" . $row["name"] . "\">";
+					// echo "<img class=\"imgLightbox\" src=\"" . $imageArray[2] . "\" alt=\"" . $row["name"] . "\" />";
+					// echo "</a>";
 					echo "</div>";
 					echo "<div class=\"col-lg-8\">";
 					echo "<p>";
