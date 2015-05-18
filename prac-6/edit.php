@@ -28,9 +28,9 @@
 	<?php
 	require("azure_db_config.php");
 
-	//$id = $_GET["id"];
+	$id = $_GET["id"];
 	// $sql = $conn->exec("SELECT * FROM markers WHERE id=\"" . $id . "\"");
-	$sql = $conn->query("SELECT * FROM markers WHERE id=1");
+	$sql = $conn->query("SELECT * FROM markers WHERE id='" . $id . "'");
 	// $sql->bindParam(":id", $id, PDO::PARAM_INT);
 	//$result = $sql->execute();
 
