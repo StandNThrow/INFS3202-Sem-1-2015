@@ -40,8 +40,8 @@
 					<li><a href="index.php">Home</a></li>
 					<li class="active"><a>Admin Panel</a></li>
 					<?php 
-					if ($sessionUsername == 0) {
-						echo $_COOKIE["username"];
+					if ($sessionUsername == null) {
+						// echo $_COOKIE["username"];
 					} else { 
 						?>
 						<li><a href="logout.php">Logout</a></li>
