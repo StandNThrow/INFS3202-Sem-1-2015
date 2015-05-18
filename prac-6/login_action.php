@@ -7,18 +7,22 @@ session_start();
 /* Check Login form submitted */
 if(isset($_POST["Submit"]))
 {
-	$result = $conn->prepare("SELECT * FROM users WHERE username= :username AND password= :password");
-	$result->bindParam(':username', $_POST["username"]);
-	$result->bindParam(':password', $_POST["password"]);
+	$username = $_POST["username"];
+	$password = $_POST["password"];
+
+	echo $username, $password;
+
+	$result = $conn->prepare("SELECT * FROM `users` WHERE `username` = :username AND `password` = :password");
+	$result->bindParam(":username", $username);
+	$result->bindParam(":password", $password);
 	$result->execute();
 	$rows = $result->fetch(PDO::FETCH_NUM);
-	echo $rows["id"], $rows["username"], $rows["password"];
-	// if($rows > 0) {
-	// 	$_SESSION['username'] = $_POST["username"];
-	// 	header("location: admin.php");
-	// } else {
-	// 	echo "Invalid login";
-	// }
+	if ($rows > 0) {
+		$_SESSION['username'] = $username;
+		header("location: admin.php");
+	} else {
+		echo "Invalid login";
+	}
 	// /* Define username and associated password array */
 	// $logins = array("admin" => "password");
 	
