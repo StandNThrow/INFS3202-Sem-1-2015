@@ -36,7 +36,7 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.php">Home</a></li>
 					<?php 
-					$sessionUsername = isset($_SESSION["username"]);
+					$sessionUsername = $_SESSION["username"];
 					if ($sessionUsername == 0) {
 						echo "<li><a href=\"login.php\">Login</a></li>";
 					} else { ?>
