@@ -66,7 +66,8 @@
 				$i=1;
 				while ($row = $result->fetch()) {
 					$images = $row["imgURL"];
-					$imageArray = explode("#", $images);
+					// $imageArray = explode("#", $images);
+					$imageArray = preg_split("#", $images);
 					echo "<div class=\"panel panel-default\">";
 					echo "<div class=\"panel-heading\">";
 					echo "<span class=\"badge\">" . $i. "</span><b>" . $row["name"] . "</b>";
