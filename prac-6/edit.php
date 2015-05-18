@@ -31,10 +31,10 @@
 	// $id = $_GET["id"];
 	$stmt = $conn->prepare("SELECT * FROM markers WHERE id=:id");
 	// $result = mysqli_query($connect, $sql);
-	$stmt_>bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+	$stmt_>bindParam(":id", $_GET["id"]);
 	$result = $stmt->execute();
 
-	if ($result->fetchColumn() > 0) {
+	// if ($result->fetchColumn() > 0) {
 		$row = $result->fetch();
 		echo "<div class=\"modal-body\">";
 		echo "<form action=\"edit_action.php\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\">";
@@ -62,11 +62,11 @@
 		echo "<!-- <div class=\"modal-footer\">";
 		echo "<button type=\"button\" class=\"btn btn-lg btn-primary\" data-dismiss=\"modal\">Close</button>";
 		echo "<button type=\"submit\" class=\"btn btn-primary\">Save</button></div> -->";
-	}
-	else 
-	{
+	// }
+	// else 
+	// {
 
-	}
+	// }
 	?>
 
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
