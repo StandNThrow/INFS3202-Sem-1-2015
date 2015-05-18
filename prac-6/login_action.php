@@ -7,7 +7,7 @@ session_start();
 /* Check Login form submitted */
 if(isset($_POST["Submit"]))
 {
-	$result = $conn->query("SELECT * FROM users WHERE username= :username AND password= :password");
+	$result = $conn->prepare("SELECT * FROM users WHERE username= :username AND password= :password");
 	$result->bindParam(':username', $_POST["username"]);
 	$result->bindParam(':password', $_POST["password"]);
 	$result->execute();
