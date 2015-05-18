@@ -2,9 +2,9 @@
 require("azure_db_config.php");
 
 // Start XML file, create parent node
-$dom = new DOMDocument("1.0");
-$node = $dom->createElement("markers");
-$parnode = $dom->appendChild($node);
+// $dom = new DOMDocument("1.0");
+// $node = $dom->createElement("markers");
+// $parnode = $dom->appendChild($node);
 
 // Select all the rows in the markers table
 $sql = "SELECT * FROM markers";
@@ -12,7 +12,7 @@ $result = $conn->query($sql);
 
 var_dump($result->fetch());
 
-header("Content-type: text/xml");
+// header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
 while ($row = $result->fetch()) {
