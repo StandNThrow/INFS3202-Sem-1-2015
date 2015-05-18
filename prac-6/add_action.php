@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-	<title>Edit</title>
+	<title>Add</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -28,13 +28,13 @@
 	$lng = mysql_escape_string($_POST["lng"]);
 	$description = mysql_escape_string($_POST["description"]);
 
-// echo "Name: " . $name . "<br>";
-// echo "Address: " . $address . "<br>";
-// echo "Contact: " . $phoneno . "<br>";
-// echo "ImageURLs: " . $images . "<br>";
-// echo "Lat: " . $lat . "<br>";
-// echo "Lng: " . $lng . "<br>";
-// echo "Description: " . $description . "<br>";
+	echo "Name: " . $name . "<br>";
+	echo "Address: " . $address . "<br>";
+	echo "Contact: " . $phoneno . "<br>";
+	echo "ImageURLs: " . $images . "<br>";
+	echo "Lat: " . $lat . "<br>";
+	echo "Lng: " . $lng . "<br>";
+	echo "Description: " . $description . "<br>";
 
 	$sql = "INSERT INTO `markers`(`id`, `name`, `address`, `contact`, `imgURL`, `lat`, `lng`, `description`) VALUES ('', '$name', '$address', '$phoneno', '$images', '$lat', '$lng', '$description')";
 
