@@ -66,7 +66,6 @@
 				$i=1;
 				while ($row = $result->fetch()) {
 					$images = $row["imgURL"];
-					echo $images;
 					$imageArray = explode("#", $images);
 					echo "<div class=\"panel panel-default\">";
 					echo "<div class=\"panel-heading\">";
