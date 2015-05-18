@@ -18,7 +18,6 @@ if(isset($_POST["submit"])) {
 
 	if ($rows > 0) {
 		setcookie("username", $username, time()+3600);
-		//$_SESSION["username"] = $username;
 		header("location: admin.php");
 	} else {
 		echo "Invalid login";

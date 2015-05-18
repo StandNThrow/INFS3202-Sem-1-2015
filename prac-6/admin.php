@@ -19,11 +19,11 @@
 </head>
 <body>
 	<?php
-	echo $_COOKIE["username"];
-	// $sessionUsername = $_SESSION["username"];
-	// if ($sessionUsername == null) {
-	// 	header("Location: login.php");
-	// }
+	// echo $_COOKIE["username"];
+	$sessionUsername = $_COOKIE["username"];
+	if ($sessionUsername == null) {
+		header("Location: login.php");
+	}
 	?>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">

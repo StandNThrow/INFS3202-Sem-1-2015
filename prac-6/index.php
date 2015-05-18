@@ -20,9 +20,6 @@
 	<?php require("azure_db_config.php"); ?>
 </head>
 <body>
-	<?php
-	echo $_COOKIE["username"];
-	?>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -38,14 +35,14 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.php">Home</a></li>
 					<?php 
-					$sessionUsername = $_SESSION["username"];
+					$sessionUsername = $_COOKIE["username"];
 					if ($sessionUsername == "") {
 						echo "<li><a href=\"login.php\">Login</a></li>";
 					} else { ?>
 					<li><a href="admin.php">Admin Panel</a></li>
 					<li><a href="logout.php">Logout</a></li>
 					<li>
-						<p class="navbar-text">Welcome back, <a class="navbar-link"><?php echo $_SESSION["username"]; ?></a></p>
+						<p class="navbar-text">Welcome back, <a class="navbar-link"><?php echo $_COOKIE["username"]; ?></a></p>
 					</li>
 					<?php } ?>
 				</ul>
