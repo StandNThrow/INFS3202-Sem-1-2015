@@ -71,7 +71,7 @@
 						$result = $conn->query($sql);
 
 						if ($result->fetchColumn() > 0) {
-							while ($row = $result->fetch()) {
+							while ($row = $result->fetchAll()) {
 								echo "<form action=\"remove_action.php\" method=\"post\">";
 								echo "<tr>";
 								echo "<td>" . $row["name"] . "</td>";
