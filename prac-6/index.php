@@ -37,7 +37,7 @@
 					<li class="active"><a href="index.php">Home</a></li>
 					<?php 
 					$sessionUsername = $_SESSION["username"];
-					if ($sessionUsername == 0) {
+					if ($sessionUsername == "") {
 						echo "<li><a href=\"login.php\">Login</a></li>";
 					} else { ?>
 					<li><a href="admin.php">Admin Panel</a></li>

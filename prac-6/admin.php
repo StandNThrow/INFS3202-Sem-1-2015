@@ -20,7 +20,7 @@
 <body>
 	<?php
 	$sessionUsername = $_SESSION["username"];
-	if ($sessionUsername == 0) {
+	if ($sessionUsername == "") {
 		header("Location: login.php");
 	}
 	?>

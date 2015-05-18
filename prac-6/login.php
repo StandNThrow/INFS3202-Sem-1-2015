@@ -21,7 +21,7 @@
 <body>
 	<?php
 	$sessionUsername = $_SESSION["username"];
-	if ($sessionUsername == 0) {
+	if ($sessionUsername == "") {
 		
 	} else {
 		header("Location: admin.php");
