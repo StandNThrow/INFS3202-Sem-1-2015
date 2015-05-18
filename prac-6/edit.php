@@ -32,10 +32,10 @@
 	$sql = $conn->prepare("SELECT * FROM markers WHERE id=:id");
 	$sql->bindParam(":id", $id, PDO::PARAM_INT);
 	$result = $sql->execute();
-	var_dump($result);
 
 	if ($result->fetchColumn() > 0) {
 		$row = $result->fetch();
+		var_dump($row);
 	// echo "<div class=\"modal-body\">";
 	// echo "<form action=\"edit_action.php\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\">";
 	// echo "<h2>Edit</h2>";
