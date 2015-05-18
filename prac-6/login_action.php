@@ -15,6 +15,8 @@ if(isset($_POST["Submit"]))
 	if($rows == 1) {
 		$_SESSION['username'] = $_POST["username"];
 		header("location: admin.php");
+	} else {
+		echo "Invalid login";
 	}
 	// /* Define username and associated password array */
 	// $logins = array("admin" => "password");
