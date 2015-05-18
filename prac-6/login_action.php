@@ -1,4 +1,5 @@
 <?php 
+require("azure_db_config.php");
 /* Set timezone to Brisbane */
 date_default_timezone_set("Australia/Brisbane");
 session_start();
