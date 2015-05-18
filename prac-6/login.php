@@ -20,6 +20,7 @@
 
 <body>
 	<?php
+	session_start();
 	$sessionUsername = $_SESSION["username"];
 	if ($sessionUsername == "") {
 		
