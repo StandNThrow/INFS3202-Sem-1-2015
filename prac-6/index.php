@@ -63,13 +63,13 @@
 			$result = $conn->query($sql);
 
 			if ($result->fetchColumn() > 0) {
-				$i=1;
+				$i=0;
 				while ($row = $result->fetch()) {
 					$images = $row["imgURL"];
 					$imageArray = explode("#", $images);
 					echo "<div class=\"panel panel-default\">";
 					echo "<div class=\"panel-heading\">";
-					echo "<span class=\"badge\">" . $i. "</span><b>" . $row["name"] . "</b>";
+					echo "<span class=\"badge\">" . ($i+1) . "</span><b>" . $row["name"] . "</b>";
 					echo "</div>";
 					echo "<div class=\"panel-body\">";
 					echo "<div class=\"row\">";
