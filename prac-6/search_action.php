@@ -24,8 +24,8 @@
 <body>
 	<?php
 	$q = $_GET['q']; //get q from the address bar, also escaping the string
+	echo $q;
 	$sql = "SELECT * FROM `markers` WHERE CONCAT(`name`, `address`, `contact`) LIKE '%" . $q . "%'";
-	// $result = mysqli_query($connect, $sql);
 	$result = $conn->query($sql);
 
 	if ($result->fetchColumn() > 0) {
