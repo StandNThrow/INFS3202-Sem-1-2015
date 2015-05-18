@@ -27,7 +27,7 @@
 	$sql = "SELECT * FROM `markers` WHERE CONCAT(`name`, `address`, `contact`) LIKE '%" . $q . "%'";
 	$result = $conn->query($sql);
 
-	if ($result->fetchColumn() > 0) {
+	if ($result->rowCount() > 0) {
 		$i=0;
 		while($row = $result->fetch()) {
 			$images = $row["imgURL"];
