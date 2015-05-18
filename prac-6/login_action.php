@@ -12,7 +12,7 @@ if(isset($_POST["Submit"]))
 	$result->bindParam(':password', $_POST["password"]);
 	$result->execute();
 	$rows = $result->fetch(PDO::FETCH_NUM);
-	if($rows == 1) {
+	if($rows > 0) {
 		$_SESSION['username'] = $_POST["username"];
 		header("location: admin.php");
 	} else {
