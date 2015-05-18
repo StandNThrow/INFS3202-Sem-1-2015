@@ -28,11 +28,11 @@
 	<?php
 	require("azure_db_config.php");
 
-	// $id = $_GET["id"];
-	$stmt = $conn->prepare("SELECT * FROM markers WHERE id=:id");
+	$id = $_GET["id"];
+	$sql = $conn->prepare("SELECT * FROM markers WHERE id=:id");
 	// $result = mysqli_query($connect, $sql);
-	$stmt->bindParam(":id", $_GET["id"]);
-	$result = $stmt->execute();
+	$sql->bindParam(":id", $id);
+	$result = $sql->execute();
 
 	// if ($result->fetchColumn() > 0) {
 	$row = $result->fetch();
