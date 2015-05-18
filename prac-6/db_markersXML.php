@@ -10,10 +10,10 @@ $parnode = $dom->appendChild($node);
 $sql = "SELECT * FROM markers";
 $result = $conn->query($sql);
 
-//header("Content-type: text/xml");
+header("Content-type: text/xml");
 
 // Iterate through the rows, adding XML nodes for each
-while ($row = $result->fetch()) {
+while ($row = $result->fetchAll()) {
 // ADD TO XML DOCUMENT NODE
 	$node = $dom->createElement("marker");
 	$newNode = $parnode->appendChild($node);
