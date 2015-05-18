@@ -19,7 +19,6 @@
 </head>
 <body>
 	<?php
-	// echo $_COOKIE["username"];
 	$sessionUsername = $_COOKIE["username"];
 	if ($sessionUsername == null) {
 		header("Location: login.php");
@@ -42,12 +41,12 @@
 					<li class="active"><a>Admin Panel</a></li>
 					<?php 
 					if ($sessionUsername == 0) {
-						echo $_SESSION["username"];
+						echo $_COOKIE["username"];
 					} else { 
 						?>
 						<li><a href="logout.php">Logout</a></li>
 						<li>
-							<p class="navbar-text">Welcome back, <a class="navbar-link"><?php echo $_SESSION["username"]; ?></a></p>
+							<p class="navbar-text">Welcome back, <a class="navbar-link"><?php echo $_COOKIE["username"]; ?></a></p>
 						</li>
 						<?php } ?>
 					</ul>
