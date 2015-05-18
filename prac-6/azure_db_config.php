@@ -1,9 +1,9 @@
 <?php
 
-$server = "tcp:bdkzfvt0vn.database.windows.net,1433";
-$user = "infs3202_admin@bdkzfvt0vn";
-$pwd = "Passworda@";
-$db = "infs3202";
+$dbhost = "au-cdbr-azure-east-a.cloudapp.net";
+$dbuser = "ba47d46104b83c";
+$dbpassword = "7b8d6e77";
+$dbname = "infs3202";
 
 $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
 
