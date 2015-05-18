@@ -28,21 +28,17 @@
 	$lng = mysql_escape_string($_POST["lng"]);
 	$description = mysql_escape_string($_POST["description"]);
 
-	echo "Name: " . $name . "<br>";
-	echo "Address: " . $address . "<br>";
-	echo "Contact: " . $phoneno . "<br>";
-	echo "ImageURLs: " . $images . "<br>";
-	echo "Lat: " . $lat . "<br>";
-	echo "Lng: " . $lng . "<br>";
-	echo "Description: " . $description . "<br>";
-
+	// echo "Name: " . $name . "<br>";
+	// echo "Address: " . $address . "<br>";
+	// echo "Contact: " . $phoneno . "<br>";
+	// echo "ImageURLs: " . $images . "<br>";
+	// echo "Lat: " . $lat . "<br>";
+	// echo "Lng: " . $lng . "<br>";
+	// echo "Description: " . $description . "<br>";
 
 	$sql = "INSERT INTO `markers` (`name`, `address`, `contact`, `imgURL`, `lat`, `lng`, `description`) VALUES ('$name', '$address', '$phoneno', '$images', '$lat', '$lng', '$description')";
-
-	// $sql = "INSERT INTO `markers`(`id`, `name`, `address`, `contact`, `imgURL`, `lat`, `lng`, `description`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 	$result = $conn->query($sql);
-	// $stmt = $conn->prepare($sql);
-	// $stmt->execute(array("", $name, $address, $phoneno, $images, $lat, $lng, $description));
+	
 	header("Location: admin.php");
 	?>
 </body>
