@@ -19,15 +19,6 @@
 </head>
 
 <body>
-	<?php
-	session_start();
-	$sessionUsername = $_SESSION["username"];
-	if ($sessionUsername == "") {
-		
-	} else {
-		header("Location: admin.php");
-	}
-	?>
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
