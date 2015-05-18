@@ -51,7 +51,7 @@
 		</div>
 	</nav>
 	<%
-	int refreshTimer = 30;
+	int refreshTimer = 2;
 	response.setIntHeader("Refresh", refreshTimer);
 	Integer hitCount = (Integer)application.getAttribute("hitCounter");
 	if (hitCount == null || hitCount == 0 ) {
