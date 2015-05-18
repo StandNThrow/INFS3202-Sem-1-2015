@@ -19,7 +19,6 @@
 </head>
 
 <body>
-	<!-- Fixed navbar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -31,27 +30,29 @@
 						<li class="active"><a>Login</a></li>
 					</ul>
 				</div>
-				<!--/.nav-collapse --> 
 			</div>
 		</nav>
 		<?php require("login_action.php"); ?>
 		<form action="login.php" name="formLogin" id="formLogin" class="formLogin" method="post">
 			<h2>Please login to continue</h2>
-			<label for="username" class="sr-only">Username</label>
-			<input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
-			<label for="password" class="sr-only">Password</label>
-			<input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+			<div id="form-group">
+				<label for="username" class="sr-only">Username</label>
+				<input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
+			</div>
+			<div id="form-group">
+				<label for="password" class="sr-only">Password</label>
+				<input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+			</div>
 			<div class="checkbox">
-				<label>
-					<input type="checkbox" value="remember-me">Remember me</label>
-				</div>
-				<button name="submit" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-			</form>
-			<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
-			<!-- Latest compiled and minified JavaScript --> 
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
-			<script src="js/googleMapAPI.js"></script> 
-			<script src="js/lightbox.js"></script> 
-			<script src="js/main.js"></script>
-		</body>
-		</html>
+				<label><input type="checkbox" value="remember-me">Remember me</label>
+			</div>
+			<button name="submit" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+		</form>
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
+		<!-- Latest compiled and minified JavaScript --> 
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+		<script src="js/googleMapAPI.js"></script> 
+		<script src="js/lightbox.js"></script> 
+		<script src="js/main.js"></script>
+	</body>
+	</html>

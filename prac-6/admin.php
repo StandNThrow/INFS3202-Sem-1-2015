@@ -20,11 +20,10 @@
 <body>
 	<?php
 	$sessionUsername = $_SESSION["username"];
-	if ($sessionUsername == "") {
+	if ($sessionUsername == null) {
 		header("Location: login.php");
 	}
 	?>
-	<!-- Fixed navbar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -52,16 +51,13 @@
 						<?php } ?>
 					</ul>
 				</div>
-				<!--/.nav-collapse --> 
 			</div>
 		</nav>
 		<div class="container">
-			<div class="panel panel-primary"> 
-				<!-- Default panel contents -->
+			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h1>Asianic Food Culture</h1>
 				</div>
-				<!-- Table -->
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -73,11 +69,9 @@
 					<tbody>
 						<?php
 						$sql = "SELECT * FROM `markers`";
-						// $result = mysqli_query($connect, $sql);
 						$result = $conn->query($sql);
 
 						if ($result->fetchColumn() > 0) {
-							// while ($row = mysqli_fetch_array($result)) {
 							while ($row = $result->fetch()) {
 								echo "<form action=\"remove_action.php\" method=\"post\">";
 								echo "<tr>";
