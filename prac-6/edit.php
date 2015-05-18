@@ -29,6 +29,7 @@
 	require("azure_db_config.php");
 
 	$id = $_GET["id"];
+	echo $id;
 	$sql = $conn->prepare("SELECT * FROM markers WHERE id=:id");
 	// $result = mysqli_query($connect, $sql);
 	$sql->bindParam(":id", $id);
