@@ -34,22 +34,19 @@
 				<ul class="nav navbar-nav">
 					<li><a href="index.php">Home</a></li>
 					<?php 
-					$sessionUsername = isset($_SESSION["username"]);
-					if ($sessionUsername == 0) {
+					$sessionUsername = $_COOKIE["username"];
+					if ($sessionUsername == null) {
 						echo "<li><a href=\"login.php\">Login</a></li>";
-						// echo $_SESSION["username"];
 					} else { ?>
 					<li><a href="admin.php">Admin Panel</a></li>
 					<li><a href="logout.php">Logout</a></li>
 					<li>
-						<p class="navbar-text">Welcome back, <a class="navbar-link"><?php echo $_SESSION["username"]; ?></a></p>
+						<p class="navbar-text">Welcome back, <a class="navbar-link"><?php echo $_COOKIE["username"]; ?></a></p>
 					</li>
 					<?php } ?>
 				</ul>
-				<!-- <form class="navbar-form navbar-left" role="search"> -->
 				<form action="search.php" class="navbar-form navbar-left" role="search" method="POST">
 					<div class="form-group">
-						<!-- <input type="text" name="searchTerm" id="searchTerm" class="form-control" onkeyup="showResult(this.value);" onchange="showResult(this.value);" onkeypress="this.onchange();" oninput="this.onchange();" placeholder="Search"> -->
 						<input type="text" name="searchTerm" id="searchTerm" class="form-control" placeholder="Search">
 					</div>
 					<input type="submit" id="search" class="btn btn-primary" value="Search" />
@@ -63,10 +60,9 @@
 			$searchTerm = $_POST["searchTerm"];
 
 			$sql = "SELECT * FROM markers WHERE CONCAT(`name`, `address`, `contact`, `description`) LIKE '%" . $searchTerm . "%'";
-			// $searchResult = mysqli_query($connect, $sql);
 			$searchResult = $conn->query($sql);
 
-			$_SESSION["searchResult"] = $searchResult;
+			setcookie("searchResult", $searchResult, time()+3600);
 
 			if ($searchResult->fetchColumn() > 0) {
 				$i=0;
