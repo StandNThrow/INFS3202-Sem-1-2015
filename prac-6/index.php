@@ -21,7 +21,7 @@
 </head>
 <body>
 	<?php
-	echo $_SESSION["username"];
+	echo $_COOKIE["username"];
 	?>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">

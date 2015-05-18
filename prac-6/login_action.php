@@ -17,9 +17,9 @@ if(isset($_POST["submit"])) {
 	$rows = $result->fetch(PDO::FETCH_NUM);
 
 	if ($rows > 0) {
-		$_SESSION["username"] = $username;
-		//header("location: admin.php");
-		echo $_SESSION["username"];
+		setcookie("username", $username, time()+3600);
+		//$_SESSION["username"] = $username;
+		header("location: admin.php");
 	} else {
 		echo "Invalid login";
 	}
