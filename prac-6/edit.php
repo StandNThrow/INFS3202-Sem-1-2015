@@ -33,9 +33,9 @@
 	$sql->bindParam(":id", $id, PDO::PARAM_INT);
 	$result = $sql->execute();
 
-	if ($result->fetchColumn() > 0) {
-		$row = $result->fetchAll();
-		var_dump($row);
+	//if ($result->fetchColumn() > 0) {
+	$row = $result->fetch(PDO::FETCH_ASSOC);
+	print_r($row);
 	// echo "<div class=\"modal-body\">";
 	// echo "<form action=\"edit_action.php\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\">";
 	// echo "<h2>Edit</h2>";
@@ -66,7 +66,7 @@
 	// else 
 	// {
 
-	}
+	//}
 	?>
 
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
