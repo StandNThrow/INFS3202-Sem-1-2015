@@ -71,7 +71,7 @@
 						$result = $conn->query($sql);
 
 						if ($result->fetchColumn() > 0) {
-							while ($row = $result->fetchAll()) {
+							while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 								echo "<form action=\"remove_action.php\" method=\"post\">";
 								echo "<tr>";
 								echo "<td>" . $row["name"] . "</td>";
