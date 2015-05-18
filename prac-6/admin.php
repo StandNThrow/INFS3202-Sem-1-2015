@@ -73,11 +73,12 @@
 					<tbody>
 						<?php
 						$sql = "SELECT * FROM `markers`";
-						$result = mysqli_query($connect, $sql);
+						// $result = mysqli_query($connect, $sql);
+						$result = $conn->query($sql);
 
-						if (mysqli_num_rows($result) > 0) {
-							
-							while ($row = mysqli_fetch_array($result)) {
+						if ($result->fetchColumn() > 0) {
+							// while ($row = mysqli_fetch_array($result)) {
+							while ($row = $result->fetch()) {
 								echo "<form action=\"remove_action.php\" method=\"post\">";
 								echo "<tr>";
 								echo "<td>" . $row["name"] . "</td>";
