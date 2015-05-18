@@ -17,13 +17,13 @@ while ($row = $result->fetch()) {
 	$node = $dom->createElement("marker");
 	$newNode = $parnode->appendChild($node);
 	$newNode->setAttribute("id", $row["id"]);
-	// $newNode->setAttribute("name", $row["name"]);
-	// $newNode->setAttribute("address", $row["address"]);
-	// $newNode->setAttribute("contact", $row["contact"]);
-	// $newNode->setAttribute("image", $row["imgURL"]);
-	// $newNode->setAttribute("lat", $row["lat"]);
-	// $newNode->setAttribute("lng", $row["lng"]);
-	// $newNode->setAttribute("description", $row["description"]);
+	$newNode->setAttribute("name", $row["name"]);
+	$newNode->setAttribute("address", $row["address"]);
+	$newNode->setAttribute("contact", $row["contact"]);
+	$newNode->setAttribute("image", $row["imgURL"]);
+	$newNode->setAttribute("lat", $row["lat"]);
+	$newNode->setAttribute("lng", $row["lng"]);
+	$newNode->setAttribute("description", $row["description"]);
 }
 echo $dom->saveXML();
 ?>
