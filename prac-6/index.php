@@ -66,7 +66,7 @@
 			<?php 
 			$sql = "SELECT * FROM `markers`";
 			// $result = mysqli_query($connect, $sql);
-			$result = $conn->prepare($sql);
+			$result = $conn->exec($sql);
 			print_r($result);
 
 			if (mysqli_num_rows($result) > 0) {
