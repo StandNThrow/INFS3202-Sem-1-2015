@@ -63,13 +63,14 @@
 			$searchTerm = $_POST["searchTerm"];
 
 			$sql = "SELECT * FROM markers WHERE CONCAT(`name`, `address`, `contact`, `description`) LIKE '%" . $searchTerm . "%'";
-			$searchResult = mysqli_query($connect, $sql);
+			// $searchResult = mysqli_query($connect, $sql);
+			$searchResult = $conn->query($sql);
 
 			$_SESSION["searchResult"] = $searchResult;
 
-			if (mysqli_num_rows($searchResult) > 0) {
+			if ($searchResult->fetchColumn() > 0) {
 				$i=0;
-				while ($row = mysqli_fetch_array($searchResult)) {
+				while ($row = $searchResult->fetch()) {
 					$images = $row["imgURL"];
 					$imageArray = explode("#", $images);
 					echo "<div class=\"panel panel-default\">";

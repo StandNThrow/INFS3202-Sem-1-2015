@@ -18,7 +18,7 @@
 </head>
 <body>
 	<?php
-	require("db_config.php");
+	require("azure_db_config.php");
 
 	$id = $_POST["id"];
 	$name = mysql_escape_string($_POST["name"]);
@@ -40,7 +40,8 @@
 
 	$sql = "UPDATE `markers` SET `name`='$name', `address`='$address', `contact`='$phoneno', `imgURL`='$images', `lat`='$lat', `lng`='$lng', `description`='$description' WHERE id='$id'";
 
-	$result = mysqli_query($connect, $sql);
+	// $result = mysqli_query($connect, $sql);
+	$result = $conn->query($sql);
 	header("Location: admin.php");
 	?>
 </body>

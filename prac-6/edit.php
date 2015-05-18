@@ -26,14 +26,15 @@
 	}
 	?>
 	<?php
-	require("db_config.php");
+	require("azure_db_config.php");
 
 	$id = $_GET["id"];
 	$sql = "SELECT * FROM markers WHERE id=\"" . $id . "\"";
-	$result = mysqli_query($connect, $sql);
+	// $result = mysqli_query($connect, $sql);
+	$result = $conn->query($sql);
 
-	if (mysqli_num_rows($result) > 0) {
-		$row = mysqli_fetch_array($result);
+	if ($result->fetchColumn() > 0) {
+		$row = $result->fetch();
 		echo "<div class=\"modal-body\">";
 		echo "<form action=\"edit_action.php\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\">";
 		echo "<h2>Edit</h2>";

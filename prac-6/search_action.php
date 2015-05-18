@@ -18,17 +18,19 @@
 	<link rel="shortcut icon" href="images/favicon.png">
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 	<script src="js/main.js"></script>
-	<?php require("db_config.php"); ?>
+	<?php require("azure_db_config.php"); ?>
 </head>
 
 <body>
 	<?php
-	$q = mysqli_real_escape_string($connect, $_GET['q']); //get q from the address bar, also escaping the string
+	$q = $_GET['q']; //get q from the address bar, also escaping the string
 	$sql = "SELECT * FROM `markers` WHERE CONCAT(`name`, `address`, `contact`) LIKE '%" . $q . "%'";
-	$result = mysqli_query($connect, $sql);
-	if (mysqli_num_rows($result) > 0) {
+	// $result = mysqli_query($connect, $sql);
+	$result = $conn->query($sql);
+
+	if ($result->fetchColumn() > 0) {
 		$i=0;
-		while($row = mysqli_fetch_array($result)) {
+		while($row = $result->fetch()) {
 			$images = $row["imgURL"];
 			$imageArray = explode("#", $images);
 			echo "<div class=\"panel panel-default\">";

@@ -17,8 +17,7 @@
 </head>
 <body>
 	<?php 
-	require("db_config.php");
-
+	require("azure_db_config.php");
 	session_destroy();
 
 	header("Location: index.php");
