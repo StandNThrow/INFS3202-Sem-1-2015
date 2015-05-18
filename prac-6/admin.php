@@ -19,6 +19,7 @@
 </head>
 <body>
 	<?php
+	echo $_SESSION["username"];
 	// $sessionUsername = $_SESSION["username"];
 	// if ($sessionUsername == null) {
 	// 	header("Location: login.php");
