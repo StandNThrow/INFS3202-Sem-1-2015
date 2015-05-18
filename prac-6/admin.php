@@ -70,7 +70,7 @@
 						$sql = "SELECT * FROM `markers`";
 						$result = $conn->query($sql);
 
-						if ($result->fetchColumn() > 0) {
+						if ($result->rowCount() > 0) {
 							while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 								echo "<form action=\"remove_action.php\" method=\"post\">";
 								echo "<tr>";
