@@ -34,7 +34,7 @@
 	$result = $sql->execute();
 
 	if ($result->fetchColumn() > 0) {
-		$row = $result->fetch();
+		$row = $result->fetchAll();
 		var_dump($row);
 	// echo "<div class=\"modal-body\">";
 	// echo "<form action=\"edit_action.php\" name=\"formEdit\" id=\"formEdit\" class=\"formEdit\" method=\"post\">";
