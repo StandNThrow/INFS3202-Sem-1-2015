@@ -21,17 +21,17 @@
 </head>
 <body>
 	<?php
-	$placeID = mysql_real_escape_string($_POST["placeID"]);
-	$placeName = mysql_real_escape_string($_POST["placeName"]);
-	$placeAddress = mysql_real_escape_string($_POST["placeAddress"]);
-	$placeContact = mysql_real_escape_string($_POST["placeContact"]);
-	$placeImgURL = mysql_real_escape_string($_POST["placeImgURL"]);
+	$placeID = mysql_escape_string($_POST["placeID"]);
+	$placeName = mysql_escape_string($_POST["placeName"]);
+	$placeAddress = mysql_escape_string($_POST["placeAddress"]);
+	$placeContact = mysql_escape_string($_POST["placeContact"]);
+	$placeImgURL = mysql_escape_string($_POST["placeImgURL"]);
 
-	// echo $placeID . "<br>";
-	// echo $placeName . "<br>";
-	// echo $placeAddress . "<br>";
-	// echo $placeContact . "<br>";
-	// echo $placeImgURL . "<br>";
+	echo $placeID . "<br>";
+	echo $placeName . "<br>";
+	echo $placeAddress . "<br>";
+	echo $placeContact . "<br>";
+	echo $placeImgURL . "<br>";
 	?>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
