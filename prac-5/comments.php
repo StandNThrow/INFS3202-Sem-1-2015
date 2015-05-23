@@ -79,7 +79,7 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-lg-4">
-							<img src=<?php echo $placeImgURL; ?> alt="googlePlacesThumbnail">
+							<img src="<?php echo $placeImgURL; ?>" alt="googlePlacesThumbnail">
 						</div>
 						<div class="col-lg-8">
 							<p>
