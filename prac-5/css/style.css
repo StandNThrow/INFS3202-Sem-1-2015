@@ -6,6 +6,10 @@ html, body {
 	padding-top: 30px;
 	background: #eee;
 }
+#content {
+	height: 400px;
+	overflow: auto;
+}
 #map-canvas {
 	height: 400px;
 	width: 100%;
