@@ -47,14 +47,11 @@
 					</li>
 					<?php } ?>
 				</ul>
-				<!-- <form class="navbar-form navbar-left" role="search"> -->
 				<form action="javascript:void(0);" class="navbar-form navbar-left" role="search">
 					<div class="form-group has-feedback has-feedback-left">
 						<input type="text" name="searchTerm" id="searchTerm" class="form-control" onkeydown="enterPressed();" placeholder="Search">
-						<!-- <input type="text" name="searchTerm" id="searchTerm" class="form-control" placeholder="Search"> -->
 						<i class="form-control-feedback glyphicon glyphicon-search"></i>
 					</div>
-					<!-- <input type="submit" id="search" class="btn btn-primary" value="Search"> -->
 				</form>
 			</div> 
 		</div>
@@ -79,6 +76,7 @@
 										<input type="hidden" name="placeAddress" id="placeAddress">
 										<input type="hidden" name="placeContact" id="placeContact">
 										<input type="hidden" name="placeImgURL" id="placeImgURL">
+										<!-- For debugging purposes -->
 										<!-- <input name="placeID" id="placeID">
 										<input name="placeName" id="placeName">
 										<input name="placeAddress" id="placeAddress">
