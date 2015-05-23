@@ -115,7 +115,7 @@ function callback(results, status) {
 
 function createList(resultLength) {
 	for (var j = 0; j < ((resultLength < 5) ? resultLength : 5) ; j++) {
-		$("#getRestaurantList").append("<div id=\"r-list-" + j + "\"></div>");
+		$("#getRestaurantList").append("<div id=\"panelPlaces" + j + "\"></div>");
 	}
 }
 
@@ -144,7 +144,7 @@ function placePageWrite(place, i) {
 	var imageArray = [];
 	var contactNo = "";
 
-	sleep(500);
+	sleep(200);
 
 	service.getDetails(place, function(result, status) {
 
@@ -168,21 +168,26 @@ function placePageWrite(place, i) {
 			}
 		}
 
+		var distanceInBetween = parseFloat(
+			google.maps.geometry.spherical.computeDistanceBetween(
+				map.getCenter(),
+				place.geometry.location)).toFixed(2);
+
 		if (typeof result.formatted_phone_number === "undefined")
 			contactNo = "<i>Contact No. is unavailable</i>";
 		else
 			contactNo = result.formatted_phone_number;
 
-		var template = $("#template").clone();
-		template.find(".panel-heading").html("<span class=\"badge\">" + String.fromCharCode(65+i) + "</span>&emsp;<b>" + result.name + "</b>");
-		template.find("#placeData").html("<p>" + result.formatted_address + "<br>" + contactNo + "</p>");
-		template.find(".col-lg-4").html("<img src=\"" + imageArray[0] + "\" alt=\"googlePlacesThumbnail\" />");
-		template.find("#placeID").val(result.place_id);
-		template.find("#placeName").val(result.name);
-		template.find("#placeAddress").val(result.formatted_address);
-		template.find("#placeContact").val(contactNo);
-		template.find("#placeImgURL").val(imageArray[0]);
-		template.css("display", "block");
-		$("#r-list-" + i).append(template);
+		var restaurantList = $("#restaurantList").clone();
+		restaurantList.find(".panel-heading").html("<span class=\"badge\">" + String.fromCharCode(65+i) + "</span>&emsp;<b>" + result.name + "</b>");
+		restaurantList.find("#placeData").html("<p>" + "<b>Address: </b>" + result.formatted_address + "<br>" + "<b>Phone No: </b>" + contactNo + "</p><p>" + "<b>Distance from current location: </b>" + distanceInBetween + "m</p>");
+		restaurantList.find(".col-lg-4").html("<img src=\"" + imageArray[0] + "\" alt=\"googlePlacesThumbnail\" />");
+		restaurantList.find("#placeID").val(result.place_id);
+		restaurantList.find("#placeName").val(result.name);
+		restaurantList.find("#placeAddress").val(result.formatted_address);
+		restaurantList.find("#placeContact").val(contactNo);
+		restaurantList.find("#placeImgURL").val(imageArray[0]);
+		restaurantList.css("display", "block");
+		$("#panelPlaces" + i).append(restaurantList);
 	});
 }
