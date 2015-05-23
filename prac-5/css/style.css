@@ -6,7 +6,7 @@ html, body {
 	padding-top: 30px;
 	background: #eee;
 }
-#content {
+.content {
 	height: 400px;
 	overflow: auto;
 }
