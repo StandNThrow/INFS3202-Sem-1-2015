@@ -5,7 +5,7 @@ var geocoder = new google.maps.Geocoder();
 function initialize() {
 	var map = new google.maps.Map(document.getElementById("map-canvas"), {
 		zoom: 10,
-		mapTypeId: 'roadmap'
+		mapTypeId: "roadmap"
 	});
 
 	// Change this depending on the name of your PHP file
@@ -44,7 +44,7 @@ function initialize() {
 			map.fitBounds(latlngbounds);
 		}
 	});
-var container = $('.getGeolocation');
+var container = $(".getGeolocation");
 
 function getLocation() {
 	if (navigator.geolocation) {
