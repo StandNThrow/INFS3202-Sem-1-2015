@@ -1,0 +1,115 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+html, body {
+	font-family: "Raleway", sans-serif;
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 30px;
+	background: #eee;
+}
+#map-canvas {
+	height: 400px;
+	width: 100%;
+}
+table.table.table-striped td {
+	vertical-align: middle;
+}
+.scrollableTableContainer {
+	height: 400px;
+	overflow: auto;
+}
+img.imgLightbox {
+	width: 64px;
+	height: 64px;
+}
+.getGeolocation {
+	width: 100%;
+	text-align: center;
+	border: 1px solid;
+	margin: 10px 0;
+	padding: 15px 10px 15px 10px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+/* Login Form */
+.formLogin {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+}
+.formLogin .formLogin-heading, .formLogin .checkbox {
+	margin-bottom: 10px;
+}
+.formLogin .checkbox {
+	font-weight: normal;
+}
+.formLogin .form-control {
+	position: relative;
+	height: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 16px;
+}
+.formLogin .form-control:focus {
+	z-index: 2;
+}
+.formLogin input:required {
+	background-image: url("../images/asterisk.png");
+	background-attachment: scroll;
+	background-position: 100% 50%;
+	background-repeat: no-repeat;
+}
+.formLogin input[type="email"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.formLogin input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+/** Edit Form **/
+.formEdit {
+	max-width: 550px;
+	padding: 15px;
+	margin: 0 auto;
+}
+.formEdit .formEdit-heading, .formEdit .checkbox {
+	margin-bottom: 10px;
+}
+.formEdit .checkbox {
+	font-weight: normal;
+}
+.formEdit .form-control {
+	position: relative;
+	height: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 16px;
+}
+.formEdit .form-control:focus {
+	z-index: 2;
+}
+.formEdit input:required {
+	background-image: url("../images/asterisk.png");
+	background-attachment: scroll;
+	background-position: 100% 50%;
+	background-repeat: no-repeat;
+}
+.formEdit input[type="email"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.formEdit input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+.moreInfo-panel {
+	display: none;
+}
