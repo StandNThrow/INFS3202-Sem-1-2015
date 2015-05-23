@@ -58,7 +58,7 @@
 	</nav>
 	<div class="getGeolocation">Google Geolocation Placeholder. Enable your Location/GPS for this to work.</div>
 	<div class="container" role="main">
-		<div class="col-lg-5" id="content">
+		<div class="col-lg-5 content">
 			<div id="restaurantList" style="display:none;">
 				<div class="panel panel-default">
 					<div class="panel-heading"></div>
