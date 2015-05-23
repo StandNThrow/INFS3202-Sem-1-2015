@@ -69,7 +69,7 @@
 					$imageArray = explode("#", $images);
 					echo "<div class=\"panel panel-default\">";
 					echo "<div class=\"panel-heading\">";
-					echo "<span class=\"badge\">" . $i . "</span><b>" . $row["name"] . "</b>";
+					echo "<span class=\"badge\">" . $i . "</span>&emsp;<b>" . $row["name"] . "</b>";
 					echo "</div>";
 					echo "<div class=\"panel-body\">";
 					echo "<div class=\"row\">";
