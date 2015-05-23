@@ -27,6 +27,7 @@
 	$placeContact = mysql_escape_string($_POST["placeContact"]);
 	$placeImgURL = mysql_escape_string($_POST["placeImgURL"]);
 
+	/* For debugging purposes */
 	// echo $placeID . "<br>";
 	// echo $placeName . "<br>";
 	// echo $placeAddress . "<br>";
