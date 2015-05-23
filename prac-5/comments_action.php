@@ -10,7 +10,6 @@ if ($sessionUsername == 0) {
 } else {
 	$sessionUsername = $_SESSION["username"];
 }
-
 // echo $sessionUsername . "<br>";
 
 $placeID = $_POST["placeID"];
