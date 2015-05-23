@@ -74,16 +74,16 @@
 									</p>
 									<!-- Form required to write to database for comments -->
 									<form action="comments.php" name="formComment" id="formComment" method="POST">
-										<!-- <input type="hidden" name="placeID" id="placeID">
+										<input type="hidden" name="placeID" id="placeID">
 										<input type="hidden" name="placeName" id="placeName">
 										<input type="hidden" name="placeAddress" id="placeAddress">
 										<input type="hidden" name="placeContact" id="placeContact">
-										<input type="hidden" name="placeImgURL" id="placeImgURL"> -->
-										<input name="placeID" id="placeID">
+										<input type="hidden" name="placeImgURL" id="placeImgURL">
+										<!-- <input name="placeID" id="placeID">
 										<input name="placeName" id="placeName">
 										<input name="placeAddress" id="placeAddress">
 										<input name="placeContact" id="placeContact">
-										<input name="placeImgURL" id="placeImgURL">
+										<input name="placeImgURL" id="placeImgURL"> -->
 										<button type="submit" class="btn btn-primary">Comments</button>
 									</form>
 								</div>
