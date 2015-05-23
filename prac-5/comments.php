@@ -60,13 +60,6 @@
 					</li>
 					<?php } ?>
 				</ul>
-				<!-- <form class="navbar-form navbar-left" role="search"> -->
-				<!-- <form action="search.php" class="navbar-form navbar-left" role="search" method="POST">
-					<div class="form-group">
-						<input type="text" name="searchTerm" id="searchTerm" class="form-control" placeholder="Search">
-					</div>
-					<input type="submit" id="search" class="btn btn-primary" value="Search">
-				</form> -->
 			</div>
 		</div>
 	</nav>
@@ -145,7 +138,7 @@
 					<label for="placeComments">Add New Comment: 
 						<span style="color:red;">(Please enter more than 10 characters to prevent spam)</span>
 					</label>
-					<textarea name="placeComments" id="placeComments" class="form-control" required></textarea>
+					<textarea name="placeComments" id="placeComments" class="form-control" minlength="10" required></textarea>
 				</div>
 				<button type="submit" class="btn btn-primary">Add Comment</button>
 			</form>
