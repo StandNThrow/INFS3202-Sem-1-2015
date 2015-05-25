@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/lightbox.css">
 	<link rel="shortcut icon" href="images/favicon.png">
-	<script src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&amp;key=AIzaSyAHXZQLmlxuxzjt9mEtGi5rZt3GJL2JAEY"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&amp;signed_in=true&amp;key=AIzaSyAHXZQLmlxuxzjt9mEtGi5rZt3GJL2JAEY"></script>
 	<?php require("db_config.php"); ?>
 </head>
 <body>

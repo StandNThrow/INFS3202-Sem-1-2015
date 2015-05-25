@@ -21,11 +21,11 @@
 </head>
 <body>
 	<?php
-	$placeID = mysql_escape_string($_POST["placeID"]);
-	$placeName = mysql_escape_string($_POST["placeName"]);
-	$placeAddress = mysql_escape_string($_POST["placeAddress"]);
-	$placeContact = mysql_escape_string($_POST["placeContact"]);
-	$placeImgURL = mysql_escape_string($_POST["placeImgURL"]);
+	$placeID = mysqli_real_escape_string($connect, $_POST["placeID"]);
+	$placeName = mysqli_real_escape_string($connect, $_POST["placeName"]);
+	$placeAddress = mysqli_real_escape_string($connect, $_POST["placeAddress"]);
+	$placeContact = mysqli_real_escape_string($connect, $_POST["placeContact"]);
+	$placeImgURL = mysqli_real_escape_string($connect, $_POST["placeImgURL"]);
 
 	/* For debugging purposes */
 	// echo $placeID . "<br>";
