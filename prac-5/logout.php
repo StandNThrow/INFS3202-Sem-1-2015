@@ -23,9 +23,8 @@
 
 	header("Location: index.php");
 	?>
-	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	<!-- Latest compiled and minified JavaScript --> 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
-	<script src="js/lightbox.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>

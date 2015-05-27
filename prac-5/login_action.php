@@ -19,7 +19,7 @@ if(isset($_POST["Submit"]))
 		/* Success: Set session variables and redirect to Homepage  */
 		$_SESSION['username'] = $Username;
 		
-		header("Location: admin.php");
+		header("Location: index.php");
 		
 		// $log  = date("Y-m-d H:i") . " " . $Username . " Login" . PHP_EOL;
 		

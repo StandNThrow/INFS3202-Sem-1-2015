@@ -14,8 +14,7 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/lightbox.css">
-	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<link rel="shortcut icon" href="images/favicon.png">
 </head>
 
 <body>
@@ -27,39 +26,48 @@
 		header("Location: index.php");
 	}
 	?>
-	<!-- Fixed navbar -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand">Asianic Food Culture</a> </div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li><a href="index.php">Home</a></li>
-						<li class="active"><a>Login</a></li>
-					</ul>
-				</div>
-				<!--/.nav-collapse --> 
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand">Asianic Food Culture</a>
 			</div>
-		</nav>
-		<?php require("login_action.php"); ?>
-		<form action="login.php" name="formLogin" id="formLogin" class="formLogin" method="post">
-			<h2>Please login to continue</h2>
-			<label for="username" class="sr-only">Username</label>
-			<input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
-			<label for="password" class="sr-only">Password</label>
-			<input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
-			<div class="checkbox">
-				<label>
-					<input type="checkbox" value="remember-me">Remember me</label>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">Home</a></li>
+					<li class="active"><a>Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<?php require("login_action.php"); ?>
+			<form action="login.php" name="formLogin" id="formLogin" class="formLogin" method="post">
+				<h2>Please login to continue</h2>
+				<div class="form-group">
+					<label for="username" class="sr-only">Username</label>
+					<input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
+				</div>
+				<div class="form-group">
+					<label for="password" class="sr-only">Password</label>
+					<input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+				</div>
+				<div class="checkbox form-group">
+					<label><input type="checkbox" name="remember-me" id="remember-me" value="remember-me">Remember me</label>
 				</div>
 				<button name="Submit" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 			</form>
-			<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
-			<!-- Latest compiled and minified JavaScript --> 
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
-			<script src="js/googleMapAPI.js"></script> 
-			<script src="js/lightbox.js"></script> 
-			<script src="js/main.js"></script>
-		</body>
-		</html>
+		</div>
+	</div>
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

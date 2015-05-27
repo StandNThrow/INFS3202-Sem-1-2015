@@ -38,45 +38,46 @@
 					<?php 
 					$sessionUsername = isset($_SESSION["username"]);
 					if ($sessionUsername == 0) {
-						echo "<li><a href=\"login.php\">Login</a></li>";
-					} else { ?>
-					<li><a href="admin.php">Admin Panel</a></li>
-					<li><a href="logout.php">Logout</a></li>
-					<li>
-						<p class="navbar-text">Welcome back, <a class="navbar-link"><?php echo $_SESSION["username"]; ?></a></p>
-					</li>
-					<?php } ?>
-				</ul>
-				<form action="javascript:void(0);" class="navbar-form navbar-left" role="search">
-					<div class="form-group has-feedback has-feedback-left">
-						<input type="text" name="searchTerm" id="searchTerm" class="form-control" onkeydown="enterPressed();" placeholder="Search">
-						<i class="form-control-feedback glyphicon glyphicon-search"></i>
-					</div>
-				</form>
-			</div> 
-		</div>
-	</nav>
-	<div class="getGeolocation">Google Geolocation Placeholder. Enable your Location/GPS for this to work.</div>
-	<div class="container" role="main">
-		<div class="col-lg-5 content">
-			<div id="restaurantList" style="display:none;">
-				<div class="panel panel-default">
-					<div class="panel-heading"></div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-lg-4">
-								<img alt="Restaurant Picture" src=""></div>
-								<div class="col-lg-8">
-									<p id="placeData">
-									</p>
-									<!-- Form required to write to database for comments -->
-									<form action="comments.php" name="formComment" id="formComment" method="POST">
-										<input type="hidden" name="placeID" id="placeID">
-										<input type="hidden" name="placeName" id="placeName">
-										<input type="hidden" name="placeAddress" id="placeAddress">
-										<input type="hidden" name="placeContact" id="placeContact">
-										<input type="hidden" name="placeImgURL" id="placeImgURL">
-										<!-- For debugging purposes -->
+						?>
+						<li><a href="login.php">Login</a></li>
+						<?php } else { ?>
+						<li><a href="admin.php">Admin Panel</a></li>
+						<li><a href="logout.php">Logout</a></li>
+						<li>
+							<p class="navbar-text">Welcome back, <a class="navbar-link"><?php echo $_SESSION["username"]; ?></a></p>
+						</li>
+						<?php } ?>
+					</ul>
+					<form action="javascript:void(0);" class="navbar-form navbar-left" role="search">
+						<div class="form-group has-feedback has-feedback-left">
+							<input type="text" name="searchTerm" id="searchTerm" class="form-control" onkeydown="enterPressed();" placeholder="Search">
+							<i class="form-control-feedback glyphicon glyphicon-search"></i>
+						</div>
+					</form>
+				</div> 
+			</div>
+		</nav>
+		<div class="getGeolocation">Google Geolocation Placeholder. Enable your Location/GPS for this to work.</div>
+		<div class="container" role="main">
+			<div class="col-lg-5 content">
+				<div id="restaurantList" style="display:none;">
+					<div class="panel panel-default">
+						<div class="panel-heading"></div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-lg-4">
+									<img alt="Restaurant Picture" src=""></div>
+									<div class="col-lg-8">
+										<p id="placeData">
+										</p>
+										<!-- Form required to write to database for comments -->
+										<form action="comments.php" name="formComment" id="formComment" method="POST">
+											<input type="hidden" name="placeID" id="placeID">
+											<input type="hidden" name="placeName" id="placeName">
+											<input type="hidden" name="placeAddress" id="placeAddress">
+											<input type="hidden" name="placeContact" id="placeContact">
+											<input type="hidden" name="placeImgURL" id="placeImgURL">
+											<!-- For debugging purposes -->
 										<!-- <input name="placeID" id="placeID">
 										<input name="placeName" id="placeName">
 										<input name="placeAddress" id="placeAddress">
@@ -97,7 +98,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script src="js/googleMapAPI.js"></script>
 	<script src="js/lightbox.js"></script>
 	<script>
