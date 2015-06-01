@@ -55,41 +55,30 @@
 	response.setIntHeader("Refresh", refreshTimer);
 	Integer hitCount = (Integer)application.getAttribute("hitCounter");
 	if (hitCount == null || hitCount == 0 ) {
-	/* First visit */
-	/*
-	out.println("Welcome to my INFS3202!");
-	out.println("<br>");
-	out.println("Page will auto refresh every" + refreshTimer);
-	*/
-	out.println("<div class=\"jumbotron\">");
-	out.println("<div class=\"container\">");
-	out.println("<h2>Welcome to my INFS3202 - Prac 6!</h2>");
-	out.println("<!-- <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more &raquo;</a></p> -->");
-	out.println("</div>");
-	out.println("</div>");
+	%>
+	<div class="jumbotron">
+		<div class="container">
+			<h2>Welcome to my INFS3202 - Prac 6!</h2>
+		</div>
+	</div>
+	<%
 	hitCount = 1;
 } else {
-/* Returning visitors */
-/*
-out.println("Welcome back to my INFS3202!");
-*/
-out.println("<div class=\"jumbotron\">");
-out.println("<div class=\"container\">");
-out.println("<h2>Welcome back to my INFS3202 - Prac 6!</h2>");
-out.println("<!-- <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more &raquo;</a></p> -->");
-out.println("</div>");
-out.println("</div>");
+%>
+<div class="jumbotron">
+	<div class="container">
+		<h2>Welcome back to my INFS3202 - Prac 6!</h2>
+	</div>
+</div>
+<%
 hitCount += 1;
 }
 
 application.setAttribute("hitCounter", hitCount);
-
 %>
 <center>
 	<h2><b>Total number of visits: </b><%= hitCount%></h2>
-	<%
-	out.println("<h3><b>Page will auto refresh every " + refreshTimer + " second(s)</b></h3>");
-	%>
+	<h3><b>Page will auto refresh every " + <%=refreshTimer %> + " second(s)</b></h3>
 	<% DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss"); %>
 	<h3><b>Current Time: </b><%=dateFormat.format(new java.util.Date()) %></h3>
 </center>
@@ -97,12 +86,5 @@ application.setAttribute("hitCounter", hitCount);
 <!-- Latest compiled and minified JavaScript --> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
 <script src="js/main.js"></script>
-<script>
-function getTimeZoneId(){
-	var timezone=String(new Date());
-	document.getElementById("timeZone").innerHTML = timezone.substring(timezone.lastIndexOf('(')+1).replace(')','').trim();
-	return timezone.substring(timezone.lastIndexOf('(')+1).replace(')','').trim();
-}
-</script>
 </body>
 </html>

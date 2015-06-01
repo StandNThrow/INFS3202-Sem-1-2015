@@ -72,38 +72,40 @@
 
 						if ($result->rowCount() > 0) {
 							while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-								echo "<form action=\"remove_action.php\" method=\"post\">";
-								echo "<tr>";
-								echo "<td>" . $row["name"] . "</td>";
-								echo "<td><a class=\"btn btn-primary\" data-toggle=\"modal\" data-remote=\"edit.php?id=" . $row["id"] . "\" data-target=\"#myModal\">Edit</a></td>";
-								echo "<td><button type=\"submit\" name=\"id\" class=\"btn btn-primary\" value=\"" . $row["id"] . "\">Remove</button></td>";
-								echo "</tr>";
-								echo "<div class=\"modal fade\" id=\"myModal\">";
-								echo "<div class=\"modal-dialog\">";
-								echo "<div class=\"modal-content\"></div>";
-								echo "</div>";
-								echo "</div>";
-								echo "</td>";
-								echo "</tr>";
-								echo "</form>";
-							}
-							
-						} else {
+								?>
+								<form action="remove_action.php" method="post">
+									<tr>
+										<td><?php echo $row["name"]; ?></td>
+										<td><a class="btn btn-primary" data-toggle="modal" data-remote="edit.php?id='<?php echo $row["id"]; ?>'" data-target="#myModal">Edit</a></td>
+										<td><button type="submit" name="id" class="btn btn-primary" value="<?php echo $row["id"]; ?>">Remove</button></td>
+									</tr>
+									<div class="modal fade" id="myModal">
+										<div class="modal-dialog">
+											<div class="modal-content"></div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</form>
+						<?php 
+					}
 
-						}
-						?>
-					</tbody>
-				</table>
-			</div>
-			<a class="btn btn-primary pull-right" data-toggle="modal" data-remote="add.php" data-target="#myModal">Add</a>
-		</div>
-		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
-		<!-- Latest compiled and minified JavaScript --> 
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/lightbox.js"></script>
-		<script>
+				} else {
+
+				}
+				?>
+			</tbody>
+		</table>
+	</div>
+	<a class="btn btn-primary pull-right" data-toggle="modal" data-remote="add.php" data-target="#myModal">Add</a>
+</div>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
+<!-- Latest compiled and minified JavaScript --> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/lightbox.js"></script>
+<script>
 // Close modal dialog, refresh page
 $('#myModal').on('hidden.bs.modal', function () {
 	location.reload();

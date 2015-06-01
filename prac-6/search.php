@@ -34,16 +34,20 @@
 				<ul class="nav navbar-nav">
 					<li><a href="index.php">Home</a></li>
 					<?php 
-					$sessionUsername = $_COOKIE["username"];
-					if ($sessionUsername == null) {
-						echo "<li><a href=\"login.php\">Login</a></li>";
-					} else { ?>
-					<li><a href="admin.php">Admin Panel</a></li>
-					<li><a href="logout.php">Logout</a></li>
-					<li>
-						<p class="navbar-text">Welcome back, <a class="navbar-link"><?php echo $_COOKIE["username"]; ?></a></p>
-					</li>
-					<?php } ?>
+					if (isset($_COOKIE["username"]) == 0) {
+						?>
+						<li><a href="login.php">Login</a></li>
+						<?php
+					} else { 
+						?>
+						<li><a href="admin.php">Admin Panel</a></li>
+						<li><a href="logout.php">Logout</a></li>
+						<li>
+							<p class="navbar-text">Welcome back, <a class="navbar-link"><?php echo $_COOKIE["username"]; ?></a></p>
+						</li>
+						<?php 
+					} 
+					?>
 				</ul>
 				<form action="search.php" class="navbar-form navbar-left" role="search" method="POST">
 					<div class="form-group">
@@ -59,64 +63,66 @@
 			<?php
 			$searchTerm = $_POST["searchTerm"];
 
-			$sql = "SELECT * FROM markers WHERE CONCAT(`name`, `address`, `contact`, `description`) LIKE '%" . $searchTerm . "%'";
+			$sql = "SELECT * FROM `markers` WHERE CONCAT(`name`, `address`, `contact`, `description`) LIKE '%$searchTerm%'";
 			$searchResult = $conn->query($sql);
 
-			setcookie("searchResult", $searchResult, time()+3600);
+			setcookie("searchResult", $searchTerm, time()+3600);
 
 			if ($searchResult->rowCount() > 0) {
 				$i=1;
 				while ($row = $searchResult->fetch()) {
 					$images = $row["imgURL"];
 					$imageArray = explode("#", $images);
-					echo "<div class=\"panel panel-default\">";
-					echo "<div class=\"panel-heading\">";
-					echo "<span class=\"badge\">" . $i . "</span><b>" . $row["name"] . "</b>";
-					echo "</div>";
-					echo "<div class=\"panel-body\">";
-					echo "<div class=\"row\">";
-					echo "<div class=\"col-lg-4\">";
-					echo "<a href=\"" . $imageArray[0] . "\" data-lightbox=\"" . $row["name"] . "\">";
-					echo "<img class=\"imgLightbox\" src=\"" . $imageArray[0] . "\" alt=\"" . $row["name"] . "\" />";
-					echo "</a>";
-					echo "<a href=\"" . $imageArray[1] . "\" data-lightbox=\"" . $row["name"] . "\">";
-					echo "<img class=\"imgLightbox\" src=\"" . $imageArray[1] . "\" alt=\"" . $row["name"] . "\" />";
-					echo "</a>";
-					echo "<a href=\"" . $imageArray[2] . "\" data-lightbox=\"" . $row["name"] . "\">";
-					echo "<img class=\"imgLightbox\" src=\"" . $imageArray[2] . "\" alt=\"" . $row["name"] . "\" />";
-					echo "</a>";
-					echo "</div>";
-					echo "<div class=\"col-lg-8\">";
-					echo "<p>";
-					echo "Address: " . $row["address"];
-					echo "<br>";
-					echo "Phone: " . $row["contact"];
-					echo "</p>";
-					echo "<div class=\"more-panel\">";
-					echo "<div class=\"moreInfo-panel\">";
-					echo "<blockquote>";
-					echo $row["description"];
-					echo "</blockquote>";
-					echo "</div>";
-					echo "<a href=\"javascript:void(0);\" class=\"btn btn-primary moreInfo\">More Info</a>";
-					echo "</div>";
-					echo "</div>";
-					echo "</div>";
-					echo "</div>";
-					echo "</div>";
 					?>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<span class="badge"><?php echo $i; ?></span>
+							<b><?php echo $row["name"]; ?></b>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-lg-4">
+									<a href="<?php echo $imageArray[0]; ?>" data-lightbox="<?php echo $row["name"]; ?>">
+										<img class="imgLightbox" src="<?php echo $imageArray[0]; ?>" alt="<?php echo $row["name"]; ?>" />
+									</a>
+									<a href="<?php echo $imageArray[1]; ?>" data-lightbox="<?php echo $row["name"]; ?>">
+										<img class="imgLightbox" src="<?php echo $imageArray[1]; ?>" alt="<?php echo $row["name"]; ?>" />
+									</a>
+									<a href="<?php echo $imageArray[2]; ?>" data-lightbox="<?php echo $row["name"]; ?>">
+										<img class="imgLightbox" src="<?php echo $imageArray[2]; ?>" alt="<?php echo $row["name"]; ?>" />
+									</a>
+								</div>
+								<div class="col-lg-8">
+									<p>
+										Address: <?php echo $row["address"]; ?>
+										<br>
+										Phone: <?php echo $row["contact"]; ?>
+									</p>
+									<div class="more-panel">
+										<div class="moreInfo-panel">
+											<blockquote>
+												<?php echo $row["description"]; ?>
+											</blockquote>
+										</div>
+										<a href="javascript:void(0)" class="btn btn-primary moreInfo">More Info</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<?php
 					$i++;
 				}
 			}
 			else
 			{
-				echo "<table class=\"table table-striped\">";
-				echo "<tr>";
-				echo "<th rowspan=\"8\" style=\"text-align:center;\">No entries found!";
-				echo "</th>";
-				echo "</tr>";
-				echo "</table>";
+				?>
+				<table class="table table-striped">
+					<tr>
+						<th rowspan="8" style="text-align:center;">No entries found!</th>
+					</tr>
+				</table>
+				<?php
 			}
 			?>
 		</div>
@@ -132,13 +138,13 @@
 	<script>
 	/* Hide/Show More Info */
 	$(document).ready(function() {
-		$('.moreInfo').click(function() {
+		$(".moreInfo").click(function() {
 			var button = $(this);
-			$(button).closest('.more-panel').find('.moreInfo-panel').slideToggle('fast', function() {
-				if ($(this).is(':visible')) {
-					button.text('Hide');
+			$(button).closest(".more-panel").find(".moreInfo-panel").slideToggle("fast", function() {
+				if ($(this).is(":visible")) {
+					button.text("Hide");
 				} else {
-					button.text('More Info');
+					button.text("More Info");
 				}
 			});
 		});

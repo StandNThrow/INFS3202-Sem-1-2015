@@ -23,8 +23,8 @@
 
 <body>
 	<?php
-	$q = $_GET['q']; //get q from the address bar, also escaping the string
-	$sql = "SELECT * FROM `markers` WHERE CONCAT(`name`, `address`, `contact`) LIKE '%" . $q . "%'";
+	$q = $_GET["q"]; //get q from the address bar, also escaping the string
+	$sql = "SELECT * FROM `markers` WHERE CONCAT(`name`, `address`, `contact`) LIKE '%$q%'";
 	$result = $conn->query($sql);
 
 	if ($result->rowCount() > 0) {
@@ -32,54 +32,56 @@
 		while($row = $result->fetch()) {
 			$images = $row["imgURL"];
 			$imageArray = explode("#", $images);
-			echo "<div class=\"panel panel-default\">";
-			echo "<div class=\"panel-heading\">";
-			echo "<span class=\"badge\">" . $row["id"] . "</span><b>" . $row["name"] . "</b>";
-			echo "</div>";
-			echo "<div class=\"panel-body\">";
-			echo "<div class=\"row\">";
-			echo "<div class=\"col-lg-4\">";
-			echo "<a href=\"" . $imageArray[0] . "\" data-lightbox=\"" . $row["name"] . "\">";
-			echo "<img class=\"imgLightbox\" src=\"" . $imageArray[0] . "\" alt=\"" . $row["name"] . "\" />";
-			echo "</a>";
-			echo "<a href=\"" . $imageArray[1] . "\" data-lightbox=\"" . $row["name"] . "\">";
-			echo "<img class=\"imgLightbox\" src=\"" . $imageArray[1] . "\" alt=\"" . $row["name"] . "\" />";
-			echo "</a>";
-			echo "<a href=\"" . $imageArray[2] . "\" data-lightbox=\"" . $row["name"] . "\">";
-			echo "<img class=\"imgLightbox\" src=\"" . $imageArray[2] . "\" alt=\"" . $row["name"] . "\" />";
-			echo "</a>";
-			echo "</div>";
-			echo "<div class=\"col-lg-8\">";
-			echo "<p>";
-			echo "Address: " . $row["address"];
-			echo "<br>";
-			echo "Phone: " . $row["contact"];
-			echo "</p>";
-			echo "<div class=\"more-panel\">";
-			echo "<div class=\"moreInfo-panel\">";
-			echo "<blockquote>";
-			echo $row["description"];
-			echo "</blockquote>";
-			echo "</div>";
-			echo "<a href=\"javascript:void(0);\" class=\"btn btn-primary moreInfo\">More Info</a>";
-			echo "</div>";
-			echo "</div>";
-			echo "</div>";
-			echo "</div>";
-			echo "</div>";
 			?>
-			<?php 
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<span class="badge"><?php echo $i; ?></span>
+					<b><?php echo $row["name"]; ?></b>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-4">
+							<a href="<?php echo $imageArray[0]; ?>" data-lightbox="<?php echo $row["name"]; ?>">
+								<img class="imgLightbox" src="<?php echo $imageArray[0]; ?>" alt="<?php echo $row["name"]; ?>" />
+							</a>
+							<a href="<?php echo $imageArray[1]; ?>" data-lightbox="<?php echo $row["name"]; ?>">
+								<img class="imgLightbox" src="<?php echo $imageArray[1]; ?>" alt="<?php echo $row["name"]; ?>" />
+							</a>
+							<a href="<?php echo $imageArray[2]; ?>" data-lightbox="<?php echo $row["name"]; ?>">
+								<img class="imgLightbox" src="<?php echo $imageArray[2]; ?>" alt="<?php echo $row["name"]; ?>" />
+							</a>
+						</div>
+						<div class="col-lg-8">
+							<p>
+								Address: <?php echo $row["address"]; ?>
+								<br>
+								Phone: <?php echo $row["contact"]; ?>
+							</p>
+							<div class="more-panel">
+								<div class="moreInfo-panel">
+									<blockquote>
+										<?php echo $row["description"]; ?>
+									</blockquote>
+								</div>
+								<a href="javascript:void(0)" class="btn btn-primary moreInfo">More Info</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php
 			$i++;
 		}
 	}
 	else
 	{
-		echo "<table class=\"table table-striped\">";
-		echo "<tr>";
-		echo "<th rowspan=\"8\" style=\"text-align:center;\">No entries found!";
-		echo "</th>";
-		echo "</tr>";
-		echo "</table>";
+		?>
+		<table class="table table-striped">
+			<tr>
+				<th rowspan="8" style="text-align:center;">No entries found!</th>
+			</tr>
+		</table>
+		<?php
 	}
 	?>
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
@@ -90,13 +92,13 @@
 	<script>
 	/* Hide/Show More Info */
 	$(document).ready(function() {
-		$('.moreInfo').click(function() {
+		$(".moreInfo").click(function() {
 			var button = $(this);
-			$(button).closest('.more-panel').find('.moreInfo-panel').slideToggle('fast', function() {
-				if ($(this).is(':visible')) {
-					button.text('Hide');
+			$(button).closest(".more-panel").find(".moreInfo-panel").slideToggle("fast", function() {
+				if ($(this).is(":visible")) {
+					button.text("Hide");
 				} else {
-					button.text('More Info');
+					button.text("More Info");
 				}
 			});
 		});
